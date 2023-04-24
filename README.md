@@ -1,108 +1,550 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# GotNoBeans
 
-Welcome USER_NAME,
+GotNoBeans is an online retailer specialising in coffee brewing equipment and accessories...
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+The primary technologies used to form the basis of this website are the coding languages HTML, CSS, JavaScript, Python, Django...
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+[View the live site here](#)
 
-## Gitpod Reminders
+&nbsp;
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+![Responsive Mockup](#)
 
-`python3 -m http.server`
+&nbsp;
 
-A blue button should appear to click: _Make Public_,
+# Table of Contents
+  * [UX and UI](#ux-and-ui)
+    * [Research](#research)
+    * [Owner Goals](#owner-goals)
+    * [User Stories](#user-stories)
+    * [User Requirements and Expectations](#user-requirements-and-expectations)
+    * [Design](#design)
+    * [Wireframes](#wireframes)
+  * [Data Model](#data-model)
+  * [Features](#features)
+    * [Existing Features](#existing-features)
+    * [Features to be Implemented in the Future](#features-to-be-implemented-in-future)
+  * [Technologies Used](#technologies-used)
+    * [Languages](#languages)
+    * [Frameworks](#frameworks)
+    * [Template Engine](#template-engine)
+    * [Database](#database)
+    * [Application Platform](#application-platform)
+    * [Version Control](#version-control)
+    * [Libraries](#libraries)
+    * [Testing and Validation Tools](#testing-and-validation-tools)
+  * [Testing](#testing)
+  * [Validation](#validation)
+    * [HTML](#html)
+    * [CSS](#css)
+    * [JavaScript](#javascript)
+    * [Python](#python)
+    * [Color Contrast](#color-contrast)
+  * [Deployment](#deployment)
+    * [Creating a GitHub Repository](#creating-a-github-repository)
+    * [Forking the GitHub Repository](#forking-the-github-repository)
+    * [Making a Local Clone](#making-a-local-clone)
+    * [Heroku Deployment: Project Setup](#heroku-deployment-project-setup)
+    * [Heroku Deployment: Create a Heroku App](#heroku-deployment-create-a-heroku-app)
+    * [Heroku Deployment: Deploy to Heroku](#heroku-deployment-deploy-to-heroku)
+  * [Credits](#credits)
 
-Another blue button should appear to click: _Open Browser_.
+&nbsp;
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+# UX and UI
 
-A blue button should appear to click: _Make Public_,
+## Research
 
-Another blue button should appear to click: _Open Browser_.
+Research for the creation of this site was carried out by searching for various forms of...
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+* [#](#)
+* [#](#)
+* [#](#)
+* [#](#)
 
-To log into the Heroku toolbelt CLI:
+&nbsp;
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+## Owner Goals
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+  * As the site owner, I want to...
+  * As the site owner, I want to...
+  * As the site owner, I want to...
 
-------
+&nbsp;
 
-## Release History
+## User Stories
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### First Time Visitor
+ 
+  * As a first time user, I want to...
+  * As a first time user, I want to...
+  * As a first time user, I want to...
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+### Returning Visitor
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+  * As a registered user, I want to...
+  * As a registered user, I want to...
+  * As a registered user, I want to...
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+&nbsp;
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+## User Requirements and Expectations
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Requirements
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+  * Familiar and intuitive design that negates any learning curve.
+  * A reactive site that is user friendly and well presented on all types of device and screen sizes.
+  * Adequate levels of color contrast across the site that presents content in an accessible and easy to read manner.
+  * Appealing visual presentation that enhances the user experience.
+  * Full CRUD functionality
+    * Create: registered users can create new dictionary terms.
+    * Read: all users can read dictionary terms and definitions.
+    * Update: registered users can update their own entries.
+    * Delete: registered users can delete their own entries.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Expectations
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+  * Feedback when interacting with the site that is also instructive.
+  * Color choices for links and buttons should be familar and logical.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+&nbsp;
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+## Design
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+### Imagery
+* A...
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Color Scheme
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+* Black (#000)...
 
-------
+### Fonts
 
-## FAQ about the uptime script
+* The Google font of...
+### Structure
 
-**Why have you added this script?**
+* The information architecture type used for this site is the hierarchical tree structure. This common structure allows for simple navigation throughout the site and allows for easy expansion of the site in the future. The use of the burger navigation icon, along with a floating return to top button, help to overcome the common issues with this structure on mobile devices.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+<details>
+<summary>Site Map</summary>
 
-**How will this affect me?**
+![Site Map](/readme-files/images/sitemap.webp)
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+</details>
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+&nbsp;
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+## Wireframes
 
-**So….?**
+* Balsamiq Wireframes was used to create the wireframes for this site. 
+Wireframes for mobile, tablet, and desktop can be found below:
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+  ### [Phone Wireframe](#)
 
-**Can I opt out?**
+  ### [Tablet Wireframe](#)
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+  ### [Desktop Wireframe](#)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+&nbsp;
 
-**Anything more?**
+[Back to top &uarr;](#GotNoBeans)
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+# Data Model
 
----
+  ... was chosen as the database for this project.
+  <summary>GotNoBeans Data Model</summary>
 
-Happy coding!
+  ![Data Model](#)
+
+  </details>
+
+&nbsp;
+
+[Back to top &uarr;](#GotNoBeans)
+
+# Features 
+
+## Existing Features
+
+* Navigation Bar
+
+  * Featured on all pages, the full responsive navigation bar includes...
+
+    ![Navbar: Desktop](#)
+
+    <details>
+    <summary>Navbar: Mobile</summary>
+
+    ![Navbar: Mobile](#)
+
+    </details>
+    
+    <details>
+    <summary>Sidenav: Mobile</summary>
+
+    ![Sidenav: Mobile](#)
+
+    </details>
+
+* Homepage Carousel
+
+  * A carousel...
+
+    ![Homepage Carousel](#)
+
+  * The carousel also contains...
+
+    ![Homepage Carousel](#)
+
+* Profile: Header
+
+  * The profile header contains...
+
+    ![Profile: Header](#)
+
+* Edit Item Form
+
+  * A page header sits above the edit term form...
+
+    ![Add Item Form](#)
+
+* Delete Item Modal
+
+  * Should the admin, select the 'Delete' button...
+
+    ![Delete Item Modal](#)
+
+* Add Item Form
+
+  * A page header sits above the...
+
+    ![Add Item Form](#)
+
+* Log-In Page
+
+  * A page header sits...
+
+    ![Log In](#)
+
+* Sign-Up Page
+
+  * A page header sits...
+
+    ![Log In](#)
+
+* Flash Message
+
+  * The flash messages...
+
+    ![Flash Message](#)
+
+* Back to Top Button
+
+  * A floating back to top button was used...
+
+    ![Back-to-Top Btn](#)
+
+* Footer
+
+  * The footer consists of...
+
+    ![Footer](#)
+
+
+## Features to be Implemented in Future
+
+* Example Heading
+  * In the future...
+
+&nbsp;
+
+* Example Heading
+  * In the future...
+
+&nbsp;
+
+[Back to top &uarr;](#GotNoBeans)
+
+# Technologies Used
+
+## Languages
+  * [HTML](https://en.wikipedia.org/wiki/HTML)
+  * [CSS](https://en.wikipedia.org/wiki/CSS)
+  * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
+  * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+
+## Frameworks
+  * [Django](#)
+  * [Bootstrap](#)
+
+## Template Engine
+  * [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
+
+## Database
+  * [#](#)
+
+## Application Platform
+  * [Heroku](https://en.wikipedia.org/wiki/Heroku)
+
+## Version Control
+  * [Git](https://en.wikipedia.org/wiki/Git)
+  * [GitHub](https://en.wikipedia.org/wiki/GitHub)
+
+## Libraries
+  * [Font Awesome](https://fontawesome.com/)
+    * Font Awesome was used to locate and import icons used throughout the site.
+  * [Google Fonts](https://fonts.google.com/)
+    * Google Fonts was used to import the 'Rubik' font used throughout the site.
+
+## Testing and Validation Tools
+  * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
+    * Google Chrome DevTools was used to carry out manual testing on the website and to simulate mobile devices.
+  * [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
+    * The W3C Markup Validation Service was used to check the markup validity of the html code. 
+  * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri)
+    * The W3C CSS Validation Service was used to validate the css code.
+  * [JSHint](https://jshint.com/)
+    * The JSHint static code analysis tool was used to check if the JavaScript source code complies with coding rules.
+  * [CI Python Linter](https://pep8ci.herokuapp.com/)
+    * The Code Institute Python Linter ensures that the code is PEP8 compliant.
+  * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
+    * Lighthouse was used to audit performance, accessibility, best practices and SEO across the website.
+  * [a11y](https://color.a11y.com/)
+    * The a11y Color Contrast Accessibility Validator was used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
+  * [LambdaTest](https://www.lambdatest.com/)
+    * LambdaTest was used to perform cross browser testing.
+
+&nbsp;
+
+[Back to top &uarr;](#GotNoBeans)
+
+# Testing 
+
+Testing information can be found in the [testing file][TESTING.md].
+
+&nbsp;
+
+[Back to top &uarr;](#GotNoBeans)
+
+# Validation
+
+## HTML
+The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
+
+<details><summary>Home</summary>
+<img src="#">
+</details>
+
+<details><summary>Profile</summary>
+<img src="#">
+</details>
+
+<details><summary>Add Term</summary>
+<img src="#">
+</details>
+
+<details><summary>Edit Term</summary>
+<img src="#">
+</details>
+
+<details><summary>Log In</summary>
+<img src="#">
+</details>
+
+<details><summary>Sign Up</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## CSS
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
+
+<details><summary>CSS Validation</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## JavaScript
+[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The undefined variable shown 'M' relates to Materialize CCS Initialization code.
+
+<details><summary>JavaScript Validation</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## Python
+[CI Python Linter](https://pep8ci.herokuapp.com/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with no errors found.
+
+<details><summary>Python Linting</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## Color Contrast
+The color contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
+
+<details>
+<summary>Color Contrast Validation</summary>
+
+![Color Contrast Validation](#)
+</details>
+
+&nbsp;
+
+[Back to top &uarr;](#GotNoBeans)
+
+# Deployment
+
+## Creating a Gitpod Repository
+
+A GitHub repository is used to store your project, with Git and GitHub used for version control. The following steps outline how to create a GitHub repository.
+  1. Log in to GitHub.
+  2. In the upper-right corner of any page, use the '+' drop-down menu and select 'New repository'.
+  3. Give your repo a short, memorable name.
+  4. Choose your repository visibility; 'Public' or 'Private'.
+  5. Select Initialize this repository with a README.
+  6. Click Create repository.
+
+&nbsp;
+
+## Forking the GitHub Repository
+
+Forking the GitHub Repository makes a copy of the original repository on our GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
+  1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
+  2. Once in the repository, navigate to the "Fork" button at the top right of the page; just above the settings button on the menu.
+  3. You should now have a copy of the original repository in your GitHub account.
+
+&nbsp;
+
+## Making a Local Clone
+  1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
+  2. Under the repository name, click "Clone or download".
+  3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
+  4. Open Git Bash
+  5. Change the current working directory to the location where you want the cloned directory to be made.
+  6. Type `git clone` and then paste the URL you copied in Step 3.
+  ```
+  $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+  ```
+
+  7. Press Enter. Your local clone will be created.
+
+  ```
+  $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+  > Cloning into `CI-Clone`...
+  > remote: Counting objects: 10, done.
+  > remote: Compressing objects: 100% (8/8), done.
+  > remove: Total 10 (delta 1), reused 10 (delta 1)
+  > Unpacking objects: 100% (10/10), done.
+  ```
+
+Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+## Heroku Deployment: Project Setup
+
+If you don't have a Heroku account, or if you have yet to install the Heroku CLI, see [How to Install the Heroku CLI](https://coding-boot-camp.github.io/full-stack/heroku/how-to-install-the-heroku-cli) before you proceed.
+
+  1. Make sure that your project is initialized as a Git repository. You can check this by running the following command at the root of your project.
+  ```
+  git status
+  ```
+
+  2. If you encounter an error, that means that your project isn't yet a Git repository. You can initialize the repository by running the following command.
+  ```
+  git init
+  ```
+
+  3. Applications that feature an Express.js back end can use Heroku's PORT environment variable. To set this up, create a port variable with a value of process.env.PORT. You can also add a default value for local instances of your server by using the || syntax.
+  ```
+  const port = process.env.PORT || 3001
+  ```
+
+## Heroku Deployment: Create a Heroku App
+
+Now that you have created the repository and configured the server, you can create an app on Heroku. Using the steps below, this can be done without opening the browser.
+  1. Create a new Heroku app by running the following command in the root of your project:
+  ```
+  heroku create
+  ```
+
+  2. The Heroku CLI will randomly generate an app name, but you can specify a name using the following syntax.
+  ```
+  heroku create <app name>
+  ```
+
+  3. Once you have created the app, you can run 'git remote -v' to verify that the Heroku remote URL was added by the Heroku CLI
+  ```
+  git remote -v
+  heroku  https://git.heroku.com/<heroku-app-name>.git (fetch)
+  heroku  https://git.heroku.com/<heroku-app-name>.git (push)
+  ```
+
+  4. The remote URL gets added automatically to your Git repository without requiring any extra commands. You can now prepare for deployment.
+
+## Heroku Deployment: Deploy to Heroku
+
+  1. Add and commit all your project files, then push to Heroku.
+  ```
+  git add -A
+  git commit -m "Pushing to Heroku"
+  git push heroku main
+  ```
+
+  2. Confirm that the application was deployed successfully by visiting the application URL provided in the terminal. Sometimes the output will say that the build was successful, but you should still open your application in the browser to verify.
+  ```
+  remote: -----> Build succeeded!
+  remote: -----> Discovering process types
+  remote:        Procfile declares types     -> (none)
+  remote:        Default types for buildpack -> web
+  remote:
+  remote: -----> Compressing...
+  remote:        Done: 33.8M
+  remote: -----> Launching...
+  remote:        Released v9
+  remote:        https://lit-retreat-65972.herokuapp.com/ deployed to Heroku
+  ```
+
+  3. Your app should now be deployed with a server to Heroku. The link will be accessible as long as your app exists on Heroku.
+
+If you encounter any issues, further details on Heroku deployment and troubleshooting can be found [here](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
+
+The live link can be found [here](#)
+
+&nbsp;
+
+[Back to top &uarr;](#GotNoBeans)
+
+# Credits 
+
+## Content 
+
+  * The Code Institute's readme-template provided the basic structure for the readme.md file.
+  * The Code Institute's Non-Relational Database Management Systems Mini Project was used to provide basic structure and authentication.
+  * The [Bootstrap](#) front-end framework was used to supply components such as navbar, sidenav, collapsible, and search panel.
+
+## Media
+
+  * The favicon image was sourced from [Icons8](https://icons8.com) and was freely used under the [Icons8 licence](https://icons8.com/license).
+  * The hero-image was sourced from [Unsplash](https://unsplash.com) and was freely used under the [Unsplash licence](https://unsplash.com/license).
+
+## Code
+
+  * The CSS code for...
+  * The JavaScript code for...
+
+## Acknowledgements
+
+  * I would like to thank my mentor, Oluwaseun Owonikoko, who assisted me on this project.
+  * I would like to thank Iris Smok, the Code Institute's cohort facilitator for Coleg y Cymoedd, for her advice and encouragement.
+  * I would also like to acknowledge the support and advice obtained from the Code Institute's Tutor Support and Slack community. 
+
+  &nbsp;
+
+  [Back to top &uarr;](#GotNoBeans)
+
+[TESTING.md]: TESTING.md

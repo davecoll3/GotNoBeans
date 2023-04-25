@@ -56,21 +56,25 @@ body {
     color: white;
 }
 
-.shop-now-button:hover,
-.shop-now-button:active,
-.shop-now-button:focus,
+.shop-now-btn:hover,
+.shop-now-btn:active,
+.shop-now-btn:focus,
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #1a0d00;
-    color: white;
+    background: #fff !important;
+    color: #1a0d00 !important;
 }
 
 /* Homepage */
 .homepage-body-text {
     font-weight: 600;
-    background-color: rgba(0,0,0,.5);
+    background-color: rgba(26,13,0,.5);
     border-radius: 25px;
+}
+
+.fa-solid {
+    color: #fff;
 }
 
 /* -------------------------------- Media Queries */

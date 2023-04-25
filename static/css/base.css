@@ -24,8 +24,23 @@ body {
 }
 
 /* Header */
-#topnav {
+#topnav,
+.navbar {
     background-color: #1a0d00;
+}
+
+.dropdown-menu {
+    background-color: #1a0d00;
+}
+
+.dropdown-item {
+    color: #fff;
+}
+
+#delivery-banner {
+    background-color: #fff;
+    color: #1a0d00;
+    font-size: 16px;
 }
 
 /* Buttons */

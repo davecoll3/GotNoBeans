@@ -6,7 +6,7 @@ body {
     background: url('/media/homepage_background.webp') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
-    color: white;
+    color: #1a0d00;
     font-family: 'Roboto Mono';
 }
 
@@ -37,12 +37,6 @@ body {
     color: #fff;
 }
 
-#delivery-banner {
-    background-color: #fff;
-    color: #1a0d00;
-    font-size: 16px;
-}
-
 /* Buttons */
 .shop-now-btn {
     background: #1a0d00;
@@ -62,19 +56,32 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #fff !important;
-    color: #1a0d00 !important;
+    background: #000 !important;
+    color: #e6e6e6 !important;
+    font-weight: 700;
 }
 
 /* Homepage */
 .homepage-body-text {
     font-weight: 600;
     background-color: rgba(26,13,0,.5);
+    color: #fff;
     border-radius: 25px;
 }
 
 .fa-solid {
     color: #fff;
+}
+
+/* Products page */
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: white;
+	z-index: -1;
 }
 
 /* -------------------------------- Media Queries */
@@ -98,5 +105,16 @@ body {
 
     .header-container {
         padding-top: 164px;
+    }
+}
+
+/* pad the top a bit when navbar is collapsed on mobile */
+@media (max-width: 991px) {
+    .header-container {
+        padding-top: 116px;
+    }
+
+    body {
+        height: calc(100vh - 116px);
     }
 }

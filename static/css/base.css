@@ -84,6 +84,24 @@ body {
 	z-index: -1;
 }
 
+/* Back to Top Button */
+.btt-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: #1a0d00;
+}
+
+.btt-button > i {
+    color: #1a0d00 !important;
+}
+
+.btt-link {
+    cursor: pointer;
+}
+
 /* -------------------------------- Media Queries */
 
 /* Slightly larger container on xl screens */

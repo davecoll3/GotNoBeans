@@ -74,6 +74,11 @@ body {
 }
 
 /* Products page */
+.category-header {
+    pointer-events: none;
+    color: #1a0d00;
+}
+
 .overlay {
 	height: 100%;
 	width: 100%;

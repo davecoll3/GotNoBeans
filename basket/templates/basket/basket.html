@@ -30,7 +30,7 @@
                                     <th scope="col">Products</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Qty</th>
-                                    <th scope="col">Subtotal</th>
+                                    <th scope="col" class="text-right">Subtotal</th>
                                 </tr>
                             </thead>
 
@@ -43,10 +43,10 @@
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
-                                    <td class="py-3 w-25">
+                                    <td class="py-3">
                                         <p class="my-0">{{ item.quantity }}</p>
                                     </td>
-                                    <td class="py-3">
+                                    <td class="py-3 text-right">
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
                                 </tr>
@@ -54,13 +54,13 @@
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
-                                    <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                                    <h6>Delivery (UK only): £{{ delivery|floatformat:2 }}</h6>
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    <a href="{% url 'products' %}" class="btn btn-lg">
+                                    <a href="{% url 'products' %}" class="btn btn-lg btn-secondary">
                                         <span class="icon">
                                             <i class="fa-solid fa-chevron-left"></i>
                                         </span>
@@ -78,7 +78,7 @@
                     </div>
                 {% else %}
                     <p class="lead mb-5">Your basket is empty.</p>
-                    <a href="{% url 'products' %}" class="btn btn-outline-black rounded-0 btn-lg">
+                    <a href="{% url 'products' %}" class="btn btn-secondary btn-lg">
                         <span class="icon">
                             <i class="fa-solid fa-chevron-left"></i>
                         </span>

@@ -38,11 +38,14 @@ body {
 }
 
 /* Buttons */
+.btn {
+    border-radius: 25px !important;
+}
+
 .shop-now-btn {
     background: #1a0d00;
     color: white;
     min-width: 260px;
-    border-radius: 25px;
 }
 
 .btn-black {
@@ -56,9 +59,13 @@ body {
 .btn-black:hover,
 .btn-black:active,
 .btn-black:focus {
-    background: #000 !important;
-    color: #e6e6e6 !important;
-    font-weight: 700;
+    color: #17a2b8 !important;
+    border-color: #17a2b8;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #666;
 }
 
 /* Homepage */

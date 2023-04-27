@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load basket_tools %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -29,8 +30,7 @@
                                 <tr>
                                     <th scope="col">Products</th>
                                     <th scope="col">Price</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Update Qty</th>
+                                    <th scope="col" class="text-center">Qty</th>
                                     <th scope="col" class="text-right">Subtotal</th>
                                 </tr>
                             </thead>
@@ -44,11 +44,8 @@
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
-                                    <td class="py-3">
-                                        <p class="my-0">{{ item.quantity }}</p>
-                                    </td>
                                     <td class="py-3 text-right">
-                                        <form method="POST" action="" class="form update-form">
+                                        <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
                                             {% csrf_token %}
                                             <div class="form-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
@@ -78,7 +75,7 @@
                                         <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3 text-right">
-                                        <p class="my-0">£{{ item.product.price }}</p>
+                                        <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     </td>
                                 </tr>
                             {% endfor %}

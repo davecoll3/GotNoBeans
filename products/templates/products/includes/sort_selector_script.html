@@ -1,0 +1,22 @@
+<script type="text/javascript">
+    $('#sort-selector').change(function() {
+        const selector = $(this);
+        const currentUrl = new URL(window.location);
+
+        const selectedVal = selector.val();
+        if(selectedVal != "reset"){
+            const sort = selectedVal.split("_")[0];
+            const direction = selectedVal.split("_")[1];
+
+            currentUrl.searchParams.set("sort", sort);
+            currentUrl.searchParams.set("direction", direction);
+
+            window.location.replace(currentUrl);
+        } else {
+            currentUrl.searchParams.delete("sort");
+            currentUrl.searchParams.delete("direction");
+
+            window.location.replace(currentUrl);
+        }
+    })
+</script>

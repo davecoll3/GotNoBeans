@@ -30,6 +30,7 @@
                                     <th scope="col">Products</th>
                                     <th scope="col">Price</th>
                                     <th scope="col">Qty</th>
+                                    <th scope="col">Update Qty</th>
                                     <th scope="col" class="text-right">Subtotal</th>
                                 </tr>
                             </thead>
@@ -45,6 +46,36 @@
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">{{ item.quantity }}</p>
+                                    </td>
+                                    <td class="py-3 text-right">
+                                        <form method="POST" action="" class="form update-form">
+                                            {% csrf_token %}
+                                            <div class="form-group">
+                                                <div class="input-group input-group-{{ item.item_id }}">
+                                                    <div class="input-group-prepend">
+                                                        <button class="decrement-qty btn-sm btn-black decrement-qty_{{ item.item_id }}" 
+                                                            data-item_id="{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fa-solid fa-minus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                    <input class="form-control form-control-sm text-center qty_input id_qty_{{ item.item_id }}" type="number"
+                                                        name="quantity" value="{{ item.quantity }}" min="1" max="20"
+                                                        data-item_id="{{ item.item_id }}">
+                                                    <div class="input-group-append">
+                                                        <button class="increment-qty btn-sm btn-black increment-qty_{{ item.item_id }}"
+                                                            data-item_id="{{ item.item_id }}">
+                                                            <span>
+                                                                <i class="fa-solid fa-plus fa-sm"></i>
+                                                            </span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                        <a class="update-link text-info float-left"><small>Update</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                                     </td>
                                     <td class="py-3 text-right">
                                         <p class="my-0">£{{ item.product.price }}</p>
@@ -88,4 +119,10 @@
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+{% include 'products/includes/qty_input_script.html' %}
+{% include 'basket/includes/update_or_remove_qty_script.html' %}
 {% endblock %}

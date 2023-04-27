@@ -106,11 +106,9 @@ button[disabled]{
     color: #1a0d00;
 }
 
-.btt-button > i {
-    color: #1a0d00 !important;
-}
-
-.btt-link {
+.btt-link,
+.update-link,
+.remove-item {
     cursor: pointer;
 }
 

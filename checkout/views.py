@@ -3,6 +3,9 @@ from django.contrib import messages
 
 from .forms import OrderForm
 
+# import stripe
+import json
+
 
 def checkout(request):
     basket = request.session.get('basket', {})
@@ -14,6 +17,8 @@ def checkout(request):
     template = 'checkout/checkout.html'
     context = {
         'order_form': order_form,
+        'stripe_public_key': stripe_public_key,
+        'client_secret': intent.client_secret,
     }
 
     return render(request, template, context)

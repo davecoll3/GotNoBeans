@@ -19,7 +19,7 @@ class Order(models.Model):
     county = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=8, null=False, blank=False)
     date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=3, decimal_places=2, null=False, default=0)
+    delivery_cost = models.DecimalField(max_digits=3, decimal_places=2, null=False, default=3.99)
     order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
     grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
 
@@ -30,8 +30,7 @@ class Order(models.Model):
     def update_total(self):
         # Update grand total each time a line item is added
         self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
-        self.delivery_cost = Decimal(3.99)
-        self.grand_total = self.order_total + self.delivery_cost
+        self.grand_total = self.order_total
         self.save()
 
     def save(self, *args, **kwargs):
@@ -43,7 +42,8 @@ class Order(models.Model):
     def __str__(self):
         return self.order_number
 
-# Used to iterate through individual items in shopping basket
+
+# Used to iterate through individual items in basket
 # and to update delivery_cost, order_total, and grand_total
 class OrderLineItem(models.Model):
     order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')

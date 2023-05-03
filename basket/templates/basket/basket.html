@@ -120,6 +120,6 @@
 
 {% block postloadjs %}
 {{ block.super }}
-{% include 'products/includes/qty_input_script.html' %}
-{% include 'basket/includes/update_or_remove_qty_script.html' %}
+    {% include 'products/includes/qty_input_script.html' %}
+    {% include 'basket/includes/update_or_remove_qty_script.html' %}
 {% endblock %}

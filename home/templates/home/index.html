@@ -10,14 +10,17 @@
 {% endblock %}
 
 {% block content %}
+    <!-- Home Page Header & Background Image Container -->
     <div class="container h-100">
         <div class="row h-100">
             <div class="col-12 my-auto text-center">
+                <!-- Home Page Header -->
                 <h3 class="display-4 homepage-body-text">
-                    You do the beans,
+                    You do the beans.
                     <br>
-                    we'll do the brew.
+                    We'll do the brew.
                 </h3>
+                <!-- Shop Now Button -->
                 <div class="my-5">
                     <h4>
                         <a href="{% url 'products' %}?category=coffee_brewers" class="shop-now-btn btn btn-lg text-uppercase py-3">Shop Now!</a>

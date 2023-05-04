@@ -4,6 +4,7 @@
 <html lang="en">
   <head>
 
+    <!-- Meta Data -->
     {% block meta %}
         <meta http-equiv="X-UA-Compatible" content="ie-edge">
         <meta charset="utf-8">
@@ -13,6 +14,7 @@
     {% block extra_meta %}
     {% endblock %}
 
+    <!-- Core CSS Links -->
     {% block corecss %}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap">
@@ -22,6 +24,7 @@
     {% block extra_css %}
     {% endblock %}
 
+    <!-- Core JavaScript Links -->
     {% block corejs %}
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
@@ -33,10 +36,12 @@
     {% block extra_js %}
     {% endblock %}
 
+    <!-- Title & Favicon -->
     <title>Got No Beans {% block extra_title %}{% endblock %}</title>
     <link rel="icon" type="image/x-icon" href="/media/favicon.webp">
   </head>
   <body>
+    <!-- Navbar -->
     <header class="container-fluid fixed-top">
         <div id="topnav" class="row pt-lg-2 d-none d-lg-flex">
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
@@ -44,6 +49,7 @@
                     <h2 class="my-0">Got No Beans</h2>
                 </a>
             </div>
+            <!-- Search Bar -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
@@ -61,6 +67,7 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
+                        <!-- My Account Dropdown -->
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-lg"></i></div>
@@ -68,18 +75,23 @@
                             </div>
                         </a>
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                            <!-- Links for Registered Users -->
                             {% if request.user.is_authenticated %}
+                                <!-- Product Management Link for Admins Only -->
                                 {% if request.user.is_superuser %}
                                     <a href="" class="dropdown-item">Product Management</a>
+                                <!-- Links for All Users -->
                                 {% endif %}
                                 <a href="" class="dropdown-item">My Profile</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
+                            <!-- Links for Guest Users -->
                             {% else %}
                                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
                             {% endif %}
                         </div>
                     </li>
+                    <!-- Shopping Basket Link & Price Total -->
                     <li class="list-inline-item">
                         <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_basket' %}">
                             <div class="text-center">
@@ -99,6 +111,7 @@
         </div>
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0"></div>
         </div>
+        <!-- Mobile Navbar Toggler -->
         <div class="row">
             <nav class="navbar navbar-expand-lg navbar-dark w-100">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -110,6 +123,7 @@
         </div>
     </header>
 
+    <!-- Toast Message Container -->
     {% if messages %}
         <div class="message-container">
             {% for message in messages %}
@@ -134,6 +148,7 @@
     {% block content %}
     {% endblock %}
 
+    <!-- Post Load JavaScript -->
     {% block postloadjs %}
         {% include 'includes/show_toasts_script.html' %}
     {% endblock %}

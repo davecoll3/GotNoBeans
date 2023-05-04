@@ -13,6 +13,7 @@
 {% block content %}
     <div class="overlay"></div>
     <div class="container mb-2">
+        <!-- My Basket Heading -->
         <div class="row">
             <div class="col">
                 <hr>
@@ -21,6 +22,7 @@
             </div>
         </div>
 
+        <!-- Basket Items -->
         <div class="row">
             <div class="col">
                 {% if basket_items %}
@@ -44,6 +46,7 @@
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
+                                    <!-- Adjust Basket Item Qty Input -->
                                     <td class="py-3 text-right">
                                         <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
                                             {% csrf_token %}
@@ -79,6 +82,7 @@
                                     </td>
                                 </tr>
                             {% endfor %}
+                            <!-- Basket Price Totals -->
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
                                     <h6><strong>Basket Total: £{{ total|floatformat:2 }}</strong></h6>
@@ -86,6 +90,7 @@
                                     <h4 class="mt-4"><strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong></h4>
                                 </td>
                             </tr>
+                            <!-- Keep Shopping & Checkout Buttons -->
                             <tr>
                                 <td colspan="5" class="text-right">
                                     <a href="{% url 'products' %}" class="btn btn-lg btn-secondary">
@@ -105,6 +110,7 @@
                         </table>
                     </div>
                 {% else %}
+                    <!-- Empty Basket Notice -->
                     <p class="lead mb-5">Your basket is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-secondary btn-lg">
                         <span class="icon">
@@ -118,6 +124,7 @@
     </div>
 {% endblock %}
 
+<!-- Post Load JavaScript -->
 {% block postloadjs %}
 {{ block.super }}
     {% include 'products/includes/qty_input_script.html' %}

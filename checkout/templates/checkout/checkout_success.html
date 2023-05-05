@@ -223,12 +223,21 @@
         <!-- Keep Shopping Button -->
         <div class="row">
 			<div class="col-12 col-lg-7 text-right">
-				<a href="{% url 'products' %}?category=coffee_brewers" class="btn btn-black my-2">
-					<span class="icon mr-2">
-						<i class="fa-solid fa-mug-hot"></i>
-					</span>
-					<span class="text-uppercase">Forgot Something?</span>
-				</a>
+                {% if from_profile %}
+                    <a href="{% url 'profile' %}" class="btn btn-black my-2">
+                        <span class="icon mr-2">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+                        <span>Back to Profile</span>
+                    </a>
+                {% else %}
+                    <a href="{% url 'products' %}?category=coffee_brewers" class="btn btn-black my-2">
+                        <span class="icon mr-2">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </span>
+                        <span>Forget Something?</span>
+                    </a>
+                {% endif %}
 			</div>
 		</div>
     </div>

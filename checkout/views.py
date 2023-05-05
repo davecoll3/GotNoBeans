@@ -45,6 +45,7 @@ def checkout(request):
             'town_or_city': request.POST['town_or_city'],
             'county': request.POST['county'],
             'postcode': request.POST['postcode'],
+            'country': request.POST['country'],
         }
 
         order_form = OrderForm(form_data)

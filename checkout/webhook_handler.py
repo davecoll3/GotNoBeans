@@ -54,6 +54,7 @@ class StripeWH_Handler:
                     town_or_city__iexact=shipping_details.address.city,
                     county__iexact=shipping_details.address.state,
                     postcode__iexact=shipping_details.address.postal_code,
+                    country__iexact=shipping_details.address.country,
                     grand_total=grand_total,
                     original_basket=basket,
                     stripe_pid=pid,
@@ -66,7 +67,6 @@ class StripeWH_Handler:
                 time.sleep(1)
         # If order HAS been found, return 200 response
         if order_exists:
-            self._send_confirmation_email(order)
             return HttpResponse(
                 content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already exists in database',
                 status=200)
@@ -83,6 +83,7 @@ class StripeWH_Handler:
                     town_or_city=shipping_details.address.city,
                     county=shipping_details.address.state,
                     postcode=shipping_details.address.postal_code,
+                    country=shipping_details.address.country,
                     original_basket=basket,
                     stripe_pid=pid,
                 )

@@ -86,6 +86,7 @@
                         {{ order_form.town_or_city | as_crispy_field }}
                         {{ order_form.county | as_crispy_field }}
                         {{ order_form.postcode | as_crispy_field }}
+                        {{ order_form.country | as_crispy_field }}
                         <div class="form-check form-check-inline float-right mr-0">
                             <!-- Save User Details -->
 							{% if user.is_authenticated %}

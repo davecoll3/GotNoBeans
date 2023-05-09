@@ -41,18 +41,16 @@ class StripeWH_Handler:
             if value == "":
                 shipping_details.address[field] = None
 
-         # Update profile information if save_info is checked
+        # Update profile information if save_info was checked
         profile = None
         username = intent.metadata.username
         if username != 'AnonymousUser':
             profile = UserProfile.objects.get(user__username=username)
             if save_info:
-                profile.default_full_name = shipping_details.full_name
-                profile.default_email = shipping_details.email
                 profile.default_phone_number = shipping_details.phone
+                profile.default_town_or_city = shipping_details.address.city
                 profile.default_street_address1 = shipping_details.address.line1
                 profile.default_street_address2 = shipping_details.address.line2
-                profile.default_town_or_city = shipping_details.address.city
                 profile.default_county = shipping_details.address.state
                 profile.default_postcode = shipping_details.address.postal_code
                 profile.default_country = shipping_details.address.country
@@ -106,7 +104,7 @@ class StripeWH_Handler:
                     original_basket=basket,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in basket.items():
+                for item_id, item_data in json.loads(basket).items():
                     product = Product.objects.get(id=item_id)
                     order_line_item = OrderLineItem(
                         order=order,

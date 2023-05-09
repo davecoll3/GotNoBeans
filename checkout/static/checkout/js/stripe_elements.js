@@ -122,7 +122,7 @@ form.addEventListener('submit', function(ev) {
             } else {
                 // If no errors, submit form
                 if (result.paymentIntent.status === 'succeeded') {
-                    // form.submit();
+                    form.submit();
                 }
             }
         });

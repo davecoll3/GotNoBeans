@@ -53,7 +53,7 @@
                                             <div class="form-group">
                                                 <div class="input-group input-group-{{ item.item_id }}">
                                                     <div class="input-group-prepend">
-                                                        <button class="decrement-qty btn-sm btn-black decrement-qty_{{ item.item_id }}" 
+                                                        <button class="decrement-qty btn-sm btn-dark decrement-qty_{{ item.item_id }}" 
                                                             data-item_id="{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fa-solid fa-minus fa-sm"></i>
@@ -64,7 +64,7 @@
                                                         name="quantity" value="{{ item.quantity }}" min="1" max="20"
                                                         data-item_id="{{ item.item_id }}">
                                                     <div class="input-group-append">
-                                                        <button class="increment-qty btn-sm btn-black increment-qty_{{ item.item_id }}"
+                                                        <button class="increment-qty btn-sm btn-dark increment-qty_{{ item.item_id }}"
                                                             data-item_id="{{ item.item_id }}">
                                                             <span>
                                                                 <i class="fa-solid fa-plus fa-sm"></i>
@@ -99,7 +99,7 @@
                                         </span>
                                         <span class="text-uppercase">Keep Shopping</span>
                                     </a>
-                                    <a href="{% url 'checkout' %}" class="btn btn-black btn-lg">
+                                    <a href="{% url 'checkout' %}" class="btn btn-dark btn-lg">
                                         <span class="text-uppercase">Secure Checkout</span>
                                         <span class="icon">
                                             <i class="fa-solid fa-lock"></i>

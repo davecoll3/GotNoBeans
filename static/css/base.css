@@ -46,27 +46,6 @@ input[name='q']::placeholder {
     border-radius: 25px !important;
 }
 
-.shop-now-btn {
-    background: #1a0d00;
-    color: white;
-    min-width: 260px;
-}
-
-.btn-black {
-    background: #1a0d00;
-    color: white;
-}
-
-.shop-now-btn:hover,
-.shop-now-btn:active,
-.shop-now-btn:focus,
-.btn-black:hover,
-.btn-black:active,
-.btn-black:focus {
-    color: #17a2b8 !important;
-    border-color: #17a2b8;
-}
-
 button:disabled,
 button[disabled]{
   background-color: #666;

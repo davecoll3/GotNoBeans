@@ -209,6 +209,7 @@ button[disabled]{
 .allauth-form-inner-content input {
     border-color: #000;
     border-radius: 0;
+    width: 100%;
 }
 
 .allauth-form-inner-content label:not([for='id_remember']) {
@@ -242,5 +243,34 @@ button[disabled]{
 
     body {
         height: calc(100vh - 116px);
+    }
+    
+    .display-4.homepage-body-text {
+        font-size: 2rem;
+    }
+
+    .navbar > ul {
+        padding: 0;
+    }
+
+    .nav-link {
+        padding: 0.15rem;
+    }
+
+    .nav-link i.fa-lg {
+        font-size: 1rem;
+    }
+
+    .navbar-toggler {
+        padding: .6rem .6rem;
+        font-size: 1rem;
+    }
+
+    .btn {
+        margin: 0;
+    }
+
+    .increment-qty, .decrement-qty {
+        padding: .25rem .5rem !important;
     }
 }

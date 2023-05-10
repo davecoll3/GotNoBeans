@@ -82,13 +82,13 @@
                             </div>
                             <!-- Submit & Keep Shopping buttons -->
                             <div class="col-12">
-                                <a href="{% url 'products' %}" class="btn btn-secondary mt-5">
+                                <a href="{% url 'products' %}" class="btn btn-secondary mt-2">
                                     <span class="icon">
                                         <i class="fa-solid fa-chevron-left"></i>
                                     </span>
                                     <span class="text-uppercase">Keep Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-dark text-uppercase mt-5" value="Add to Basket">
+                                <input type="submit" class="btn btn-dark text-uppercase mt-2" value="Add to Basket">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

@@ -22,7 +22,7 @@
         </div>
         <div class="col-12 col-lg-6">
             <div class="table-responsive">
-                {% if wishlist_items %}
+                {% if wishlist_products %}
                     <table class="table table-borderless table-striped w-100">
                         <thead>
                             <tr class="border-bottom">
@@ -33,13 +33,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            {% for product in wishlist_items %}
+                            {% for product in wishlist_products %}
                                 <tr class="border-top">
                                     <td>
-                                        <p class="m-0"> {{product.name}}</p>
+                                        <p class="m-0"> {{ item.product.name }}</p>
                                     </td>
                                     <td>
-                                        €{{ product.sort_price }}
+                                        £{{ item.product.price }}
                                     </td>
                                     <td>
                                         <div class="p-0">

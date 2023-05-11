@@ -5,13 +5,12 @@ from products.models import Product
 
 
 def view_basket(request):
-    """ A view that renders the basket contents page """
-
+    # Renders the basket contents template
     return render(request, 'basket/basket.html')
 
 
 def add_to_basket(request, item_id):
-    """ Add a quantity of the specified product to the basket """
+    # Add a quantity of the specified product to the basket
 
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))

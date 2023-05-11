@@ -9,9 +9,7 @@ from .models import Wishlist
 
 @login_required
 def wishlist(request):
-    # A view that renders the wishlist contents page
-    template = 'wishlist/wishlist.html'
-
+    # Renders the wishlist contents page
     return render(request, 'wishlist/wishlist.html')
 
 
@@ -19,21 +17,21 @@ def wishlist(request):
 def add_to_wishlist(request, product_id):
     # Add product to the wishlist
     user = UserProfile.objects.get(user=request.user)
-    product = get_object_or_404(product, pk=product_id)
+    product = get_object_or_404(Product, pk=product_id)
     existing_wishlist = wishlist.objects.filter(user=user, product=product).exists()
 
     if not existing_wishlist:
-        wishlist_item = Wishlist.objects.create(
+        wishlist_product = Wishlist.objects.create(
             user=user,
             product=product
         )
         messages.success(request, f'You have added {wishlist_item} to your wishlist.')
-        return redirect(reverse('product_detail', args=[product.id]))
+        return redirect(reverse('product_detail', args=[item.id]))
     else:
-        wishlist_item = Wishlist.objects.get(
+        wishlist_product = Wishlist.objects.get(
             user=user,
             product=product
         )
-        wishlist_item.delete()
+        wishlist_product.delete()
         messages.info(request, 'Removed from wishlist')
-        return redirect(reverse('product_detail', args=[product.id]))
+        return redirect(reverse('product_detail', args=[item.id]))

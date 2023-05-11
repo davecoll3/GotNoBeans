@@ -7,13 +7,11 @@ from profiles.models import UserProfile
 from .models import Wishlist
 
 
-@login_required
 def wishlist(request):
     # Renders the wishlist contents page
     return render(request, 'wishlist/wishlist.html')
 
 
-@login_required
 def add_to_wishlist(request, product_id):
     # Add product to the wishlist
     user = UserProfile.objects.get(user=request.user)
@@ -25,7 +23,7 @@ def add_to_wishlist(request, product_id):
             user=user,
             product=product
         )
-        messages.success(request, f'You have added {wishlist_item} to your wishlist.')
+        messages.success(request, f'You have added {wishlist_product} to your wishlist.')
         return redirect(reverse('product_detail', args=[item.id]))
     else:
         wishlist_product = Wishlist.objects.get(
@@ -35,3 +33,12 @@ def add_to_wishlist(request, product_id):
         wishlist_product.delete()
         messages.info(request, 'Removed from wishlist')
         return redirect(reverse('product_detail', args=[item.id]))
+
+
+def remove_from_wishlist(request, book_id):
+    # Remove product from the wishlist
+    user = UserProfile.objects.get(user=request.user)
+    product = get_object_or_404(Product, pk=product_id)
+    wishlist_item = Wishlist.objects.get(user=user, product=product)
+    wishlist_item.delete()
+    messages.success(request, f'You have removed {product.name} from your wishlist.')

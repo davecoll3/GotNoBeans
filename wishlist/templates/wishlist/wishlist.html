@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load static %}
 
 {% block page_header %}
     <div class="container header-container">
@@ -22,24 +21,22 @@
         </div>
         <div class="col-12 col-lg-6">
             <div class="table-responsive">
-                {% if wishlist_items %}
                     <table class="table table-borderless table-striped w-100">
                         <thead>
                             <tr class="border-bottom">
                                 <th>Product</th>
-                                <th>Price</th>
                                 <th>Date Added</th>
 
                             </tr>
                         </thead>
                         <tbody>
-                            {% for item in wishlist_items %}
+                            {% for product in wishlist_items %}
                                 <tr class="border-top">
                                     <td>
-                                        <p class="m-0"> {{ product.name }}</p>
+                                        <p class="m-0"> {{product.name}}</p>
                                     </td>
                                     <td>
-                                        £{{ product.price }}
+                                        £{{product.price}}
                                     </td>
                                     <td>
                                         <div class="p-0">
@@ -50,7 +47,6 @@
                             {% endfor %}
                         </tbody>
                     </table>
-                    {% else %}
                     <!-- Empty Wishlist Notice -->
                     <p class="lead mb-5">Your wishlist is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-secondary btn-lg mt-2">
@@ -59,7 +55,6 @@
                         </span>
                         <span class="text-uppercase mt-2">Keep Shopping</span>
                     </a>
-                {% endif %}
             </div>
         </div>
 {% endblock %}

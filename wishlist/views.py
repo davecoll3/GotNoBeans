@@ -10,6 +10,7 @@ from .models import Wishlist
 @login_required
 def wishlist(request):
     # A view that renders the wishlist contents page
+    template = 'wishlist/wishlist.html'
 
     return render(request, 'wishlist/wishlist.html')
 

@@ -7,7 +7,4 @@ from .models import Wishlist
 
 def wishlist(request):
     # Renders the wishlist page
-    user = UserProfile.objects.get(user=request.user)
-    item = Wishlist.objects.filter(user=user)
-    context = {'item': item}
-    return render(request, 'wishlist/wishlist.html', context)
+    return render(request, 'wishlist/wishlist.html')

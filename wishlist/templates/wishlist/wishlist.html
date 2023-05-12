@@ -21,12 +21,13 @@
         </div>
         <div class="col-12 col-lg-6">
             <div class="table-responsive">
+                {% if wishlist_items %}
                     <table class="table table-borderless table-striped w-100">
                         <thead>
                             <tr class="border-bottom">
                                 <th>Product</th>
+                                <th>Price</th>
                                 <th>Date Added</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -39,6 +40,9 @@
                                         £{{product.price}}
                                     </td>
                                     <td>
+                                        {{wishlist.date}}
+                                    </td>
+                                    <td>
                                         <div class="p-0">
                                             <a href="" class="btn bg-danger text-light">Remove</a>
                                         </div>
@@ -47,6 +51,7 @@
                             {% endfor %}
                         </tbody>
                     </table>
+                {% else %}
                     <!-- Empty Wishlist Notice -->
                     <p class="lead mb-5">Your wishlist is empty.</p>
                     <a href="{% url 'products' %}" class="btn btn-secondary btn-lg mt-2">
@@ -55,6 +60,7 @@
                         </span>
                         <span class="text-uppercase mt-2">Keep Shopping</span>
                     </a>
+                {% endif %}
             </div>
         </div>
 {% endblock %}

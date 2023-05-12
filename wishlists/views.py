@@ -29,11 +29,11 @@ def wishlist(request):
             'wishlist': True,
             'products': items
         }
-        return render(request, 'wishlist/wishlist.html', context)
+        return render(request, 'wishlists/wishlist.html', context)
 
     else:
         context = {
             'wishlist': False,
         }
 
-    return render(request, 'wishlist/wishlist.html', context)
+    return render(request, 'wishlists/wishlist.html', context)

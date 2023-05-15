@@ -93,6 +93,11 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
+                    <form class="form update-form" method="POST" action="{% url 'add_favourite' product.id %}">
+                        {% csrf_token %}
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <button class="btn btn-info mt-2">Add to Favourites</button>
+                    </form>
                 </div>
             </div>
         </div>

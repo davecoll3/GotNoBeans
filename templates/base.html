@@ -82,7 +82,8 @@
                                     <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                                 <!-- Links for All Users -->
                                 {% endif %}
-                                <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
+                                <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
+                                <a href="{% url 'favourites_list' %}" class="dropdown-item">Favourites</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             <!-- Links for Guest Users -->
                             {% else %}

@@ -22,14 +22,14 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row">
-                    <!-- Display recipe Selection -->
+                    <!-- Display Recipe Selection -->
                     {% for recipe in recipes %}
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                             <div class="card h-100 border-0">
-                                <!-- recipe Image -->
+                                <!-- Recipe Image -->
                                 {% if recipe.image %}
                                 <a href="{% url 'recipe_detail' recipe.id %}">
-                                    <img class="card-img-top img-fluid" src="#" alt="{{ recipe.name }}">
+                                    <img class="card-img-top img-fluid" src="{{ recipe.image.url }}" alt="{{ recipe.name }}">
                                 </a>
                                 <!-- Default No Image -->
                                 {% else %}

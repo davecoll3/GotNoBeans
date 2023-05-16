@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 
 from .models import Recipe
@@ -31,7 +31,17 @@ def recipe_detail(request, recipe_id):
 
 def add_recipe(request):
     # Add a recipe
-    form = RecipeForm()
+    if request.method == 'POST':
+        form = RecipeForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added recipe!')
+            return redirect(reverse('add_product'))
+        else:
+            messages.error(request, 'Failed to add recipe. Please ensure the form is valid.')
+    else:
+        form = RecipeForm()
+
     template = 'recipes/add_recipe.html'
     context = {
         'form': form,

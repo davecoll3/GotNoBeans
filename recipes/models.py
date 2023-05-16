@@ -1,6 +1,4 @@
 from django.db import models
-
-
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 from products.models import Product
@@ -49,6 +47,7 @@ class Recipe(models.Model):
     )
     brew_time_mins = models.DecimalField(max_digits=4, decimal_places=2)
     products = models.ManyToManyField(Product)
+    intro = models.TextField(null=True, blank=True)
     method = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)

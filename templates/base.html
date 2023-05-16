@@ -79,7 +79,8 @@
                             {% if request.user.is_authenticated %}
                                 <!-- Product Management Link for Admins Only -->
                                 {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
+                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
+                                    <a href="#" class="dropdown-item">Add New Recipe</a>
                                 <!-- Links for All Users -->
                                 {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>

@@ -1,5 +1,8 @@
-from django.shortcuts import render, reverse, get_object_or_404
+from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib import messages
+
 from .models import Recipe
+from .forms import RecipeForm
 
 
 def all_recipes(request):
@@ -24,3 +27,14 @@ def recipe_detail(request, recipe_id):
     }
 
     return render(request, 'recipes/recipe_detail.html', context)
+
+
+def add_recipe(request):
+    # Add a recipe
+    form = RecipeForm()
+    template = 'recipes/add_recipe.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)

@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-12 col-md-6">
                 <hr>
-                    <h2 class="logo-font mb-4">Add New Product</h2>
+                    <h2 class="logo-font mb-4">Add New Recipe</h2>
                 <hr>
             </div>
         </div>
@@ -24,7 +24,7 @@
         <!-- Order Summary -->
         <div class="row">
             <div class="col-12 col-md-6">
-                <form method="POST" action="{% url 'add_product' %}" class="form mb-2" enctype="multipart/form-data">
+                <form method="POST" action="{% url 'add_recipe' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
                         {% if field.name != 'image' %}
@@ -34,8 +34,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-secondary" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-dark" type="submit">Add Product</button>
+                        <a class="btn btn-secondary" href="{% url 'recipes' %}">Cancel</a>
+                        <button class="btn btn-dark" type="submit">Add Recipe</button>
                     </div>
                 </form>
             </div>            
@@ -45,6 +45,4 @@
 
 <!-- Post Load JavaScript -->
 {% block postloadjs %}
-{{ block.super }}
-    {% include 'products/includes/add_or_edit_product_script.html' %}
 {% endblock %}

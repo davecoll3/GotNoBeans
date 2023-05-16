@@ -46,7 +46,7 @@
                                             <form class="form update-form" method="POST" action="{% url 'remove_favourite' product.id %}">
                                                 {% csrf_token %}
                                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                <button class="btn btn-sm btn-secondary"><strong>Remove</strong></button>
+                                                <button class="btn btn-sm btn-danger" title="Remove"><strong><i class="fa-solid fa-minus"></i></strong></button>
                                             </form>
                                         </td>
                                     </tr>

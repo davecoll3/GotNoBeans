@@ -25,7 +25,7 @@ class Recipe(models.Model):
         (s_fine, 'Superfine'),
     ]
 
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100)
     coffee_qty_g = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(100),

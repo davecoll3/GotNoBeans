@@ -1,8 +1,6 @@
 from django.shortcuts import render, reverse, get_object_or_404
 from .models import Recipe
 
-from products import views
-
 
 def all_recipes(request):
     # A view to return all brewing recipies

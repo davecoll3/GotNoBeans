@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import user_passes_test
 
 from .models import Recipe
 from .forms import RecipeForm
 
 
-@login_required
 def all_recipes(request):
     # A view to return all brewing recipes
 
@@ -19,7 +20,6 @@ def all_recipes(request):
     return render(request, 'recipes/recipes.html', context)
 
 
-@login_required
 def recipe_detail(request, recipe_id):
     # A view to display individual brewing recipe details
 
@@ -32,7 +32,7 @@ def recipe_detail(request, recipe_id):
     return render(request, 'recipes/recipe_detail.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def add_recipe(request):
     # Add a recipe
     if request.method == 'POST':
@@ -53,7 +53,7 @@ def add_recipe(request):
     return render(request, 'recipes/add_recipe.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def edit_recipe(request, recipe_id):
     # Edit an existing recipe
     recipe = get_object_or_404(Recipe, pk=recipe_id)
@@ -77,7 +77,7 @@ def edit_recipe(request, recipe_id):
     return render(request, 'recipes/edit_recipe.html', context)
 
 
-@login_required
+@user_passes_test(lambda u: u.is_superuser)
 def delete_recipe(request, recipe_id):
     # Delete a recipe
     recipe = get_object_or_404(Recipe, pk=recipe_id)

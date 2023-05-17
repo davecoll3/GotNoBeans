@@ -47,8 +47,8 @@
                                         <div class="col">
                                             {% if request.user.is_superuser %}
                                                 <small>
-                                                    <a href="#">Edit</a> | 
-                                                    <a class="text-danger" href="#">Delete</a>
+                                                    <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
+                                                    <a class="text-danger" href="{% url 'delete_recipe' recipe.id %}">Delete</a>
                                                 </small>
                                             {% endif %}
                                         </div>

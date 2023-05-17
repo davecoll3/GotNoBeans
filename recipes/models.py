@@ -26,28 +26,28 @@ class Recipe(models.Model):
     ]
 
     name = models.CharField(max_length=100)
-    coffee_qty_g = models.PositiveIntegerField(
+    coffee_qty = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(100),
             MinValueValidator(1)
         ]
         )
     grind_size = models.CharField(max_length=20, choices=GRIND, default=medium)
-    water_temp_c = models.PositiveIntegerField(
+    water_temp = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(100),
             MinValueValidator(1)
         ]
     )
-    water_volume_ml = models.PositiveIntegerField(
+    water_volume = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(999),
             MinValueValidator(1)
         ]
     )
-    brew_time_mins = models.DecimalField(max_digits=4, decimal_places=2)
+    brew_time = models.DecimalField(max_digits=4, decimal_places=2)
     products = models.ManyToManyField(Product)
-    intro = models.TextField(null=True, blank=True)
+    intro = models.TextField()
     method = models.TextField()
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)

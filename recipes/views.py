@@ -6,6 +6,7 @@ from .models import Recipe
 from .forms import RecipeForm
 
 
+@login_required
 def all_recipes(request):
     # A view to return all brewing recipes
 
@@ -18,6 +19,7 @@ def all_recipes(request):
     return render(request, 'recipes/recipes.html', context)
 
 
+@login_required
 def recipe_detail(request, recipe_id):
     # A view to display individual brewing recipe details
 
@@ -30,14 +32,15 @@ def recipe_detail(request, recipe_id):
     return render(request, 'recipes/recipe_detail.html', context)
 
 
+@login_required
 def add_recipe(request):
     # Add a recipe
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            recipe = form.save()
             messages.success(request, 'Successfully added recipe!')
-            return redirect(reverse('add_recipe'))
+            return redirect(reverse('recipe_detail', args=[recipe.id]))
         else:
             messages.error(request, 'Failed to add recipe. Please ensure the form is valid.')
     else:
@@ -50,7 +53,9 @@ def add_recipe(request):
     return render(request, 'recipes/add_recipe.html', context)
 
 
+@login_required
 def edit_recipe(request, recipe_id):
+    # Edit an existing recipe
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
@@ -70,3 +75,12 @@ def edit_recipe(request, recipe_id):
     }
 
     return render(request, 'recipes/edit_recipe.html', context)
+
+
+@login_required
+def delete_recipe(request, recipe_id):
+    # Delete a recipe
+    recipe = get_object_or_404(Recipe, pk=recipe_id)
+    recipe.delete()
+    messages.success(request, 'Recipe successfully deleted!')
+    return redirect(reverse('recipes'))

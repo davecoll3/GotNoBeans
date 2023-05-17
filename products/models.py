@@ -24,9 +24,6 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     description = models.TextField()
-    rating = models.DecimalField(
-        max_digits=6, decimal_places=1, null=True, blank=True
-    )
     yield_in_cups = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(10),

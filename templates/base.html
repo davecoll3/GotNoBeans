@@ -67,7 +67,23 @@
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
                     <li class="list-inline-item dropdown">
-                        <!-- My Account Dropdown -->
+                        {% if request.user.is_superuser %}
+                            <!-- Admin Dropdown for Superusers Only -->
+                            <a class="text-white nav-link" href="#" id="admin-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <div class="text-center">
+                                    <div><i class="fa-solid fa-cog fa-lg"></i></div>
+                                    <p class="my-0">Admin</p>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu border-0" aria-labelledby="admin-options">
+                                <!-- Add New Product/Recipe Links -->
+                                <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
+                                <a href="{% url 'add_recipe' %}" class="dropdown-item">Add New Recipe</a>
+                            </div>
+                        {% endif %}
+                    </li>
+                    <li class="list-inline-item dropdown">
+                        <!-- Account Dropdown -->
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-lg"></i></div>
@@ -77,12 +93,6 @@
                         <div class="dropdown-menu border-0" aria-labelledby="user-options">
                             <!-- Links for Registered Users -->
                             {% if request.user.is_authenticated %}
-                                <!-- Product Management Link for Admins Only -->
-                                {% if request.user.is_superuser %}
-                                    <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
-                                    <a href="{% url 'add_recipe' %}" class="dropdown-item">Add New Recipe</a>
-                                <!-- Links for All Users -->
-                                {% endif %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
                                 <a href="{% url 'favourites_list' %}" class="dropdown-item">Favourites</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>

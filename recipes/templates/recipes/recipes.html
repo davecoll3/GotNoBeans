@@ -22,62 +22,63 @@
         <div class="row">
             <div class="product-container col-10 offset-1">
                 <div class="row">
-                    <!-- Display Recipe Selection -->
-                    {% for recipe in recipes %}
-                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                            <div class="card h-100 border-0">
-                                <!-- Recipe Image -->
-                                {% if recipe.image %}
-                                <a href="{% url 'recipe_detail' recipe.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ recipe.image.url }}" alt="{{ recipe.name }}">
-                                </a>
-                                <!-- Default No Image -->
-                                {% else %}
-                                <a href="{% url 'recipe_detail' recipe.id %}">
-                                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no_image.webp" alt="{{ recipe.name }}">
-                                </a>
-                                {% endif %}
-                                <!-- Recipe Name -->
-                                <div class="card-body pb-0">
-                                    <p class="mb-0">{{ recipe.name }}</p>
-                                </div>
-                                <!-- Admin Edit/Delete Options -->
-                                <div class="card-footer bg-white pt-0 border-0 text-left">
-                                    <div class="row">
-                                        <div class="col">
-                                            {% if request.user.is_superuser %}
-                                                <small>
-                                                    <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
-                                                    <a class="text-danger" href="{% url 'delete_recipe' recipe.id %}">Delete</a>
-                                                </small>
-                                            {% endif %}
-                                        </div>
-                                    </div>
+                <!-- Display Recipe Selection -->
+                {% for recipe in recipes %}
+                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                    <div class="card h-100 border-0">
+                        <!-- Recipe Image -->
+                        {% if recipe.image %}
+                        <a href="{% url 'recipe_detail' recipe.id %}">
+                            <img class="card-img-top img-fluid" src="{{ recipe.image.url }}" alt="{{ recipe.name }}">
+                        </a>
+                        <!-- Default No Image -->
+                        {% else %}
+                        <a href="{% url 'recipe_detail' recipe.id %}">
+                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}no_image.webp" alt="{{ recipe.name }}">
+                        </a>
+                        {% endif %}
+                        <!-- Recipe Name -->
+                        <div class="card-body pb-0">
+                            <a href="{% url 'recipe_detail' recipe.id %}" class="mb-0">{{ recipe.name }}</a>
+                        </div>
+                        <!-- Admin Edit/Delete Options -->
+                        <div class="card-footer bg-white pt-0 border-0 text-left">
+                            <div class="row">
+                                <div class="col">
+                                    {% if request.user.is_superuser %}
+                                    <small>
+                                        <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
+                                        <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{recipe.id}}">Delete</a>
+                                    </small>
+                                    {% include 'recipes/includes/delete_recipe_modal.html' %}
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
-                        <!-- Change hr width depending on no. of recipes per row -->
-                        {% if forloop.counter|divisibleby:1 %}
-                            <div class="col-12 d-sm-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}                        
-                        {% if forloop.counter|divisibleby:2 %}
-                            <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:3 %}
-                            <div class="col-12 d-none d-lg-block d-xl-none mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                        {% if forloop.counter|divisibleby:4 %}
-                            <div class="col-12 d-none d-xl-block mb-5">
-                                <hr>
-                            </div>
-                        {% endif %}
-                    {% endfor %}
+                    </div>
+                </div>
+                <!-- Change hr width depending on no. of recipes per row -->
+                {% if forloop.counter|divisibleby:1 %}
+                <div class="col-12 d-sm-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}                        
+                {% if forloop.counter|divisibleby:2 %}
+                <div class="col-12 d-none d-sm-block d-md-block d-lg-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:3 %}
+                <div class="col-12 d-none d-lg-block d-xl-none mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% if forloop.counter|divisibleby:4 %}
+                <div class="col-12 d-none d-xl-block mb-5">
+                    <hr>
+                </div>
+                {% endif %}
+                {% endfor %}
                 </div>
             </div>
         </div>

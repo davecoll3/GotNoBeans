@@ -41,8 +41,9 @@
                     {% if request.user.is_superuser %}
                     <small>
                         <a href="{% url 'edit_product' product.id %}">Edit</a> | 
-                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                        <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{product.id}}">Delete</a>
                     </small>
+                    {% include 'products/includes/delete_product_modal.html' %}
                     {% endif %}
                     <form class="form update-form" method="POST" action="{% url 'add_favourite' product.id %}">
                         {% csrf_token %}
@@ -82,9 +83,6 @@
                             <!-- Submit & Keep Shopping buttons -->
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-secondary mt-2">
-                                    <span class="icon">
-                                        <i class="fa-solid fa-chevron-left"></i>
-                                    </span>
                                     <span>Keep Shopping</span>
                                 </a>
                                 <input type="submit" class="btn btn-dark mt-2" value="Add to Basket">

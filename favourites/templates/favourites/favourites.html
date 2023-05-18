@@ -19,7 +19,6 @@
                 <hr>
             </div>
         </div>
-        {% if favourites_list %}
             <div class="row">
                 <div class="col-12 col-lg-6">
                     <div class="table-responsive">
@@ -31,36 +30,25 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for product in products %}
                                     <tr>
                                         <td>
-                                            <a href="{% url 'product_detail' product.id %}"
-                                            title="{{ product.proudct_id }}">
-                                                {{ product.name }}
+                                            <a href="#"
+                                            title="#">
+                                                product.name
                                             </a>
                                         </td>
                                         <td>
-                                            <p>{{ product.price }}</p>
-                                        </td>
-                                        <td>
-                                            <form class="form update-form" method="POST" action="{% url 'remove_favourite' product.id %}">
-                                                {% csrf_token %}
-                                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                                                <button class="btn btn-sm btn-danger" title="Remove"><strong><i class="fa-solid fa-minus"></i></strong></button>
-                                            </form>
+                                            <p>product.price</p>
                                         </td>
                                     </tr>
-                                {% endfor %}
                             </tbody>
                         </table>
                     </div>
                 </div>
-            {% else %}
                 <div class="row">
                     <div class="col-12 col-lg-6">
                         <p class="lead mb-5">You have no favourites.</p>
                     </div>
                 </div>
-            {% endif %}
         </div>
 {% endblock %}

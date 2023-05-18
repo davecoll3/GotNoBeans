@@ -34,7 +34,7 @@
                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
             {% endif %}
             <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-            <a href="{% url 'favourites_list' %}" class="dropdown-item">Favourites</a>
+            <a href="{% url 'favourites' %}" class="dropdown-item">Favourites</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
         {% else %}
             <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>

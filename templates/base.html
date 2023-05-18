@@ -94,7 +94,7 @@
                             <!-- Links for Registered Users -->
                             {% if request.user.is_authenticated %}
                                 <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
-                                <a href="{% url 'favourites_list' %}" class="dropdown-item">Favourites</a>
+                                <a href="{% url 'favourites' %}" class="dropdown-item">Favourites</a>
                                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
                             <!-- Links for Guest Users -->
                             {% else %}

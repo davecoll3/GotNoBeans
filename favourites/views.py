@@ -9,17 +9,28 @@ from .models import Favourites
 
 @login_required
 def favourites(request):
-    """
-    A view to render the users wishlist
-    """
-    wishlist = None
+    # Renders the user's favourites
+    favourite = None
     try:
-        wishlist = Wishlist.objects.get(user=request.user)
-    except Wishlist.DoesNotExist:
+        favourite = Favourites.objects.get(user=request.user)
+    except Favourites.DoesNotExist:
         pass
 
     context = {
-        'wishlist': wishlist,
+        'favourite': favourite,
     }
 
-    return render(request, 'wishlists/wishlist.html', context=context)
+    return render(request, 'favourites/favourites.html', context=context)
+
+
+@login_required
+def remove_favourite(request, product_id):
+    # Find favourites and product to remove
+    favourites = Favourites.objects.get(user=request.user)
+    product = get_object_or_404(Product, pk=product_id)
+
+    # Remove product from favourites
+    favourites.products.remove(product)
+    messages.info(request, "This product was removed from your favourites")
+
+    return redirect(reverse('favourites'))

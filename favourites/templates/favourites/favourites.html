@@ -1,54 +1,63 @@
 {% extends "base.html" %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <!-- My Profile Heading -->
-        <div class="row">
-            <div class="col">
-                <hr>
+<div class="overlay"></div>
+<div class="container">
+    <!-- My Profile Heading -->
+    <div class="row">
+        <div class="col">
+            <hr>
                 <h2 class="logo-font mb-4">My Favourites</h2>
-                <hr>
+            <hr>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-sm table-borderless">
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            {% for product in favourite.products.all %}
+                            <td>
+                                <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
+                            </td>
+                            <td>
+                                <p>{{ product.price }}</p>
+                            </td>
+                            <td>
+                                <small>
+                                    <a class="text-danger" href="{% url 'remove_favourite' product.id %}">Remove</a>
+                                </small>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="lead mb-4">You have no favourites.</p>
+                            </div>
+                            <div class="col-12">
+                                <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-sm btn-primary py-3"><strong>Shop Now!</strong></a>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </tbody>
+                </table>
             </div>
         </div>
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="table-responsive">
-                        <table class="table table-sm table-borderless">
-                            <thead>
-                                <tr>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                    <tr>
-                                        <td>
-                                            <a href="#"
-                                            title="#">
-                                                product.name
-                                            </a>
-                                        </td>
-                                        <td>
-                                            <p>product.price</p>
-                                        </td>
-                                    </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 col-lg-6">
-                        <p class="lead mb-5">You have no favourites.</p>
-                    </div>
-                </div>
-        </div>
+    </div>
+</div>
 {% endblock %}

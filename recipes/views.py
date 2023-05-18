@@ -11,7 +11,7 @@ from .forms import RecipeForm
 def all_recipes(request):
     # A view to return all brewing recipes
 
-    recipes = Recipe.objects.all()
+    recipes = Recipe.objects.all().order_by('name')
 
     context = {
         'recipes': recipes,

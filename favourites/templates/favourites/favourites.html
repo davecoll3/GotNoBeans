@@ -14,8 +14,7 @@
     <!-- My Profile Heading -->
     <div class="row">
         <div class="col">
-            <hr>
-                <h2 class="logo-font mb-4">My Favourites</h2>
+                <h2 class="logo-font mb-4 text-center">Favourites</h2>
             <hr>
         </div>
     </div>
@@ -30,8 +29,8 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {% for product in favourite.products.all %}
                         <tr>
-                            {% for product in favourite.products.all %}
                             <td>
                                 <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
                             </td>
@@ -43,16 +42,12 @@
                                     <a class="text-danger" href="{% url 'remove_favourite' product.id %}">Remove</a>
                                 </small>
                             </td>
-                        </tr>
-                        {% empty %}
-                        <div class="row">
-                            <div class="col-12">
-                                <p class="lead mb-4">You have no favourites.</p>
-                            </div>
-                            <div class="col-12">
+                            {% empty %}
+                            <td>
+                                <p class="lead mb-4">You have no products in you favourites.</p>
                                 <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-sm btn-primary py-3"><strong>Shop Now!</strong></a>
-                            </div>
-                        </div>
+                            </td>
+                        </tr>
                         {% endfor %}
                     </tbody>
                 </table>

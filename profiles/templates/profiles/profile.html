@@ -66,6 +66,10 @@
                                             </ul>
                                         </td>
                                         <td>£{{ order.grand_total }}</td>
+                                        {% empty %}
+                                        <td>
+                                            <p class="lead mb-4">You have no previous orders.</p>
+                                        </td>
                                     </tr>
                                 {% endfor %}
                             </tbody>

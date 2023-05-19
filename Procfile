@@ -1,1 +1,1 @@
-web: python manage.py
+web: gunicorn got_no_beans.wsgi:application

@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',  # callback urls for SM accounts
+    'django_countries',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',  # handles social media logins

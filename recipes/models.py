@@ -15,7 +15,7 @@ class Recipe(models.Model):
     m_fine = 'Medium-Fine'
     fine = 'Fine'
     s_fine = 'Superfine'
-
+ 
     GRIND = [
         (ex_course, 'Extra-Coarse'),
         (coarse, 'Coarse'),

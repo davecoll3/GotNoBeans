@@ -17,6 +17,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+
     category = models.ForeignKey(
         'Category', on_delete=models.PROTECT
     )

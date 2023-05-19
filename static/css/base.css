@@ -3,11 +3,22 @@ html {
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background: url('/media/homepage_background.webp') no-repeat center center fixed;
     background-size: cover;
     height: calc(100vh - 164px);
     color: #1a0d00;
     font-family: 'Roboto Mono';
+}
+
+a, 
+a:hover, 
+a:focus, 
+a:active {
+    text-decoration: none;
+    color: inherit;
 }
 
 /* from Bulma */
@@ -23,7 +34,9 @@ body {
     width: fit-content;
 }
 
-/* Header */
+/* ==========
+Navbar
+========== */
 #topnav,
 .navbar {
     background-color: #1a0d00;
@@ -190,6 +203,26 @@ button[disabled]{
     border-color: #dc3545;
     border-radius: 0;
 }
+
+
+/* ==========
+Footer
+========== */
+footer {
+    background-color: rgba(26,13,0,.5);
+    margin-top: auto;
+}
+
+.footer-copyright {
+    padding: 5px !important;
+    color: #fff;
+}
+
+.footer-copyright a:hover {
+    font-weight: 500;
+    color: #d9d9d9;
+}
+
 
 /* -------------------------------- Media Queries */
 

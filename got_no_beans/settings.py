@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',  # callback urls for SM accounts
-    'django_countries',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',  # handles social media logins
@@ -73,6 +72,13 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'got_no_beans.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+COUNTRIES_ONLY = [
+    "GB",
+    "GG",
+    "IM",
+    "JE",
+]
 
 TEMPLATES = [
     {

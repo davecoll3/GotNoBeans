@@ -29,12 +29,12 @@
                 <div class="d-block d-md-none">
                     <div class="row">
                         <div class="col">
-                            {% include "basket/basket_total.html" %}
+                            {% include "basket/includes/basket_total.html" %}
                         </div>
                     </div>
                     <div class="row">
                         <div class="col">
-                            {% include "basket/checkout_buttons.html" %}
+                            {% include "basket/includes/checkout_buttons.html" %}
                             <p class="text-muted mt-2 mb-2">Your basket summary</p>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="row">
                             <!-- Basket Item Info -->
                             <div class="col-12 col-6-sm mb-2">
-                                {% include "basket/product_info.html" %}
+                                {% include "basket/includes/product_info.html" %}
                             </div>
                             <!-- Basket Price Totals -->
                             <div class="col-12 col-6-sm order-sm-last">
@@ -51,7 +51,7 @@
                             </div>
                             <!-- Adjust Basket Item Qty Input -->
                             <div class="col-12 col-6-sm">
-                                {% include "basket/quantity_form.html" %}
+                                {% include "basket/includes/quantity_form.html" %}
                             </div>
                         </div>
                         <div class="row">
@@ -76,14 +76,14 @@
                                 <tr>
                                     <!-- Basket Item Info -->
                                     <td class="py-3">
-                                        {% include "basket/product_info.html" %}
+                                        {% include "basket/includes/product_info.html" %}
                                     </td>
                                     <td class="py-3">
                                         <p class="my-0">£{{ item.product.price }}</p>
                                     </td>
                                     <!-- Adjust Basket Item Qty Input -->
                                     <td class="py-3 text-right">
-                                        {% include "basket/quantity_form.html" %}
+                                        {% include "basket/includes/quantity_form.html" %}
                                     </td>
                                     <td class="py-3 text-right">
                                         <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
@@ -93,13 +93,13 @@
                             <!-- Basket Price Totals -->
                             <tr>
                                 <td colspan="5" class="pt-5 text-right">
-                                    {% include "basket/basket_total.html" %}
+                                    {% include "basket/includes/basket_total.html" %}
                                 </td>
                             </tr>
                             <!-- Keep Shopping & Checkout Buttons -->
                             <tr>
                                 <td colspan="5" class="text-right">
-                                    {% include "basket/checkout_buttons.html" %}
+                                    {% include "basket/includes/checkout_buttons.html" %}
                                 </td>
                             </tr>
                         </table>

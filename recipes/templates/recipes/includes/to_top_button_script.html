@@ -1,0 +1,12 @@
+<script type="text/javascript">
+
+    $(window).scroll(function() {
+    // Hide or Show back to top button
+    if ($(this).scrollTop() > 75) {
+        $('.to-top-button').fadeIn();
+    } else {
+        $('.to-top-button').fadeOut();
+    }
+}).trigger('scroll');
+
+</script>

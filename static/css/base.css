@@ -100,21 +100,7 @@ button[disabled]{
 	z-index: -1;
 }
 
-/* Back to Top Button */
-.btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
-    color: #1a0d00;
-}
 
-.btt-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
 
 /* bootstrap toasts */
 
@@ -214,6 +200,26 @@ button[disabled]{
 
 
 /* ==========
+back to top button
+========== */
+.to-top-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 44px;
+    right: 10px;
+    border: 1px solid;
+    border-radius: 50%;
+    color: rgba(26,13,0,.5);
+}
+
+.to-top-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+/* ==========
 Footer
 ========== */
 footer {
@@ -274,14 +280,14 @@ Media Queries
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 120px;
     }
 }
 
 /* Padding to top when navbar is collapsed on mobile */
 @media (max-width: 991px) {
     .header-container {
-        padding-top: 116px;
+        padding-top: 80px;
     }
 
     body {

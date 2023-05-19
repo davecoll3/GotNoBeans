@@ -2,7 +2,7 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
+    <div class="header-container">
         <div class="row">
             <div class="col"></div>
         </div>
@@ -83,4 +83,16 @@
             </div>
         </div>
     </div>
+    <!-- Back to Top Button -->
+    <div class="to-top-button">
+        <a class="to-top-link d-flex h-100" title="Back to top">
+            <i class="fas fa-arrow-up mx-auto my-auto"></i>
+        </a>	
+    </div>
+    <!-- Back to Top Button End -->
+{% endblock %}
+
+<!-- Post Load JavaScript -->
+{% block postloadjs %}
+{% include 'recipes/includes/to_top_button_script.html' %}
 {% endblock %}

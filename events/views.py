@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import user_passes_test
 
 from .models import Event
+from .forms import EventForm
 
 
 def all_events(request):
@@ -16,6 +17,27 @@ def all_events(request):
     }
 
     return render(request, 'events/events.html', context)
+
+
+@user_passes_test(lambda u: u.is_superuser)
+def add_event(request):
+    # Add an event
+    if request.method == 'POST':
+        form = EventForm(request.POST)
+        if form.is_valid():
+            event = form.save()
+            messages.success(request, 'New event added!')
+            return redirect(reverse('all_events'))
+        else:
+            messages.error(request, 'Failed to add event. Please ensure that the form is valid.')
+    else:
+        form = EventForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'events/add_event.html', context)
 
 
 @user_passes_test(lambda u: u.is_superuser)

@@ -38,10 +38,10 @@ def add_recipe(request):
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             recipe = form.save()
-            messages.success(request, 'Successfully added recipe!')
+            messages.success(request, 'New recipe added!')
             return redirect(reverse('recipe_detail', args=[recipe.id]))
         else:
-            messages.error(request, 'Failed to add recipe. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add recipe. Please ensure that the form is valid.')
     else:
         form = RecipeForm()
 

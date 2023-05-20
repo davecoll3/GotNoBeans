@@ -20,8 +20,9 @@
     </div>
     <div class="row">
         <div class="col-12">
-            <div class="table-responsive">
-                <table class="table table-sm table-borderless">
+            <div class="table-responsive . table-striped">
+                <table class="table table-borderless">
+                    {% for event in events %}
                     <thead>
                         <tr>
                             <th>Event</th>
@@ -31,7 +32,6 @@
                         </tr>
                     </thead>
                     <tbody>
-                        {% for event in events %}
                         <tr>
                             <td>
                                 <p>{{ event.name }}</p>
@@ -48,17 +48,29 @@
                             {% if request.user.is_superuser %}
                             <td>
                                 <small>
-                                    <a class="text-danger" href="#">Remove</a>
+                                    <a class="text-danger" href="{% url 'delete_event' event.id %}">Remove</a>
                                 </small>
                             </td>
                             {% endif %}
-                            {% empty %}
+                        </tr>
+                        <tr>
+                            <td>{{ event.description }}</td>
+                        </tr>
+                    </tbody>
+                    {% empty %}
+                    <thead>
+                        <tr>
+                            <th>Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
                             <td>
                                 <p class="lead mb-4">Sorry, no upcoming events.</p>
                             </td>
                         </tr>
-                        {% endfor %}
                     </tbody>
+                    {% endfor %}
                 </table>
             </div>
         </div>

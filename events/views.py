@@ -29,7 +29,7 @@ def add_event(request):
             messages.success(request, 'New event added!')
             return redirect(reverse('events'))
         else:
-            messages.error(request, 'Failed to add event. Please ensure that the form is valid.')
+            messages.error(request, "Failed to add event. Please ensure that the form is valid and that this event hasn't previously been created.")
     else:
         form = EventForm()
 

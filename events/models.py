@@ -23,5 +23,8 @@ class Event(models.Model):
     postcode = models.CharField(max_length=8, null=True, blank=True)
     products = models.ManyToManyField(Product, blank=True)
 
+    class Meta:
+        unique_together = ["name", "date", "time", "location", "town_or_city"]
+
     def __str__(self):
         return self.name

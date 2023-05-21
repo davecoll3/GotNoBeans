@@ -2,11 +2,8 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.core.exceptions import ValidationError
-from django.core.validators import RegexValidator
 
 from products.models import Product
-
-alphanumeric = RegexValidator(r'^[0-9a-zA-Z]*$', 'Please enter a valid UK postcode. Numbers and letters only.')
 
 
 def validate_date(date):
@@ -23,7 +20,7 @@ class Event(models.Model):
     description = models.TextField(null=True, blank=True)
     street_address = models.CharField(max_length=80, null=True, blank=True)
     town_or_city = models.CharField(max_length=40)
-    postcode = models.CharField(max_length=8, validators=[alphanumeric])
+    postcode = models.CharField(max_length=8)
     products = models.ManyToManyField(Product, blank=True)
 
     class Meta:

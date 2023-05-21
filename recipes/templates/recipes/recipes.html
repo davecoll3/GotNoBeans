@@ -78,6 +78,8 @@
                     <hr>
                 </div>
                 {% endif %}
+                {% empty %}
+                    <p class="lead mb-4">Sorry, no recipes at the moment. Please, try again later.</p>
                 {% endfor %}
                 </div>
             </div>

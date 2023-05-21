@@ -23,67 +23,58 @@
             <img src="/media/events.webp" class="img-fluid banner-img" alt="Events Cafe">
         </div>
     </div>
-    <div class="row">
-        <div class="col-12">
-            <div class="table-responsive .table-striped">
-                <table class="table table-borderless">
-                    {% for event in events %}
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                            <th>Location</th>
-                            <th>City</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p>{{ event.name }}</p>
-                            </td>
-                            <td>
-                                <p>{{ event.location }}</p>
-                            </td>
-                            <td>
-                                <p>{{ event.town_or_city }}</p>
-                            </td>
-                            <td>
-                                <p>{{ event.date }}</p>
-                            </td>
-                            <td>
-                                <p>{{ event.time }}</p>
-                            </td>
-                            {% if request.user.is_superuser %}
-                            <td>
-                                <small>
-                                    <a href="{% url 'edit_event' event.id %}">Edit</a> | 
-                                    <a class="text-danger" href="{% url 'delete_event' event.id %}">Remove</a>
-                                </small>
-                            </td>
-                            {% endif %}
-                        </tr>
-                        <tr>
-                            <td>{{ event.description }}</td>
-                        </tr>
-                    </tbody>
-                    {% empty %}
-                    <thead>
-                        <tr>
-                            <th>Event</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <p class="lead mb-4">Sorry, no upcoming events.</p>
-                            </td>
-                        </tr>
-                    </tbody>
+
+    {% for event in events %}
+    <div class="accordion" id="accordion{{ event.id }}">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" 
+                            data-toggle="collapse" data-target="#collapse{{ event.id }}" 
+                            aria-expanded="true" aria-controls="collapseOne">
+                    {{ event.name }} in {{ event.town_or_city }}
+                    <br> 
+                    {{ event.date }}
+                    </button>
+                </h2>
+            </div>
+      
+            <div id="collapse{{ event.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion{{ event.id }}">
+                <div class="card-body">
+                    {{ event.description }}
+                    <br>
+                    <strong>Showcased Products: </strong>
+                    {% for products in event.products.all %}
+                        <a href="{% url 'product_detail' products.id %}">{{ products }}</a>
                     {% endfor %}
-                </table>
+                    <br>
+                    <strong>Time: </strong>{{ event.time }}
+                    <br>
+                    <strong>Location: </strong>{{ event.location }}
+                    <br>
+                    <strong>Address: </strong>{{ event.street_address }}, {{ event.postcode }}
+                    <br>
+                    {% if request.user.is_superuser %}
+                    <small>
+                        <a href="{% url 'edit_event' event.id %}">Edit</a> | 
+                        <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{event.id}}">Delete</a>
+                    </small>
+                    {% include 'events/includes/delete_event_modal.html' %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
+    {% empty %}
+    <div class="accordion" id="accordion{{ event.id }}">
+        <div class="card">
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <p class="lead mb-4">Sorry, no upcoming events.</p>
+                </h2>
+            </div>
+        </div>
+    </div>
+    {% endfor %}     
 </div>
 {% endblock %}

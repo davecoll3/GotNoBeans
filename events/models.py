@@ -17,7 +17,7 @@ class Event(models.Model):
     date = models.DateField(default=timezone.now, validators=[validate_date])
     time = models.TimeField(default='12:00')
     location = models.CharField(max_length=100)
-    description = models.TextField(null=True, blank=True)
+    description = models.TextField()
     street_address = models.CharField(max_length=80, null=True, blank=True)
     town_or_city = models.CharField(max_length=40)
     postcode = models.CharField(max_length=8)

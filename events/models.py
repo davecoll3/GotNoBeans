@@ -18,13 +18,13 @@ class Event(models.Model):
     time = models.TimeField(default='12:00')
     location = models.CharField(max_length=100)
     description = models.TextField()
-    street_address = models.CharField(max_length=80, null=True, blank=True)
+    street_address = models.CharField(max_length=80)
     town_or_city = models.CharField(max_length=40)
     postcode = models.CharField(max_length=8)
-    products = models.ManyToManyField(Product, blank=True)
+    products = models.ManyToManyField(Product)
 
     class Meta:
-        unique_together = ["name", "date", "time", "location", "town_or_city"]
+        unique_together = ["name", "date", "time", "location", "town_or_city", "postcode"]
 
     def __str__(self):
         return self.name

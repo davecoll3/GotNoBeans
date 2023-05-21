@@ -1,29 +1,19 @@
 {% extends "base.html" %}
 
 {% block page_header %}
-<div class="container header-container">
-    <div class="row">
-        <div class="col"></div>
-    </div>
-</div>
+
 {% endblock %}
 
 {% block content %}
 <div class="overlay"></div>
-<div class="container">
-    <!-- Events Heading -->
-    <div class="row">
-        <div class="col">
-                <h2 class="logo-font mb-4 text-center">Events</h2>
-            <hr>
-        </div>
+<!-- Events Hero Image -->
+<div class="hero-image">
+    <div class="hero-text">
+        <h1>Events</h1>
     </div>
-    <div class="row">
-        <div class="col">
-            <img src="/media/events.webp" class="img-fluid banner-img" alt="Events Cafe">
-        </div>
-    </div>
+</div>
 
+<div class="container align-items-center">
     {% for event in events %}
     <div class="accordion" id="accordion{{ event.id }}">
         <div class="card">

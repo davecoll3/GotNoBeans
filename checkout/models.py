@@ -3,15 +3,12 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-from django.core.validators import RegexValidator
 from django_countries.fields import CountryField
 
 from decimal import Decimal
 
 from products.models import Product
 from profiles.models import UserProfile
-
-alphanumeric = RegexValidator(r'^[0-9a-zA-Z]*$', 'Please enter a valid UK postcode. Numbers and letters only.')
 
 
 # handles all orders across the store
@@ -25,7 +22,7 @@ class Order(models.Model):
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     town_or_city = models.CharField(max_length=40)
     county = models.CharField(max_length=80, null=True, blank=True)
-    postcode = models.CharField(max_length=8, validators=[alphanumeric])
+    postcode = models.CharField(max_length=8)
     country = CountryField(default='GB')
     date = models.DateTimeField(auto_now_add=True)
     delivery_cost = models.DecimalField(max_digits=3, decimal_places=2, default=3.99)

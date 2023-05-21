@@ -3,7 +3,7 @@ import uuid
 from django.db import models
 from django.db.models import Sum
 from django.conf import settings
-
+from django.core.validators import RegexValidator
 from django_countries.fields import CountryField
 
 from decimal import Decimal
@@ -11,26 +11,28 @@ from decimal import Decimal
 from products.models import Product
 from profiles.models import UserProfile
 
+alphanumeric = RegexValidator(r'^[0-9a-zA-Z]*$', 'Please enter a valid UK postcode. Numbers and letters only.')
+
 
 # handles all orders across the store
 class Order(models.Model):
-    order_number = models.CharField(max_length=32, null=False, editable=False)
+    order_number = models.CharField(max_length=32, editable=False)
     user_profile = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, null=True, blank=True, related_name='orders')
-    full_name = models.CharField(max_length=50, null=False, blank=False)
-    email = models.EmailField(max_length=254, null=False, blank=False)
-    phone_number = models.CharField(max_length=11, null=False, blank=False)
-    street_address1 = models.CharField(max_length=80, null=False, blank=False)
+    full_name = models.CharField(max_length=50)
+    email = models.EmailField(max_length=254)
+    phone_number = models.CharField(max_length=11)
+    street_address1 = models.CharField(max_length=80)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
-    town_or_city = models.CharField(max_length=40, null=False, blank=False)
+    town_or_city = models.CharField(max_length=40)
     county = models.CharField(max_length=80, null=True, blank=True)
-    postcode = models.CharField(max_length=8, null=False, blank=False)
-    country = CountryField(null=False, blank=False, default='GB')
+    postcode = models.CharField(max_length=8, validators=[alphanumeric])
+    country = CountryField(default='GB')
     date = models.DateTimeField(auto_now_add=True)
-    delivery_cost = models.DecimalField(max_digits=3, decimal_places=2, null=False, default=3.99)
-    order_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    grand_total = models.DecimalField(max_digits=10, decimal_places=2, null=False, default=0)
-    original_basket = models.TextField(null=False, blank=False, default='')
-    stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
+    delivery_cost = models.DecimalField(max_digits=3, decimal_places=2, default=3.99)
+    order_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    grand_total = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    original_basket = models.TextField(default='')
+    stripe_pid = models.CharField(max_length=254, default='')
 
     def _generate_order_number(self):
         # Generate a random, unique order number using UUID
@@ -55,10 +57,10 @@ class Order(models.Model):
 # Used to iterate through individual items in basket
 # and to update delivery_cost, order_total, and grand_total
 class OrderLineItem(models.Model):
-    order = models.ForeignKey(Order, null=False, blank=False, on_delete=models.CASCADE, related_name='lineitems')
-    product = models.ForeignKey(Product, null=False, blank=False, on_delete=models.CASCADE)
-    quantity = models.IntegerField(null=False, blank=False, default=0)
-    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='lineitems')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    quantity = models.IntegerField(default=0)
+    lineitem_total = models.DecimalField(max_digits=6, decimal_places=2, editable=False)
 
     def save(self, *args, **kwargs):
         # Override the original save method to set the lineitem total

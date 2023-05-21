@@ -6,18 +6,9 @@
             </a>
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="shop-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Products
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="shop-link">
-                <a class="logo-font font-weight-bold nav-link text-white mr-5"
-                    href="{% url 'products' %}?category=brewers">Brewers</a>
-                <a class="logo-font font-weight-bold nav-link text-white mr-5"
-                    href="{% url 'products' %}?category=accessories">Accessories</a>
-                <a class="logo-font font-weight-bold nav-link text-white mr-5"
-                    href="{% url 'products' %}?category=brewers,accessories" class="dropdown-item">Show All</a>
-            </div>
+        <li class="nav-item">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5"
+                href="{% url 'products' %}?category=brewers,accessories">Products</a>
         </li>
         <li class="nav-item">
             <a class="logo-font font-weight-bold nav-link text-white mr-5"

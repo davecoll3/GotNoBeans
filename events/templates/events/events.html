@@ -7,7 +7,7 @@
 {% block content %}
 <div class="overlay"></div>
 <!-- Events Hero Image -->
-<div class="hero-image">
+<div class="hero-image events-image">
     <div class="hero-text">
         <h1>Events</h1>
     </div>
@@ -30,7 +30,7 @@
             </div>
       
             <div id="collapse{{ event.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion{{ event.id }}">
-                <div class="card-body">
+                <div class="col-12 col-md-10 card-body">
                     {{ event.description }}
                     <br>
                     <strong>Showcased Products: </strong>

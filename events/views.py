@@ -41,6 +41,30 @@ def add_event(request):
 
 
 @user_passes_test(lambda u: u.is_superuser)
+def edit_event(request, event_id):
+    # Edit an existing event
+    event = get_object_or_404(Event, pk=event_id)
+    if request.method == 'POST':
+        form = EventForm(request.POST, request.FILES, instance=event)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Event Updated!')
+            return redirect(reverse('events'))
+        else:
+            messages.error(request, 'Failed to update event. Please ensure that the form is valid.')
+    else:
+        form = EventForm(instance=event)
+        messages.info(request, f'You are editing {event.name}')
+
+    context = {
+        'form': form,
+        'event': event,
+    }
+
+    return render(request, 'events/edit_event.html', context)
+
+
+@user_passes_test(lambda u: u.is_superuser)
 def delete_event(request, event_id):
     # Delete an event
     event = get_object_or_404(Event, pk=event_id)

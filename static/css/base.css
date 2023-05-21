@@ -6,7 +6,7 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: url('/media/homepage_background.webp') no-repeat center center fixed;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('/media/homepage_background.webp');
     background-size: cover;
     height: calc(100vh - 164px);
     color: #1a0d00;
@@ -107,7 +107,6 @@ button[disabled]{
 /* Homepage */
 .homepage-body-text {
     font-weight: 400;
-    background-color: rgba(26,13,0,.5);
     color: #fff;
     border-radius: 25px;
 }

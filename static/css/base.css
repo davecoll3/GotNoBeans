@@ -46,6 +46,17 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
+.nav-link {
+    color: #fff !important;
+}
+
+.nav-link:hover {
+    color: #aab7c4 !important;
+}
+
+.active {
+    color: #007bff !important;
+}
 
 
 /* ==========

@@ -1,29 +1,37 @@
+<!-- Assign Page Name for Nav Links Active Class  -->
+{% url 'home' as home_url %}
+{% url 'events' as events_url %}
+{% url 'products' as products_url %}
+{% url 'recipes' as recipes_url %}
+
 <div class="collapse navbar-collapse" id="main-nav">
     <ul class="navbar-nav w-auto mx-auto">
         <!-- Home Link -->
         <li class="nav-item d-block d-lg-none">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'home' %}" id="home-link">
+            <a class="logo-font font-weight-bold nav-link mr-5 {% if request.path == home_url %} active {%endif%}" 
+                href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <!-- Products Link -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5"
+            <a class="logo-font font-weight-bold nav-link mr-5 {% if request.path == products_url %} active {%endif%}"
                 href="{% url 'products' %}?category=brewers,accessories">Products</a>
         </li>
         <!-- Recipes Link -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5"
+            <a class="logo-font font-weight-bold nav-link mr-5 {% if request.path == recipes_url %} active {%endif%}"
                 href="{% url 'recipes' %}">Recipes</a>
         </li>
         <!-- Events Link -->
         <li class="nav-item">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5"
+            <a class="logo-font font-weight-bold nav-link mr-5 {% if request.path == events_url %} active {%endif%}"
                 href="{% url 'events' %}">Events</a>
         </li>
         <!-- Search Link -->
         <li class="nav-item dropdown d-lg-none">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="search-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link mr-5" 
+                href="#" id="search-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Search
             </a>
             <!-- Search Bar -->

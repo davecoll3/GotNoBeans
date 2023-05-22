@@ -34,16 +34,16 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-3"><strong>{{ recipe.name }}</strong></p>
                     <p class="mb-3">{{ recipe.intro }}</p>
-                    <p class="mb-0"><strong>Ground Coffee (grams):</strong> {{ recipe.coffee_qty_g }}</p>
-                    <p class="mb-0"><strong>Grind:</strong> {{ recipe.grind_size }}</p>
-                    <p class="mb-0"><strong>Water Temp (°C):</strong> {{ recipe.water_temp_c }}</p>
-                    <p class="mb-0"><strong>Water Volume (ml):</strong> {{ recipe.water_volume_ml }}</p>
-                    <p class="mb-3"><strong>Brew Time (mins):</strong> {{ recipe.brew_time_mins }}</p>
+                    <p class="mb-0"><strong>Grind: </strong> {{ recipe.grind_size }}</p>
+                    <p class="mb-0"><strong>Ground Coffee (grams):</strong> {{ recipe.coffee_qty }}</p>
+                    <p class="mb-0"><strong>Water Temp (°C):</strong> {{ recipe.water_temp }}</p>
+                    <p class="mb-0"><strong>Water Volume (ml):</strong> {{ recipe.water_volume }}</p>
+                    <p class="mb-3"><strong>Brew Time (mins):</strong> {{ recipe.brew_time }}</p>
                     <p class="mb-1"><strong>Method: </strong> {{ recipe.method }}</p>
                     <!-- Admin Edit/Delete options -->
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
+                        <a class="text-primary" href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
                         <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{recipe.id}}">Delete</a>
                     </small>
                     {% include 'recipes/includes/delete_recipe_modal.html' %}

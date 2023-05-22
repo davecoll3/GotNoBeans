@@ -13,38 +13,6 @@ body {
     font-family: 'Roboto Mono';
 }
 
-/* The hero image */
-.events-image {
-    /* Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/events-image.webp");
-}
-
-.favourites-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/favourites-image.webp");
-}
-
-.hero-image {
-    /* Set a specific height */
-    height: 50%;
-  
-    /* Position and center the image to scale nicely on all screens */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin: 50px 0 50px 0;
-}
-  
-/* Place text in the middle of the image */
-.hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-}
-
 a, 
 a:hover, 
 a:focus, 
@@ -53,7 +21,12 @@ a:active {
     color: inherit;
 }
 
-/* from Bulma */
+.card > button {
+    text-decoration: none !important;
+    color: inherit;
+}
+
+/* From: Bulma */
 .icon {
     align-items: center;
     display: inline-flex;
@@ -94,17 +67,10 @@ Block Content
     margin-bottom: 50px;
 }
 
-/* Buttons */
-.btn {
-    border-radius: 25px !important;
-}
 
-button:disabled,
-button[disabled]{
-  background-color: #666;
-}
-
-/* Homepage */
+/* ==========
+Homepage
+========== */
 .homepage-body-text {
     font-weight: 400;
     color: #fff;
@@ -115,7 +81,10 @@ button[disabled]{
     color: #fff;
 }
 
-/* Products page */
+
+/* ==========
+Products Page
+========== */
 .category-header {
     pointer-events: none;
     color: #1a0d00;
@@ -132,9 +101,100 @@ button[disabled]{
 }
 
 
+/* ==========
+Product Form
+========== */
 
-/* bootstrap toasts */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
 
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #dc3545;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 0;
+}
+
+/* ==========
+Hero Images
+========== */
+.events-image {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/events-image.webp");
+ }
+ 
+ .favourites-image {
+     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/favourites-image.webp");
+ }
+
+/* From: https://www.w3schools.com/howto/howto_css_hero_image.asp */
+.hero-image {
+    height: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin: 50px 0 50px 0;
+}
+
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+
+/* ==========
+Buttons
+========== */
+.btn {
+    border-radius: 25px !important;
+}
+
+button:disabled,
+button[disabled]{
+  background-color: #666;
+}
+
+.to-top-button {
+    height: 42px;
+    width: 42px;
+    position: fixed;
+    bottom: 44px;
+    right: 10px;
+    border: 1px solid;
+    border-radius: 50%;
+    color: rgba(26,13,0,.5);
+}
+
+.to-top-link,
+.update-link,
+.remove-item {
+    cursor: pointer;
+}
+
+
+/* ==========
+Bootstrap Toasts
+========== */
 .message-container {
     position: fixed;
     top: 72px;
@@ -150,7 +210,7 @@ button[disabled]{
     height: 2px;
 }
 
-/* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
+/* From: CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
     width: 0; 
     height: 0; 
@@ -162,7 +222,7 @@ button[disabled]{
     right: 36px;
 }
 
-/* Convenience classes - colors copied from Bootstrap */
+/* Convenience classes: colors copied from Bootstrap */
 .arrow-primary {
     border-bottom-color: #007bff !important;
 }
@@ -201,64 +261,6 @@ button[disabled]{
     overflow-y: auto;
 }
 
-/* Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
-}
-
-
-/* ==========
-Images
-========== */
-banner-img {
-    width: 500px;
-    height: 100px;
-    object-fit: cover;
-}
-
-
-/* ==========
-back to top button
-========== */
-.to-top-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 44px;
-    right: 10px;
-    border: 1px solid;
-    border-radius: 50%;
-    color: rgba(26,13,0,.5);
-}
-
-.to-top-link,
-.update-link,
-.remove-item {
-    cursor: pointer;
-}
 
 /* ==========
 Footer

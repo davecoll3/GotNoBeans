@@ -40,13 +40,13 @@
                     <!-- Admin edit/delete options -->
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                        <a class="text-primary" href="{% url 'edit_product' product.id %}">Edit</a> | 
                         <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{product.id}}">Delete</a>
                     </small>
                     {% include 'products/includes/delete_product_modal.html' %}
                     {% endif %}
                     <div class="col-12 p-0">
-                        <a class="btn btn-info btn-width mt-3" href="{% url 'add_favourite' product.id %}">
+                        <a class="btn btn-primary btn-width mt-3" href="{% url 'add_favourite' product.id %}">
                             <span>Add to Favourites</span>
                         </a>
                     </div>

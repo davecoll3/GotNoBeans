@@ -19,12 +19,12 @@
         <div class="card">
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
-                    <button class="btn btn-link btn-block text-left" type="button" 
+                    <button class="btn btn-block text-dark text-left" type="button" 
                             data-toggle="collapse" data-target="#collapse{{ event.id }}" 
                             aria-expanded="true" aria-controls="collapseOne">
-                    {{ event.name }} in {{ event.town_or_city }}
-                    <br> 
-                    {{ event.date }}
+                        <strong>{{ event.name }} in {{ event.town_or_city }}</strong>
+                        <br> 
+                        {{ event.date }}
                     </button>
                 </h2>
             </div>
@@ -46,7 +46,7 @@
                     <br>
                     {% if request.user.is_superuser %}
                     <small>
-                        <a href="{% url 'edit_event' event.id %}">Edit</a> | 
+                        <a class="text-primary" href="{% url 'edit_event' event.id %}">Edit</a> | 
                         <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{event.id}}">Delete</a>
                     </small>
                     {% include 'events/includes/delete_event_modal.html' %}

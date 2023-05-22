@@ -1,8 +1,9 @@
 {% if request.user.is_superuser %}
-<!-- Vertically centered Bootstrap modal -->
+<!-- Vertically Centered Bootstrap Modal -->
 <div id="delete-modal-{{product.id}}" class="modal" tabindex="-1">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
+            <!-- Modal Header -->
             <div class="modal-header">
                 <h5>Delete Product:
                     <br>
@@ -11,11 +12,13 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+            <!-- Modal Body -->
             <div class="modal-body text-center">
                 <p>Are you sure that you want to delete this product? 
                     <span class="text-danger">This action cannot be undone!</span> 
                 </p>
             </div>
+            <!-- Modal Footer -->
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                 <a class="btn btn-danger" href="{% url 'delete_product' product.id %}">Delete</a>

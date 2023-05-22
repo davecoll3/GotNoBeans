@@ -21,9 +21,9 @@
             </div>
         </div>
 
-        <!-- Order Summary -->
         <div class="row">
             <div class="col-12 col-md-6">
+                <!-- Populated Edit Recipe Form -->
                 <form method="POST" action="{% url 'edit_recipe' recipe.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -33,9 +33,10 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
+                    <!-- Cancel and Update Buttons -->
                     <div class="text-right">
                         <a class="btn btn-secondary" href="{% url 'recipes' %}">Cancel</a>
-                        <button class="btn btn-dark" type="submit">Update Recipe</button>
+                        <button class="btn btn-dark" type="submit">Update</button>
                     </div>
                 </form>
             </div>            

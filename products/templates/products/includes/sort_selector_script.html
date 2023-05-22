@@ -1,21 +1,28 @@
+<!-- Sort Selector -->
 <script type="text/javascript">
+    // Caputre the change event & current window location
     $('#sort-selector').change(function() {
         const selector = $(this);
         const currentUrl = new URL(window.location);
 
+        // Get selected value from selector box
         const selectedVal = selector.val();
+        // If not reset, get sort item and direction
         if(selectedVal != "reset"){
             const sort = selectedVal.split("_")[0];
             const direction = selectedVal.split("_")[1];
 
             currentUrl.searchParams.set("sort", sort);
             currentUrl.searchParams.set("direction", direction);
-
+            
+            // Replace current URL with new URL
             window.location.replace(currentUrl);
         } else {
+            // Delete sort and direction params
             currentUrl.searchParams.delete("sort");
             currentUrl.searchParams.delete("direction");
 
+            // Replace URL with default URL
             window.location.replace(currentUrl);
         }
     })

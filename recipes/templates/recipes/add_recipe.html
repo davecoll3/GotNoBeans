@@ -21,9 +21,9 @@
             </div>
         </div>
 
-        <!-- Order Summary -->
         <div class="row">
             <div class="col-12 col-md-6">
+                <!-- Empty Add Recipe Form -->
                 <form method="POST" action="{% url 'add_recipe' %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -33,6 +33,7 @@
                             {{ field }}
                         {% endif %}
                     {% endfor %}
+                    <!-- Cancel and Add Buttons -->
                     <div class="text-right">
                         <a class="btn btn-secondary" href="{% url 'recipes' %}">Cancel</a>
                         <button class="btn btn-dark" type="submit">Add Recipe</button>

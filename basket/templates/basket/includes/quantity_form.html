@@ -1,7 +1,9 @@
+<!-- Product Qty Form -->
 <form class="form update-form" method="POST" action="{% url 'adjust_basket' item.item_id %}">
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group input-group-{{ item.item_id }}">
+            <!-- Decrement Qty Button -->
             <div class="input-group-prepend">
                 <button class="decrement-qty btn-sm btn-dark decrement-qty_{{ item.item_id }}" 
                     data-item_id="{{ item.item_id }}">
@@ -13,6 +15,7 @@
             <input class="form-control form-control-sm text-center qty_input id_qty_{{ item.item_id }}" type="number"
                 name="quantity" value="{{ item.quantity }}" min="1" max="20"
                 data-item_id="{{ item.item_id }}">
+            <!-- Increment Qty Button -->
             <div class="input-group-append">
                 <button class="increment-qty btn-sm btn-dark increment-qty_{{ item.item_id }}"
                     data-item_id="{{ item.item_id }}">
@@ -24,5 +27,6 @@
         </div>
     </div>
 </form>
-<a class="update-link text-info float-left"><small>Update</small></a>
+<!-- Update & Remove Item Tags -->
+<a class="update-link text-primary float-left"><small>Update</small></a>
 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>

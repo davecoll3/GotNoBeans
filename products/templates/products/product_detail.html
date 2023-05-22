@@ -37,20 +37,23 @@
                     <p class="mt-3">{{ product.description }}</p>
                     <p class="mb-0">Yeild (cups): {{ product.yield_in_cups }}</p>
                     <p class="mb-0">Material: {{ product.material }}</p>
-                    <!-- Admin edit/delete options -->
+                    <!-- Admin Edit/Delete Options -->
                     {% if request.user.is_superuser %}
                     <small>
                         <a class="text-primary" href="{% url 'edit_product' product.id %}">Edit</a> | 
                         <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{product.id}}">Delete</a>
                     </small>
+                    <!-- Delete Product Modal -->
                     {% include 'products/includes/delete_product_modal.html' %}
                     {% endif %}
+                    <!-- Add to Favourites Button -->
                     <div class="col-12 p-0">
                         <a class="btn btn-primary btn-width mt-3" href="{% url 'add_favourite' product.id %}">
                             <span>Add to Favourites</span>
                         </a>
                     </div>
                     <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                    <!-- Add to Basket Form -->
                     <form class="form" action="{% url 'add_to_basket' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
@@ -81,7 +84,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!-- Submit & Keep Shopping buttons -->
+                            <!-- Add To Basket & Keep Shopping buttons -->
                             <div class="col-12">
                                 <a href="{% url 'products' %}" class="btn btn-secondary mt-2">
                                     <span>Keep Shopping</span>

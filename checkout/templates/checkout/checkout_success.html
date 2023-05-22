@@ -23,14 +23,18 @@
                 <hr>
                 <h2 class="logo-font mb-4">Thank You</h2>
                 <hr>
-                <p class="text-black">Please find your order information below. A confirmation email will be sent to <strong>{{ order.email }}</strong>.</p>
+                <p class="text-black">
+                    Please find your order information below.
+                    A confirmation email will be sent to 
+                    <strong>{{ order.email }}</strong>.
+                </p>
             </div>
         </div>
 
         <!-- Order Information -->
         <div class="row">
-            <div class="col-12 col-lg-7">
-                <div class="order-confirmation-wrapper p-2 border">
+            <div class="col-12 col-lg-6">
+                <div class="m-0 p-2 border">
                     <div class="row">
                         <div class="col">
                             <small class="text-muted">Order Info:</small>
@@ -222,12 +226,9 @@
 
         <!-- Keep Shopping Button -->
         <div class="row">
-			<div class="col-12 col-lg-7 text-right">
+			<div class="col-12 col-lg-6 text-right">
                 {% if from_profile %}
                     <a href="{% url 'profile' %}" class="btn btn-dark my-2">
-                        <span class="icon mr-2">
-                            <i class="fa-solid fa-user"></i>
-                        </span>
                         <span>Back to Profile</span>
                     </a>
                 {% else %}

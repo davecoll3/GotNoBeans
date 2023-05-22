@@ -17,6 +17,7 @@
 {% block content %}
 <div class="overlay"></div>
 <div class="container">
+    <!-- My Profile Header -->
     <div class="row">
         <div class="col">
             <hr>
@@ -24,8 +25,10 @@
             <hr>
         </div>
     </div>
+    <!-- Profile Accordion -->
     <div class="accordion" id="profile-accordion">
         <div class="card">
+            <!-- Order History Header -->
             <div class="card-header" id="headingOne">
                 <h2 class="mb-0">
                     <button class="btn btn-block text-dark text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -33,11 +36,13 @@
                     </button>
                 </h2>
             </div>
-        
+            <!-- Order History Table -->
             <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#profile-accordion">
                 <div class="card-body">
                     <div class="order-history table-responsive">
                         <table class="table table-sm table-borderless">
+                            {% for order in orders %}
+                            <!-- Order Headings -->
                             <thead>
                                 <tr>
                                     <th>Order Number</th>
@@ -45,30 +50,33 @@
                                     <th>Order Total</th>
                                 </tr>
                             </thead>
+                            <!-- Order Details -->
                             <tbody>
-                                {% for order in orders %}
-                                    <tr>
-                                        <td>
-                                            <a href="{% url 'order_history' order.order_number %}"
-                                            title="{{ order.order_number }}">
-                                                {{ order.order_number|truncatechars:6 }}
-                                            </a>
-                                        </td>
-                                        <td>{{ order.date }}</td>
-                                        <td>£{{ order.grand_total }}</td>
-                                        {% empty %}
-                                        <td>
-                                            <p class="lead mb-4">You have no previous orders.</p>
-                                        </td>
-                                    </tr>
-                                {% endfor %}
+                                <tr>
+                                    <td>
+                                        <a href="{% url 'order_history' order.order_number %}"
+                                        title="{{ order.order_number }}">
+                                            {{ order.order_number|truncatechars:6 }}
+                                        </a>
+                                    </td>
+                                    <td>{{ order.date }}</td>
+                                    <td>£{{ order.grand_total }}</td>
+                                </tr>
                             </tbody>
+                            <!-- No Orders Message -->
+                            {% empty %}
+                            <tbody>
+                                <td>
+                                    <p class="lead mb-4">You have no previous orders.</p>
+                                </td>
+                            </tbody>
+                            {% endfor %}
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
+        <!-- Defauly Delivery Information Header -->
         <div class="card">
             <div class="card-header" id="headingTwo">
                 <h2 class="mb-0">
@@ -77,6 +85,7 @@
                     </button>
                 </h2>
             </div>
+            <!-- Default Delivery Information Form -->
             <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#profile-accordion">
                 <div class="card-body">
                     <div class="row">

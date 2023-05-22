@@ -38,7 +38,7 @@
 
     <!-- Title & Favicon -->
     <title>Got No Beans {% block extra_title %}{% endblock %}</title>
-    <!-- favicon -->
+    <!-- Favicon -->
     <link type="image" sizes="16x16" rel="icon" href="{% static 'favicon/icons8-coffee-glyph-neue-16.webp' %}">
     <link type="image" sizes="16x16" rel="icon" href="{% static 'favicon/icons8-coffee-glyph-neue-32.webp' %}">
     <link type="image" sizes="16x16" rel="icon" href="{% static 'favicon/icons8-coffee-glyph-neue-96.webp' %}">
@@ -67,27 +67,29 @@
                     </div>
                 </form>
             </div>
+            <!-- Dropdown Nav Items -->
             <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
                 <ul class="list-inline list-unstyled text-center text-lg-right my-0">
+
+                    <!-- Admin Only Nav Dropdown -->
+                    {% if request.user.is_superuser %}
                     <li class="list-inline-item dropdown">
-                        {% if request.user.is_superuser %}
-                            <!-- Admin Dropdown for Superusers Only -->
-                            <a class="text-white nav-link" href="#" id="admin-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <div class="text-center">
-                                    <div><i class="fa-solid fa-cog fa-lg"></i></div>
-                                    <p class="my-0">Admin</p>
-                                </div>
-                            </a>
-                            <div class="dropdown-menu border-0" aria-labelledby="admin-options">
-                                <!-- Add New Product/Recipe Links -->
-                                <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
-                                <a href="{% url 'add_recipe' %}" class="dropdown-item">Add New Recipe</a>
-                                <a href="{% url 'add_event' %}" class="dropdown-item">Add New Event</a>
+                        <a class="text-white nav-link" href="#" id="admin-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fa-solid fa-cog fa-lg"></i></div>
+                                <p class="my-0">Admin</p>
                             </div>
-                        {% endif %}
+                        </a>
+                        <div class="dropdown-menu border-0" aria-labelledby="admin-options">
+                            <!-- Add New Product/Recipe/Event Links -->
+                            <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
+                            <a href="{% url 'add_recipe' %}" class="dropdown-item">Add New Recipe</a>
+                            <a href="{% url 'add_event' %}" class="dropdown-item">Add New Event</a>
+                        </div>
                     </li>
+                    {% endif %}
+                    <!-- Account Nav Dropdown -->
                     <li class="list-inline-item dropdown">
-                        <!-- Account Dropdown -->
                         <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-user fa-lg"></i></div>
@@ -109,7 +111,7 @@
                     </li>
                     <!-- Shopping Basket Link & Price Total -->
                     <li class="list-inline-item">
-                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_basket' %}">
+                        <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_basket' %}">
                             <div class="text-center">
                                 <div><i class="fa-solid fa-basket-shopping fa-lg"></i></div>
                                 <p class="my-0">

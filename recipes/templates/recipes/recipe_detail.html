@@ -40,14 +40,16 @@
                     <p class="mb-0"><strong>Water Volume (ml):</strong> {{ recipe.water_volume }}</p>
                     <p class="mb-3"><strong>Brew Time (mins):</strong> {{ recipe.brew_time }}</p>
                     <p class="mb-1"><strong>Method: </strong> {{ recipe.method }}</p>
-                    <!-- Admin Edit/Delete options -->
+                    <!-- Admin Edit/Delete Options -->
                     {% if request.user.is_superuser %}
                     <small>
                         <a class="text-primary" href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
                         <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{recipe.id}}">Delete</a>
                     </small>
+                    <!-- Delete Recipe Modal -->
                     {% include 'recipes/includes/delete_recipe_modal.html' %}
                     {% endif %}
+                    <!-- Suggested Products Links -->
                     <p class="mt-3"><strong>Suggested Products:</strong>
                         {% for products in recipe.products.all %}
                         <a href="{% url 'product_detail' products.id %}"><br><em>{{ products }}</em></a>

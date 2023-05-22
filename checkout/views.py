@@ -26,8 +26,11 @@ def cache_checkout_data(request):
         })
         return HttpResponse(status=200)
     except Exception as e:
-        messages.error(request, 'Sorry, we could not process your payment.\
-            Please try again.')
+        messages.error(
+                       request,
+                       'Sorry, we could not process your payment.\
+                       Please try again.'
+                       )
         return HttpResponse(content=e, status=400)
 
 
@@ -68,9 +71,12 @@ def checkout(request):
                     order_line_item.save()
 
                 except Product.DoesNotExist:
-                    messages.error(request, (
-                        "One of the products in your basket doesn't exist in our database. "
-                        "Please contact us for assistance.")
+                    messages.error(
+                                   request,
+                                   (
+                        "A product in your basket doesn't exist."
+                        "Please contact us for assistance."
+                        )
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))

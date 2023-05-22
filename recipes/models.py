@@ -4,18 +4,19 @@ from django.core.validators import MaxValueValidator, MinValueValidator
 from products.models import Product
 
 
+# Recipe model
 class Recipe(models.Model):
 
     class Meta:
         verbose_name_plural = 'Recipes'
-
+    # Set value options for grind size field
     ex_course = 'Extra-Coarse'
     coarse = 'Coarse'
     medium = 'Medium'
     m_fine = 'Medium-Fine'
     fine = 'Fine'
     s_fine = 'Superfine'
- 
+
     GRIND = [
         (ex_course, 'Extra-Coarse'),
         (coarse, 'Coarse'),

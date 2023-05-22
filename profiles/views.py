@@ -10,14 +10,16 @@ from checkout.models import Order
 
 @login_required
 def profile(request):
-    # Display the user's profile.
+    # Display user profile
     profile = get_object_or_404(UserProfile, user=request.user)
 
     if request.method == 'POST':
+        # Update profile if valid
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
             messages.success(request, 'Your profile has been updated.')
+        # Display error message for invalid form
         else:
             messages.error(request, 'Please ensure that the form is valid.')
     else:

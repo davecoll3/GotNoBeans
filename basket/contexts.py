@@ -1,11 +1,10 @@
 from decimal import Decimal
 from django.shortcuts import get_object_or_404
-from django.conf import settings
 from products.models import Product
 
 
 def basket_contents(request):
-
+    # Basket Contents
     basket_items = []
     total = 0
     product_count = 0
@@ -21,7 +20,7 @@ def basket_contents(request):
             'quantity': quantity,
             'product': product,
         })
-
+    # Set delivery charge
     if total == 0:
         delivery = 0
     else:

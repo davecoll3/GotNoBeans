@@ -13,8 +13,7 @@ def view_basket(request):
 
 
 def add_to_basket(request, item_id):
-    # Add a quantity of the specified product to the basket
-
+    # Add a qty of the specified product to the basket
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
@@ -34,17 +33,17 @@ def add_to_basket(request, item_id):
 
 
 def adjust_basket(request, item_id):
-    """Adjust the quantity of the specified product to the specified amount"""
-
+    # Adjust the qty the specified product in the basket
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     basket = request.session.get('basket', {})
-
+    # Update product qty
     if quantity > 0:
         basket[item_id] = quantity
         messages.success(
             request, f'Updated {product.name} quantity to {basket[item_id]}'
         )
+    # Delete item from basket
     else:
         basket.pop(item_id)
         messages.success(request, f'Removed {product.name} from your basket')
@@ -54,8 +53,7 @@ def adjust_basket(request, item_id):
 
 
 def remove_from_basket(request, item_id):
-    """Remove the item from basket"""
-
+    # Remove item from basket
     try:
         product = get_object_or_404(Product, pk=item_id)
         basket = request.session.get('basket', {})

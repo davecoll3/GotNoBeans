@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
+# Category model
 class Category(models.Model):
     class Meta:
         verbose_name_plural = 'Categories'
@@ -16,6 +17,7 @@ class Category(models.Model):
         return self.friendly_name
 
 
+# Product model
 class Product(models.Model):
 
     category = models.ForeignKey(

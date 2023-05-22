@@ -5,9 +5,8 @@ from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 
+# UserProfile model for default delivery info
 class UserProfile(models.Model):
-    # A user profile model for maintaining default
-    # delivery information & order history
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     default_full_name = models.CharField(max_length=50, null=True, blank=True)
     default_email = models.EmailField(max_length=254, null=True, blank=True)

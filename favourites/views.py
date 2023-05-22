@@ -9,7 +9,7 @@ from .models import Favourites
 
 @login_required
 def favourites(request):
-    # Renders the user's favourites
+    # Renders user favourites
     favourite = None
     try:
         favourite = Favourites.objects.get(user=request.user)
@@ -28,7 +28,7 @@ def add_favourite(request, product_id):
     # Get products from Product model and get/create user favourites
     product = get_object_or_404(Product, pk=product_id)
     favourites, _ = Favourites.objects.get_or_create(user=request.user)
-
+    # Notify user if product is already one of their favouruites
     if favourites.products.filter(id=product_id).exists():
         messages.info(request, "This item is already one of your favourites!")
     else:

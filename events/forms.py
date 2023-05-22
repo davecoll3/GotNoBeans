@@ -11,7 +11,7 @@ class TimeInput(forms.DateInput):
 
 
 class EventForm(forms.ModelForm):
-
+    # Associate with Event model, render fields, format date and time
     class Meta:
         model = Event
         fields = '__all__'

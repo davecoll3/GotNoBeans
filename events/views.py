@@ -8,8 +8,7 @@ from .forms import EventForm
 
 
 def all_events(request):
-    # A view to return all events
-
+    # All events view
     events = Event.objects.all().order_by('date')
 
     context = {
@@ -24,10 +23,12 @@ def add_event(request):
     # Add an event
     if request.method == 'POST':
         form = EventForm(request.POST)
+        # Add event if valid
         if form.is_valid():
             event = form.save()
             messages.success(request, 'New event added!')
             return redirect(reverse('events'))
+        # Display error message for invalid form
         else:
             messages.error(request, 'Please ensure that the form is valid '
                                     'and this event does not already exist.')
@@ -47,10 +48,12 @@ def edit_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES, instance=event)
+        # Update event if valid
         if form.is_valid():
             form.save()
             messages.success(request, 'Event Updated!')
             return redirect(reverse('events'))
+        # Display error message for invalid form
         else:
             messages.error(request, 'Please ensure that the form is valid '
                                     'and this event does not already exist.')

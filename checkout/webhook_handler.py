@@ -107,7 +107,7 @@ class StripeWH_Handler:
         if order_exists:
             self._send_confirmation_email(order)
             return HttpResponse(
-                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already exists in database',
+                content=f'Webhook received: {event["type"]} | SUCCESS',
                 status=200)
         # If order has NOT been found, create the order
         else:
@@ -144,7 +144,7 @@ class StripeWH_Handler:
         self._send_confirmation_email(order)
         # Return 200 response indicating that webhook handler created order
         return HttpResponse(
-            content=f'Webhook received: {event["type"]} | SUCCESS: Created order in webhook',
+            content=f'Webhook received: {event["type"]} | SUCCESS',
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):

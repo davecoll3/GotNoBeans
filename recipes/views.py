@@ -8,8 +8,7 @@ from .forms import RecipeForm
 
 
 def all_recipes(request):
-    # A view to return all brewing recipes
-
+    # All brewing recipes view
     recipes = Recipe.objects.all().order_by('name')
 
     context = {
@@ -20,8 +19,7 @@ def all_recipes(request):
 
 
 def recipe_detail(request, recipe_id):
-    # A view to display individual brewing recipe details
-
+    # Individual brewing recipe details view
     recipe = get_object_or_404(Recipe, pk=recipe_id)
 
     context = {
@@ -35,11 +33,13 @@ def recipe_detail(request, recipe_id):
 def add_recipe(request):
     # Add a recipe
     if request.method == 'POST':
+        # Add new recipe if form is valid
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             recipe = form.save()
             messages.success(request, 'New recipe added!')
             return redirect(reverse('recipe_detail', args=[recipe.id]))
+        # Display error message if form is not valid
         else:
             messages.error(request, 'Please ensure that the form is valid.')
     else:
@@ -58,10 +58,12 @@ def edit_recipe(request, recipe_id):
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     if request.method == 'POST':
         form = RecipeForm(request.POST, request.FILES, instance=recipe)
+        # Update recipe if form is valid
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated recipe!')
             return redirect(reverse('recipe_detail', args=[recipe.id]))
+        # Display error message if form is not valid
         else:
             messages.error(request, 'Please ensure the form is valid.')
     else:

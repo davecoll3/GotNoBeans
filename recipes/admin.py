@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import Recipe
 
 
+# Admin settings for Recipe model
 class RecipesAdmin(admin.ModelAdmin):
     list_display = (
         'name',

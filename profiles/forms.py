@@ -3,13 +3,13 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
+    # Associate with UserProfile model and exclude user field
     class Meta:
         model = UserProfile
         exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
-        # Add placeholders and classes, remove auto-generated labels
-        # and set autofocus on first field
+        # Set defauly and create dictionary of placeholders
         super().__init__(*args, **kwargs)
         placeholders = {
             'default_full_name': 'Full Name',
@@ -22,6 +22,7 @@ class UserProfileForm(forms.ModelForm):
             'default_postcode': 'Postcode',
         }
 
+        # Set autofocus on first field and remove auto-generated labels
         self.fields['default_full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'default_country':

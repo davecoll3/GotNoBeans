@@ -4,15 +4,16 @@ from .models import Recipe
 
 
 class RecipeForm(forms.ModelForm):
-
+    # Associate with Recipe model and render fields
     class Meta:
         model = Recipe
         fields = '__all__'
-
+    # Use widget for image field
     image = forms.ImageField(label='Image',
                              required=False,
                              widget=CustomClearableFileInput)
 
+    # Render field display names
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 

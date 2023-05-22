@@ -3,6 +3,7 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    # Associate with Order model and render fields
     class Meta:
         model = Order
         fields = ('full_name', 'email', 'phone_number',
@@ -11,8 +12,7 @@ class OrderForm(forms.ModelForm):
                   'country')
 
     def __init__(self, *args, **kwargs):
-        # Add placeholders and classes, remove auto-generated labels
-        # and set autofocus on first field
+        # Set defauly and create dictionary of placeholders
         super().__init__(*args, **kwargs)
         placeholders = {
             'full_name': 'Full Name',
@@ -24,7 +24,7 @@ class OrderForm(forms.ModelForm):
             'county': 'County',
             'postcode': 'Postcode',
         }
-
+        # Set autofocus on first field and remove auto-generated labels
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
             if field != 'country':

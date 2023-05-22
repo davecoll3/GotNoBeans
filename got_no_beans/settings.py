@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1',
-                 os.environ.get('HEROKU_HOST'), 
+                 os.environ.get('HEROKU_HOST'),
                  os.environ.get('DOMAIN_HOST')]
 
 

@@ -30,7 +30,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', os.environ.get('HEROKU_HOST'), os.environ.get('DOMAIN_HOST')]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
+                 os.environ.get('HEROKU_HOST'), 
+                 os.environ.get('DOMAIN_HOST')]
 
 
 # Application definition
@@ -42,10 +44,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # callback urls for SM accounts
+    'django.contrib.sites',
     'allauth',
     'allauth.account',
-    'allauth.socialaccount',  # handles social media logins
+    'allauth.socialaccount',
     'home',
     'products',
     'basket',
@@ -153,19 +155,19 @@ else:
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+            'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',  # noqa
     },
     {
         'NAME':
-            'django.contrib.auth.password_validation.MinimumLengthValidator',
+            'django.contrib.auth.password_validation.MinimumLengthValidator',  # noqa
     },
     {
         'NAME':
-            'django.contrib.auth.password_validation.CommonPasswordValidator',
+            'django.contrib.auth.password_validation.CommonPasswordValidator',  # noqa
     },
     {
         'NAME':
-            'django.contrib.auth.password_validation.NumericPasswordValidator',
+            'django.contrib.auth.password_validation.NumericPasswordValidator',  # noqa
     },
 ]
 

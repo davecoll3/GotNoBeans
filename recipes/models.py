@@ -32,7 +32,8 @@ class Recipe(models.Model):
             MinValueValidator(1)
         ]
         )
-    grind_size = models.CharField(max_length=20, choices=GRIND, default=medium)
+    grind_size = models.CharField(max_length=20, choices=GRIND,
+                                  default=medium)
     water_temp = models.PositiveIntegerField(
         validators=[
             MaxValueValidator(100),

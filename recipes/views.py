@@ -41,7 +41,7 @@ def add_recipe(request):
             messages.success(request, 'New recipe added!')
             return redirect(reverse('recipe_detail', args=[recipe.id]))
         else:
-            messages.error(request, 'Failed to add recipe. Please ensure that the form is valid.')
+            messages.error(request, 'Please ensure that the form is valid.')
     else:
         form = RecipeForm()
 
@@ -63,7 +63,7 @@ def edit_recipe(request, recipe_id):
             messages.success(request, 'Successfully updated recipe!')
             return redirect(reverse('recipe_detail', args=[recipe.id]))
         else:
-            messages.error(request, 'Failed to update recipe. Please ensure the form is valid.')
+            messages.error(request, 'Please ensure the form is valid.')
     else:
         form = RecipeForm(instance=recipe)
         messages.info(request, f'You are editing {recipe.name}')

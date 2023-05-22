@@ -29,7 +29,8 @@ def add_event(request):
             messages.success(request, 'New event added!')
             return redirect(reverse('events'))
         else:
-            messages.error(request, "Failed to add event. Please ensure that the form is valid and that this event hasn't previously been created.")
+            messages.error(request, 'Please ensure that the form is valid '
+                                    'and this event does not already exist.')
     else:
         form = EventForm()
 
@@ -51,7 +52,8 @@ def edit_event(request, event_id):
             messages.success(request, 'Event Updated!')
             return redirect(reverse('events'))
         else:
-            messages.error(request, 'Failed to update event. Please ensure that the form is valid.')
+            messages.error(request, 'Please ensure that the form is valid '
+                                    'and this event does not already exist.')
     else:
         form = EventForm(instance=event)
         messages.info(request, f'You are editing {event.name}')

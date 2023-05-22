@@ -24,7 +24,11 @@ class Event(models.Model):
     products = models.ManyToManyField(Product)
 
     class Meta:
-        unique_together = ["name", "date", "time", "location", "town_or_city", "postcode"]
+        unique_together = [
+            "name", "date",
+            "time", "location",
+            "town_or_city", "postcode"
+        ]
 
     def __str__(self):
         return self.name

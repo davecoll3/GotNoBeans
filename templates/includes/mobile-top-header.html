@@ -1,27 +1,22 @@
 <ul>
-  <li class="list-inline-item">
-    <a class="nav-link text-white d-block d-lg-none" href="#" id="mobile-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        <div class="text-center">
-            <div><i class="fas fa-search fa-lg"></i></div>
-            <p class="my-0">Search</p>
-        </div>
-    </a>
-    <div class="dropdown-menu border-0 w-100 p-3 rounded-0 my-0" aria-labelledby="mobile-search">
-        <form class="form" method="GET" action="{% url 'products' %}">
-            <div class="input-group w-100">
-                <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our site">
-                <div class="input-group-append">
-                    <button class="form-control form-control btn btn-black border border-black rounded-0" type="submit">
-                        <span class="icon">
-                            <i class="fa-solid fa-search"></i>
-                        </span>
-                    </button>
-                </div>
+    {% if request.user.is_superuser %}
+    <li class="list-inline-item dropdown d-lg-none">
+        <!-- Admin Dropdown for Superusers Only -->
+        <a class="text-white nav-link" href="#" id="admin-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <div class="text-center">
+                <div><i class="fa-solid fa-cog fa-lg"></i></div>
+                <p class="my-0">Admin</p>
             </div>
-        </form>
-    </div>
-</li>
-<li class="list-inline-item dropdown">
+        </a>
+        <div class="dropdown-menu border-0" aria-labelledby="admin-options">
+            <!-- Add New Product/Recipe Links -->
+            <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
+            <a href="{% url 'add_recipe' %}" class="dropdown-item">Add New Recipe</a>
+            <a href="{% url 'add_event' %}" class="dropdown-item">Add New Event</a>
+        </div>
+    </li>
+    {% endif %}
+    <li class="list-inline-item dropdown">
     <a class="nav-link text-white d-block d-lg-none" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <div class="text-center">
             <div><i class="fa-solid fa-user fa-lg"></i></div>
@@ -30,9 +25,6 @@
     </a> 
     <div class="dropdown-menu border-0" aria-labelledby="user-options">
         {% if request.user.is_authenticated %}
-            {% if request.user.is_superuser %}
-                <a href="{% url 'add_product' %}" class="dropdown-item">Admin</a>
-            {% endif %}
             <a href="{% url 'profile' %}" class="dropdown-item">Profile</a>
             <a href="{% url 'favourites' %}" class="dropdown-item">Favourites</a>
             <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
@@ -41,8 +33,8 @@
             <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
         {% endif %}
     </div>
-</li>
-<li class="list-inline-item">
+    </li>
+    <li class="list-inline-item">
     <a class="{% if grand_total %}text-primary font-weight-bold{% else %}text-white{% endif %} nav-link d-block d-lg-none" href="{% url 'view_basket' %}">
         <div class="text-center">
             <div><i class="fa-solid fa-basket-shopping fa-lg"></i></div>
@@ -55,5 +47,5 @@
             </p>
         </div>
     </a>
-  </li>
-</ul>
+    </li>
+</ul> 

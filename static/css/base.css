@@ -13,19 +13,6 @@ body {
     font-family: 'Roboto Mono';
 }
 
-a, 
-a:hover, 
-a:focus, 
-a:active {
-    text-decoration: none;
-    color: inherit;
-}
-
-.card > button {
-    text-decoration: none !important;
-    color: inherit;
-}
-
 /* From: Bulma */
 .icon {
     align-items: center;
@@ -135,11 +122,11 @@ Product Form
 Hero Images
 ========== */
 .events-image {
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/events-image.webp");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/media/events-image.webp");
  }
  
  .favourites-image {
-     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/media/favourites-image.webp");
+     background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/media/favourites-image.webp");
  }
 
 /* From: https://www.w3schools.com/howto/howto_css_hero_image.asp */
@@ -163,7 +150,7 @@ Hero Images
 
 
 /* ==========
-Buttons
+Buttons & <a> Tags
 ========== */
 .btn {
     border-radius: 25px !important;
@@ -189,6 +176,23 @@ button[disabled]{
 .update-link,
 .remove-item {
     cursor: pointer;
+}
+
+a, 
+a:hover, 
+a:focus, 
+a:active {
+    text-decoration: none;
+    color: inherit;
+}
+
+a.heading-link:hover {
+    font-weight: 700;
+}
+
+a.category-badge > span.badge:hover {
+    background: #212529 !important;
+    color: #fff !important;
 }
 
 

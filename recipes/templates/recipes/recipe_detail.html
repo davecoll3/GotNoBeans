@@ -50,7 +50,7 @@
                     {% endif %}
                     <p class="mt-3"><strong>Suggested Products:</strong>
                         {% for products in recipe.products.all %}
-                        <a href="{% url 'product_detail' products.id %}"><br>{{ products }}</a>
+                        <a href="{% url 'product_detail' products.id %}"><br><em>{{ products }}</em></a>
                         {% endfor %}
                     </p>
                 </div>

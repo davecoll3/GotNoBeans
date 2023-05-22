@@ -33,16 +33,16 @@
                 <div class="col-12 col-md-10 card-body">
                     {{ event.description }}
                     <br>
-                    <strong>Showcased Products: </strong>
-                    {% for products in event.products.all %}
-                        <a href="{% url 'product_detail' products.id %}">{{ products }}</a>
-                    {% endfor %}
-                    <br>
                     <strong>Time: </strong>{{ event.time }}
                     <br>
                     <strong>Location: </strong>{{ event.location }}
                     <br>
                     <strong>Address: </strong>{{ event.street_address }}, {{ event.postcode }}
+                    <br>
+                    <strong>Showcased Products: </strong>
+                    {% for products in event.products.all %}
+                        <a href="{% url 'product_detail' products.id %}"><br><em>{{ products }}</em></a>
+                    {% endfor %}
                     <br>
                     {% if request.user.is_superuser %}
                     <small>

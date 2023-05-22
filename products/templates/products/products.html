@@ -15,7 +15,7 @@
         <!-- Current Category Page Header -->
         <div class="row">
             <div class="col text-center mt-3">
-                <h2 class="p-2 mt-2">Products</h2>
+                <h2 class="p-2 mt-2"><a class="heading-link border border-light rounded" href="{% url 'products' %}?category=brewers,accessories" title="Show All Products">Products</a></h2>
                 {% for c in current_categories %}
                     <a class="category-badge text-decoration-none" href="{% url 'products' %}?category={{ c.name }}">
                         <span class="p-2 mt-2 badge badge-white text-black border border-dark">{{ c.friendly_name }}</span>

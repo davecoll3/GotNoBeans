@@ -231,10 +231,7 @@
                         <span>Back to Profile</span>
                     </a>
                 {% else %}
-                    <a href="{% url 'products' %}?category=coffee_brewers" class="btn btn-dark my-2">
-                        <span class="icon mr-2">
-                            <i class="fa-solid fa-mug-hot"></i>
-                        </span>
+                    <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-dark my-2">
                         <span>Forget Something?</span>
                     </a>
                 {% endif %}

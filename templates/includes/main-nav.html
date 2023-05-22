@@ -22,7 +22,7 @@
                 href="{% url 'events' %}">Events</a>
         </li>
         <!-- Search Link -->
-        <li class="nav-item dropdown">
+        <li class="nav-item dropdown d-lg-none">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="search-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Search
             </a>
@@ -30,7 +30,7 @@
             <div class="col-12 col-sm-6 my-auto py-1 py-lg-0 dropdown-menu border-0" aria-labelledby="search-link">
                 <form method="GET" action="{% url 'products' %}">
                     <div class="input-group w-100">
-                        <input class="form-control border border-dark" type="text" name="q" placeholder="Search">
+                        <input class="form-control border border-dark" type="text" name="q" placeholder="Search Products">
                         <div class="input-group-append">
                             <button class="form-control btn-dark border border-dark" type="submit">
                                 <span class="icon">

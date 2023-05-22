@@ -29,13 +29,13 @@
     color: #aab7c4;
 }
 
-/* checkout form */
+/* Checkout form */
 .fieldset-label {
     position: relative;
     right: .5rem;
 }
 
-/* page loading overlay */
+/* Page loading overlay */
 #loading-overlay {
 	display: none;
 	position: fixed;

@@ -16,15 +16,6 @@ body {
     font-family: 'Roboto Mono';
 }
 
-/* From: Bulma */
-.icon {
-    align-items: center;
-    display: inline-flex;
-    justify-content: center;
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
 .main-logo-link {
     width: fit-content;
 }
@@ -223,9 +214,22 @@ a.category-badge > span.badge:hover {
     color: #fff !important;
 }
 
+.heading-link:hover {
+    color: #666;
+}
+
+/* From: bulma.io/documentation/elements/icon/ */
+.icon {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
 
 /* ==========
-Bootstrap Toasts
+Toasts
 ========== */
 .message-container {
     position: fixed;

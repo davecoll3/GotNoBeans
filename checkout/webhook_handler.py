@@ -51,6 +51,7 @@ class StripeWH_Handler:
         stripe_charge = stripe.Charge.retrieve(
             intent.latest_charge
         )
+
         billing_details = stripe_charge.billing_details
         shipping_details = intent.shipping
         grand_total = round(stripe_charge.amount / 100, 2)

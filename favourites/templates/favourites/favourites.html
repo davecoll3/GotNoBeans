@@ -12,20 +12,27 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-            {% for product in favourite.products.all %}
             <!-- Products Table -->
             <div class="table-responsive">
                 <table class="table table-sm table-borderless">
                     <!-- Table Header -->
                     <thead>
                         <tr>
+                            <th></th>
                             <th>Product</th>
                             <th>Price</th>
                         </tr>
                     </thead>
                     <!-- Table Body -->
                     <tbody>
+                        {% for product in favourite.products.all %}
                         <tr>
+                            <td class="col-1">
+                                <a href="{% url 'product_detail' product.id %}">
+                                    <img class="img-responsive img-rounded" style="max-height: 100px; max-width: 100px;"
+                                        src="{{ product.image.url }}" alt="{{ product.name }}">
+                                </a>
+                            </td>
                             <td>
                                 <a href="{% url 'product_detail' product.id %}">{{ product.name }}</a>
                             </td>
@@ -38,14 +45,19 @@
                                 </small>
                             </td>
                         </tr>
+                        {% empty %}
+                        <!-- No Products Message -->
+                        <tr>
+                            <td>
+                                <p class="lead mb-4">You have no products in you favourites.</p>
+                                <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-primary py-3"><strong>Shop Now!</strong></a>
+                            </td>
+                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
-            {% empty %}
-            <!-- No Products Message -->
-            <p class="lead mb-4">You have no products in you favourites.</p>
-            <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-primary py-3"><strong>Shop Now!</strong></a>
-            {% endfor %}
+            
         </div>
     </div>
 </div>

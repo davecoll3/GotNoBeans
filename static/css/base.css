@@ -1,3 +1,6 @@
+/* ==========
+general
+========== */
 html {
     height: 100%;
 }
@@ -102,7 +105,26 @@ Products Page
 
 
 /* ==========
-Product Form
+Footer
+========== */
+footer {
+    background-color: rgba(26,13,0,.5);
+    margin-top: auto;
+}
+
+.footer-copyright {
+    padding: 5px !important;
+    color: #fff;
+}
+
+.footer-copyright a:hover {
+    font-weight: 500;
+    color: #d9d9d9;
+}
+
+
+/* ==========
+Forms
 ========== */
 
 .btn-file {
@@ -131,32 +153,27 @@ Product Form
     border-radius: 0;
 }
 
-.accordion {
-    position: relative !important;
-}
 
 /* ==========
-Hero Image
+Allauth Forms
 ========== */
-/* From: https://www.w3schools.com/howto/howto_css_hero_image.asp */
-.hero-image {
-
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("/media/favourites-image.webp");
-    height: 60%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-    margin: 20px 0 20px 0;
+.allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
 }
 
-.hero-text {
-    text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
+.allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+    width: 100%;
+}
+
+.allauth-form-inner-content label:not([for='id_remember']) {
+    display: none;
+}
+
+.allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
 }
 
 
@@ -225,51 +242,6 @@ Bootstrap Toasts
     height: 2px;
 }
 
-/* From: CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
-.arrow-up {
-    width: 0; 
-    height: 0; 
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent; 
-    border-bottom: 10px solid black;
-    position: absolute;
-    top: -10px;
-    right: 36px;
-}
-
-/* Convenience classes: colors copied from Bootstrap */
-.arrow-primary {
-    border-bottom-color: #007bff !important;
-}
-
-.arrow-secondary {
-    border-bottom-color: #6c757d !important;
-}
-
-.arrow-success {
-    border-bottom-color: #28a745 !important;
-}
-
-.arrow-danger {
-    border-bottom-color: #dc3545 !important;
-}
-
-.arrow-warning {
-    border-bottom-color: #ffc107 !important;
-}
-
-.arrow-info {
-    border-bottom-color: #17a2b8 !important;
-}
-
-.arrow-light {
-    border-bottom-color: #f8f9fa !important;
-}
-
-.arrow-dark {
-    border-bottom-color: #343a40 !important;
-}
-
 .basket-notification-wrapper {
     height: 100px;
     overflow-x: hidden;
@@ -278,78 +250,50 @@ Bootstrap Toasts
 
 
 /* ==========
-Footer
+media queries
+min-width 1200px
 ========== */
-footer {
-    background-color: rgba(26,13,0,.5);
-    margin-top: auto;
-}
-
-.footer-copyright {
-    padding: 5px !important;
-    color: #fff;
-}
-
-.footer-copyright a:hover {
-    font-weight: 500;
-    color: #d9d9d9;
+@media (min-width: 1200px) {
+    /* General */
+    .container {
+        max-width: 80%;
+    }
 }
 
 
 /* ==========
-Media Queries
+media queries
+min-width 992px
 ========== */
-
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
-
-/* Allauth form formatting */
-.allauth-form-inner-content p {
-    margin-top: 1.5rem; /* mt-4 */
-    color: #6c757d; /* text-secondary */
-}
-
-.allauth-form-inner-content input {
-    border-color: #000;
-    border-radius: 0;
-    width: 100%;
-}
-
-.allauth-form-inner-content label:not([for='id_remember']) {
-    display: none;
-}
-
-.allauth-form-inner-content input::placeholder {
-    color: #aab7c4;
-}
-
-/* fixed top navbar only on medium and up */
 @media (min-width: 992px) {
+    /* General */
+    .header-container {
+        padding-top: 120px;
+    }
+
+    /* Navbar */
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
         right: 0;
         left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 120px;
+        z-index: 1000;
     }
 }
 
-/* Padding to top when navbar is collapsed on mobile */
-@media (max-width: 991px) {
-    .header-container {
-        padding-top: 80px;
-    }
 
+/* ==========
+media queries
+max-width 991px
+========== */
+@media (max-width: 991px) {
+    /* General */
     body {
         height: calc(100vh - 116px);
+    }
+
+    .header-container {
+        padding-top: 80px;
     }
     
     .display-4.homepage-body-text {
@@ -374,11 +318,11 @@ Media Queries
         font-size: 1rem;
     }
 
+    /* Buttons */
     .btn {
-        margin: 0;
+        margin: 1px;
     }
 
-    /* Checkout Page */
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }

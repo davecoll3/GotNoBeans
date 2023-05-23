@@ -398,47 +398,96 @@ Testing information can be found in the [testing file][TESTING.md].
 ## Creating a Gitpod Repository
 
 A GitHub repository is used to store your project, with Git and GitHub used for version control. The following steps outline how to create a GitHub repository.
-  1. Log in to GitHub.
-  2. In the upper-right corner of any page, use the '+' drop-down menu and select 'New repository'.
-  3. Give your repo a short, memorable name.
-  4. Choose your repository visibility; 'Public' or 'Private'.
-  5. Select Initialize this repository with a README.
-  6. Click Create repository.
+1. Log in to GitHub.
+2. In the upper-right corner of any page, use the '+' drop-down menu and select 'New repository'.
+3. Give your repository a name.
+4. Choose your repository visibility; 'Public' or 'Private'.
+5. Select Initialize this repository with a README.
+6. Click Create repository.
 
 &nbsp;
 
 ## Forking the GitHub Repository
 
-Forking the GitHub Repository makes a copy of the original repository on our GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
-  1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
-  2. Once in the repository, navigate to the "Fork" button at the top right of the page; just above the settings button on the menu.
-  3. You should now have a copy of the original repository in your GitHub account.
+Forking the GitHub Repository makes a copy of the original repository on your GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
+1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
+2. Once in the repository, navigate to the "Fork" button at the top righthand corner of the page.
+3. Click on the fork dropdown arrow and then select "Create a new fork".
+4. You should now have a copy of the original repository in your GitHub account.
 
 &nbsp;
 
 ## Making a Local Clone
-  1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
-  2. Under the repository name, click "Clone or download".
-  3. To clone the repository using HTTPS, under "Clone with HTTPS", copy the link.
-  4. Open Git Bash
-  5. Change the current working directory to the location where you want the cloned directory to be made.
-  6. Type `git clone` and then paste the URL you copied in Step 3.
-  ```
-  $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-  ```
+1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
+2. Click on the geen "Code" button at the top of the page.
+3. From here you can select HTTPS, SSH or Github CLI; click on the clipboard icon to copy the URL.
+4. Open Git Bash
+5. Change the current working directory to the location where you want the cloned directory to be made.
+6. Type `git clone` and then paste the URL you copied in Step 3.
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+```
 
-  7. Press Enter. Your local clone will be created.
+7. Press Enter. Your local clone will be created.
 
-  ```
-  $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
-  > Cloning into `CI-Clone`...
-  > remote: Counting objects: 10, done.
-  > remote: Compressing objects: 100% (8/8), done.
-  > remove: Total 10 (delta 1), reused 10 (delta 1)
-  > Unpacking objects: 100% (10/10), done.
-  ```
+```
+$ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+> Cloning into `CI-Clone`...
+> remote: Counting objects: 10, done.
+> remote: Compressing objects: 100% (8/8), done.
+> remove: Total 10 (delta 1), reused 10 (delta 1)
+> Unpacking objects: 100% (10/10), done.
+```
 
-Click [Here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository#cloning-a-repository-to-github-desktop) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+Click [Here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
+
+## Django
+This project is built around the Dango framework which can be installed as follows:
+1. Type the following command into your IDE:
+```
+pipe install 'django'
+```
+2. Then name your project to create it.
+```
+django-admin startproject your_project_name .
+```
+3. You will then see a folder with your project's name in the file explorer.
+4. Create a .gitignore file by typing:
+```
+touch .gitignore
+```
+5. Inside the new .gitignore file add the following basics:
+```
+*.sqlite3
+*.pyc
+__pycache__
+.env
+```
+6. Check the project by running it with the command below.This should expose port 8000 which, when open, should display Django's success page.
+```
+python3 manage.py runserver
+```
+7. Stop the server and run your initial migrations with the following command:
+```
+python3 manage.py migrate
+```
+8. Then create a superuser to allow you to log into the project admin. Type the command below, which will result in a request for you to provide a username, email address and password.
+```
+python3 manage.py createsuperuser
+```
+9. Finally, you can push your changes to github by running the commands below sequentially:
+```
+git add .
+git commit -m "initial commit"
+git push
+```
+
+### Allauth
+Allauth is a django package that handles the registration and login process. It can be installed by following [this guide](https://django-allauth.readthedocs.io/en/latest/installation.html).  
+
+&nbsp;
+
+&nbsp;
 
 ## Heroku Deployment: Project Setup
 

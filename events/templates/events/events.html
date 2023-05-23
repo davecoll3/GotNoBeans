@@ -74,4 +74,15 @@
     </div>
     {% endfor %}     
 </div>
+<!-- Back to Top Button -->
+<div class="to-top-button">
+    <a class="to-top-link d-flex h-100" title="Back to top">
+        <i class="fas fa-arrow-up mx-auto my-auto"></i>
+    </a>	
+</div>
+{% endblock %}
+
+<!-- Post Load JavaScript -->
+{% block postloadjs %}
+{% include 'events/includes/to_top_button_script.html' %}
 {% endblock %}

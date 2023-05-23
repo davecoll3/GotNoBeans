@@ -1,0 +1,16 @@
+<script type="text/javascript">
+    // Scroll to top on click
+    $('.to-top-link').click(function(e) {
+			window.scrollTo(0,0)
+		})
+
+    // Hide/Show to top button on scroll
+    $(window).scroll(function() {
+    if ($(this).scrollTop() > 75) {
+        $('.to-top-button').fadeIn();
+    } else {
+        $('.to-top-button').fadeOut();
+    }
+}).trigger('scroll');
+
+</script>

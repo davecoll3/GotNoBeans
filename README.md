@@ -15,8 +15,9 @@ The GotNoBeans website is a full-stack e-commerce site built using Django, Pytho
 # Table of Contents
 * [UX and UI](#ux-and-ui)
     * [Research](#research)
+    * [Owner Goals](#owner-goals)
     * [User Stories](#user-stories)
-    * [User Requirements and Expectations](#user-requirements-and-expectations)
+    * [User Requirements](#user-requirements)
     * [Design](#design)
     * [Wireframes](#wireframes)
 * [Data Model](#data-model)
@@ -56,10 +57,19 @@ The GotNoBeans website is a full-stack e-commerce site built using Django, Pytho
 
 Research for the creation of this site was carried out by searching for various forms of...
 
+* [Clumsy Goat Coffee](https://clumsygoat.co.uk/pages/home-coffee-equipment)
 * [#](#)
 * [#](#)
 * [#](#)
-* [#](#)
+
+&nbsp;
+
+## Owner Goals
+The store owner has several goals for this site, which are outlined below:
+* Provide an e-commerce site that will appeal to the home brew coffee enthusiast.
+* Showcase a product line that consisting of a range of coffee brewers and accessories.
+* List store organised events that help generate interest and a community around the business.
+* Educate the user in brewing methods by listing product specific recipes.
 
 &nbsp;
 
@@ -122,34 +132,22 @@ Research for the creation of this site was carried out by searching for various 
 
 &nbsp;
 
-## User Requirements and Expectations
-
-### Requirements
-
-  * Familiar and intuitive design that negates any learning curve.
-  * A reactive site that is user friendly and well presented on all types of device and screen sizes.
-  * Adequate levels of color contrast across the site that presents content in an accessible and easy to read manner.
-  * Appealing visual presentation that enhances the user experience.
-  * Full CRUD functionality
-    * Create: registered users can create new dictionary terms.
-    * Read: all users can read dictionary terms and definitions.
-    * Update: registered users can update their own entries.
-    * Delete: registered users can delete their own entries.
-
-### Expectations
-
-  * Feedback when interacting with the site that is also instructive.
-  * Color choices for links and buttons should be familar and logical.
+## User Requirements
+* Appealing visual presentation that enhances the user experience.
+* Familiar and intuitive design that negates any learning curve.
+* Feedback when interacting with the site that is also instructive.
+* Color choices for links and buttons should be familar and logical.
+* A reactive site that is user friendly and well presented on all types of device and screen sizes.
+* Adequate levels of color contrast across the site that presents content in an accessible and easy to read manner.
 
 &nbsp;
 
 ## Design
 
-### Imagery
-* A...
+### Image
+* A large colorful image showing a selection of coffee brewers is used as a background for the site homepage. The image itself is visually appealing while also making a direct link to the products sold on the site. This immediately demonstrates to the user the purpose of the site and is ovelayed with a 'Shop Now' which encourages them to view the products on offer. The tagline of "You do the brew, we'll do the beans" is used to convey that the site specailses in brewing equipment rather than coffee itself. 
 
 ### Color Scheme
-
 * Black (#000)...
 
 ### Fonts

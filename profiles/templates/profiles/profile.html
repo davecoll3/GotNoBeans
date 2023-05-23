@@ -40,7 +40,6 @@
                 <div class="card-body">
                     <div class="order-history table-responsive">
                         <table class="table table-sm table-borderless">
-                            {% for order in orders %}
                             <!-- Order Headings -->
                             <thead>
                                 <tr>
@@ -49,6 +48,7 @@
                                     <th>Order Total</th>
                                 </tr>
                             </thead>
+                            {% for order in orders %}
                             <!-- Order Details -->
                             <tbody>
                                 <tr>

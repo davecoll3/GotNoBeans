@@ -3,118 +3,118 @@
 {% load basket_tools %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container mb-2">
-        <!-- My Basket Heading -->
-        <div class="row">
-            <div class="col">
-                <hr>
-                <h2 class="logo-font mb-4">My Basket</h2>
-                <hr>
-            </div>
-        </div>
-
-        <!-- Basket Items -->
-        <div class="row">
-            <div class="col">
-                {% if basket_items %}
-                <div class="d-block d-md-none">
-                    <div class="row">
-                        <div class="col">
-                            {% include "basket/includes/basket_total.html" %}
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            {% include "basket/includes/checkout_buttons.html" %}
-                            <p class="text-muted mt-2 mb-2">Your basket summary</p>
-                        </div>
-                    </div>
-                    {% for item in basket_items %}
-                        <div class="row">
-                            <!-- Basket Item Info -->
-                            <div class="col-12 col-6-sm mb-2">
-                                {% include "basket/includes/product_info.html" %}
-                            </div>
-                            <!-- Basket Price Totals -->
-                            <div class="col-12 col-6-sm order-sm-last">
-                                <p class="my-0">Unit Price: £{{ item.product.price }}</p>
-                                <p><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                            </div>
-                            <!-- Adjust Basket Item Qty Input -->
-                            <div class="col-12 col-6-sm">
-                                {% include "basket/includes/quantity_form.html" %}
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <hr>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-                    <div class="table-responsive d-none d-md-block">
-                        <table class="table table-sm table-borderless">
-                            <!-- Basket Item Headings -->
-                            <thead>
-                                <tr>
-                                    <th scope="col">Products</th>
-                                    <th scope="col">Price</th>
-                                    <th scope="col" class="text-center">Qty</th>
-                                    <th scope="col" class="text-right">Subtotal</th>
-                                </tr>
-                            </thead>
-
-                            {% for item in basket_items %}
-                                <tr>
-                                    <!-- Basket Item Info -->
-                                    <td class="py-3">
-                                        {% include "basket/includes/product_info.html" %}
-                                    </td>
-                                    <td class="py-3">
-                                        <p class="my-0">£{{ item.product.price }}</p>
-                                    </td>
-                                    <!-- Adjust Basket Item Qty Input -->
-                                    <td class="py-3 text-right">
-                                        {% include "basket/includes/quantity_form.html" %}
-                                    </td>
-                                    <td class="py-3 text-right">
-                                        <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
-                                    </td>
-                                </tr>
-                            {% endfor %}
-                            <!-- Basket Price Totals -->
-                            <tr>
-                                <td colspan="5" class="pt-5 text-right">
-                                    {% include "basket/includes/basket_total.html" %}
-                                </td>
-                            </tr>
-                            <!-- Keep Shopping & Checkout Buttons -->
-                            <tr>
-                                <td colspan="5" class="text-right">
-                                    {% include "basket/includes/checkout_buttons.html" %}
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-                {% else %}
-                    <!-- Empty Basket Notice -->
-                    <p class="lead mb-5">Your basket is empty.</p>
-                    <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-secondary mt-2">
-                        <span class="mt-2">Keep Shopping</span>
-                    </a>
-                {% endif %}
-            </div>
+<div class="overlay"></div>
+<div class="container mb-2">
+    <!-- My Basket Heading -->
+    <div class="row">
+        <div class="col">
+            <hr>
+            <h2 class="logo-font mb-4">My Basket</h2>
+            <hr>
         </div>
     </div>
+
+    <!-- Basket Items -->
+    <div class="row">
+        <div class="col">
+            {% if basket_items %}
+            <div class="d-block d-md-none">
+                <div class="row">
+                    <div class="col">
+                        {% include "basket/includes/basket_total.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        {% include "basket/includes/checkout_buttons.html" %}
+                        <p class="text-muted mt-2 mb-2">Your basket summary</p>
+                    </div>
+                </div>
+                {% for item in basket_items %}
+                <div class="row">
+                    <!-- Basket Item Info -->
+                    <div class="col-12 col-6-sm mb-2">
+                        {% include "basket/includes/product_info.html" %}
+                    </div>
+                    <!-- Basket Price Totals -->
+                    <div class="col-12 col-6-sm order-sm-last">
+                        <p class="my-0">Unit Price: £{{ item.product.price }}</p>
+                        <p><strong>Subtotal: </strong>£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                    </div>
+                    <!-- Adjust Basket Item Qty Input -->
+                    <div class="col-12 col-6-sm">
+                        {% include "basket/includes/quantity_form.html" %}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <hr>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="table-responsive d-none d-md-block">
+                <table class="table table-sm table-borderless">
+                    <!-- Basket Item Headings -->
+                    <thead>
+                        <tr>
+                            <th scope="col">Products</th>
+                            <th scope="col">Price</th>
+                            <th scope="col" class="text-center">Qty</th>
+                            <th scope="col" class="text-right">Subtotal</th>
+                        </tr>
+                    </thead>
+
+                    {% for item in basket_items %}
+                    <tr>
+                        <!-- Basket Item Info -->
+                        <td class="py-3">
+                            {% include "basket/includes/product_info.html" %}
+                        </td>
+                        <td class="py-3">
+                            <p class="my-0">£{{ item.product.price }}</p>
+                        </td>
+                        <!-- Adjust Basket Item Qty Input -->
+                        <td class="py-3 text-right">
+                            {% include "basket/includes/quantity_form.html" %}
+                        </td>
+                        <td class="py-3 text-right">
+                            <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                    <!-- Basket Price Totals -->
+                    <tr>
+                        <td colspan="5" class="pt-5 text-right">
+                            {% include "basket/includes/basket_total.html" %}
+                        </td>
+                    </tr>
+                    <!-- Keep Shopping & Checkout Buttons -->
+                    <tr>
+                        <td colspan="5" class="text-right">
+                            {% include "basket/includes/checkout_buttons.html" %}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            {% else %}
+            <!-- Empty Basket Notice -->
+            <p class="lead mb-5">Your basket is empty.</p>
+            <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-secondary mt-2">
+                <span class="mt-2">Keep Shopping</span>
+            </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
 {% endblock %}
 
 <!-- Post Load JavaScript -->

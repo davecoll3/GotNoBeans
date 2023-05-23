@@ -2,30 +2,30 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <!-- Home Page Header & Background Image Container -->
-    <div class="container h-100">
-        <div class="row h-100">
-            <div class="col-12 my-auto text-center">
-                <!-- Home Page Header -->
-                <h3 class="display-4 homepage-body-text">
-                    You do the beans
-                    <br>
-                    We'll do the brew 
-                    <i class="fa-solid fa-mug-hot"></i>
-                </h3>
-                <!-- Shop Now Button -->
-                <div class="my-5">
-                    <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-primary btn-lg py-3">Shop Now!</a>
-                </div>
+<!-- Home Page Header & Background Image Container -->
+<div class="container h-100">
+    <div class="row h-100">
+        <div class="col-12 my-auto text-center">
+            <!-- Home Page Header -->
+            <h3 class="display-4 homepage-body-text">
+                You do the beans
+                <br>
+                We'll do the brew 
+                <i class="fa-solid fa-mug-hot"></i>
+            </h3>
+            <!-- Shop Now Button -->
+            <div class="my-5">
+                <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-primary btn-lg py-3">Shop Now!</a>
             </div>
         </div>
     </div>
+</div>
 {% endblock %}

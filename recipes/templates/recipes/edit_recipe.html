@@ -2,46 +2,46 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
-        <!-- Checkout Heading -->
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <hr>
-                    <h2 class="logo-font mb-4">Edit Recipe</h2>
-                <hr>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-12 col-md-6">
-                <!-- Populated Edit Recipe Form -->
-                <form method="POST" action="{% url 'edit_recipe' recipe.id %}" class="form mb-2" enctype="multipart/form-data">
-                    {% csrf_token %}
-                    {% for field in form %}
-                        {% if field.name != 'image' %}
-                            {{ field | as_crispy_field }}
-                        {% else %}
-                            {{ field }}
-                        {% endif %}
-                    {% endfor %}
-                    <!-- Cancel and Update Buttons -->
-                    <div class="text-right">
-                        <a class="btn btn-secondary" href="{% url 'recipes' %}">Cancel</a>
-                        <button class="btn btn-dark" type="submit">Update</button>
-                    </div>
-                </form>
-            </div>            
+<div class="overlay"></div>
+<div class="container">
+    <!-- Checkout Heading -->
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <hr>
+                <h2 class="logo-font mb-4">Edit Recipe</h2>
+            <hr>
         </div>
     </div>
+
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <!-- Populated Edit Recipe Form -->
+            <form method="POST" action="{% url 'edit_recipe' recipe.id %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+                <!-- Cancel and Update Buttons -->
+                <div class="text-right">
+                    <a class="btn btn-secondary" href="{% url 'recipes' %}">Cancel</a>
+                    <button class="btn btn-dark" type="submit">Update</button>
+                </div>
+            </form>
+        </div>            
+    </div>
+</div>
 {% endblock %}
 
 <!-- Post Load JavaScript -->

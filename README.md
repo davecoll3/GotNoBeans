@@ -39,7 +39,7 @@ The GotNoBeans website is a full-stack e-commerce site built using Django, Pytho
     * [CSS](#css)
     * [JavaScript](#javascript)
     * [Python](#python)
-    * [Color Contrast](#color-contrast)
+    * [Colour Contrast](#colour-contrast)
 * [Deployment](#deployment)
     * [Creating a GitHub Repository](#creating-a-github-repository)
     * [Forking the GitHub Repository](#forking-the-github-repository)
@@ -136,25 +136,31 @@ The store owner has several goals for this site, which are outlined below:
 * Appealing visual presentation that enhances the user experience.
 * Familiar and intuitive design that negates any learning curve.
 * Feedback when interacting with the site that is also instructive.
-* Color choices for links and buttons should be familar and logical.
+* Colour choices for links and buttons should be familar and logical.
 * A reactive site that is user friendly and well presented on all types of device and screen sizes.
-* Adequate levels of color contrast across the site that presents content in an accessible and easy to read manner.
+* Adequate levels of colour contrast across the site that presents content in an accessible and easy to read manner.
 
 &nbsp;
 
 ## Design
 
 ### Image
-* A large colorful image showing a selection of coffee brewers is used as a background for the site homepage. The image itself is visually appealing while also making a direct link to the products sold on the site. This immediately demonstrates to the user the purpose of the site and is ovelayed with a 'Shop Now' which encourages them to view the products on offer. The tagline of "You do the brew, we'll do the beans" is used to convey that the site specailses in brewing equipment rather than coffee itself. 
+* A large colourful image showing a selection of coffee brewers is used as a background for the site homepage. The image itself is visually appealing while also making a direct link to the products sold on the site. This immediately demonstrates to the user the purpose of the site and is ovelayed with a 'Shop Now' which encourages them to view the products on offer. The tagline of "You do the brew, we'll do the beans" is used to convey that the site specailses in brewing equipment rather than coffee itself. 
 
-### Color Scheme
-* Black (#000)...
+### Colour Scheme
+* Black text on a white background forms the main basis of the site. This clean and classic pairing offers maximium contrast to the user while also being visually appealing and working well with other colours. The navbar is an extremelt dark shade of brown (#1a0d00) which is used to provide a suttle link to that of coffee beans. Brown is also used on the footer with an opacity of .5 to add lightness and allow the background image to be seen through it on the homepage.
+
+* Main Colour Pallet:
+    * Background: #fff
+    * Text: #000
+    * Navbar: #1a0d00
+    * Footer: rgba(26,13,0,.5)
+    * Buttons and Links: #000, #adb5bd, #0d6efd, #dc3545 (Bootstrap theme colours)
 
 ### Fonts
+* The Google font of Roboto Mono was chosen for this site. A monospaced member of the Roboto family type, this font is optimised for readability on screens across a wide variety of devices and reading environments. It works very well with the site theme and helps to provide a clean asthetic.
 
-* The Google font of...
 ### Structure
-
 * The information architecture type used for this site is the hierarchical tree structure. This common structure allows for simple navigation throughout the site and allows for easy expansion of the site in the future. The use of the burger navigation icon, along with a floating return to top button, help to overcome the common issues with this structure on mobile devices.
 
 <details>
@@ -182,13 +188,21 @@ Wireframes for mobile, tablet, and desktop can be found below:
 [Back to top &uarr;](#GotNoBeans)
 
 # Data Model
+The site is underpinned by a relational database model and the datbabase schema can be seen below. This represents the models, fields, field types and relationships between models. 
 
-  ... was chosen as the database for this project.
-  <summary>GotNoBeans Data Model</summary>
+* The database currently consists of eight models, these include:
+    * Category
+    * Event
+    * Favourites
+    * Order
+    * OrderLineItems
+    * Product
+    * Recipe
+    * UserProfile
 
-  ![Data Model](#)
+ &nbsp;
 
-  </details>
+![Database Schema](/documentation/readme_images/database_schema.png)
 
 &nbsp;
 
@@ -200,9 +214,11 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 * Navigation Bar
 
-  * Featured on all pages, the full responsive navigation bar includes...
+  * Featured on all pages, the full responsive navigation bar includes the GotNoBeans name in the upper lefthand corner, linked to the homepage. A search field in the top centre and three main links just below that for 'Products', 'Recipes', and 'Events'. A basket link and basket total are found in the upper righthand corner. Beside these are dropdown menus for 'Account' and 'Admin' with the latter only appearing for superusers. The 'Account' dropdown expands to show 'Register' and 'Login' links for users who haven't yet registered or logged in. Once logged in, registered users will instead see links to 'Profile', 'Favourites' and 'Logout' under the 'Account' dropdown.
 
-    ![Navbar: Desktop](#)
+  * On mobile devices the main links, 'Products', 'Recipes', and 'Events', collapse into a burger icon and are joined by a search link/field. The 'Account' and 'Admin' dropdowns remain in the same location beside the basket and basket total.
+
+    ![Navbar: Desktop](/documentation/readme_images/navbar.png)
 
     <details>
     <summary>Navbar: Mobile</summary>
@@ -278,9 +294,9 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 * Footer
 
-  * The footer consists of...
+  * The footer consists of GotNoBeans copyright text and a mailto link which users can use to contact the site owner. It has an opacity of .5 to add lightness and allow the background image to be seen through it on the homepage.
 
-    ![Footer](#)
+    ![Footer](/documentation/readme_images/footer.png)
 
 
 ## Features to be Implemented in Future
@@ -342,7 +358,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
   * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
     * Lighthouse was used to audit performance, accessibility, best practices and SEO across the website.
   * [a11y](https://color.a11y.com/)
-    * The a11y Color Contrast Accessibility Validator was used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
+    * The a11y Colour Contrast Accessibility Validator was used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
   * [LambdaTest](https://www.lambdatest.com/)
     * LambdaTest was used to perform cross browser testing.
 
@@ -416,13 +432,13 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 
 &nbsp;
 
-## Color Contrast
-The color contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
+## Colour Contrast
+The colour contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
 
 <details>
-<summary>Color Contrast Validation</summary>
+<summary>colour Contrast Validation</summary>
 
-![Color Contrast Validation](#)
+![colour Contrast Validation](#)
 </details>
 
 &nbsp;

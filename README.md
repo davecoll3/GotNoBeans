@@ -487,11 +487,134 @@ Allauth is a django package that handles the registration and login process. It 
 
 &nbsp;
 
+## ElephantSQL
+The database used while developing your project within the IED is only available within the IED. You need to create a new database that can be accessed by your Heroku app. This can be achieved using [ElephantSQL](https://www.elephantsql.com/) and the steps are outlined below.
+1. On the ElephantSQL site, log into your account to access your dashboard. If you don't have an account, you can create one [here](https://customer.elephantsql.com/signup).
+2. Click on the green "+ Create New Instance" button in the top right-hand corner.
+3. Set up your plan by giving it a name (usually the name of your project), select your plan; the tags are optional.
+4. Select "Set Region" and choose a data centre near you.
+5. Click "Review" and, if your details are correct, click "Create Instance".
+6. Return to your dashboard and click on the database instance name for this project.
+7. In the URL section, click on the copy icon to copy the database URL to your clipboard.
+8. This URL will be used in your Heroku Config Vars to connect it to your database.
+
 &nbsp;
 
-## Heroku Deployment: Project Setup
+## Heroku Deployment
 
-If you don't have a Heroku account, or if you have yet to install the Heroku CLI, see [How to Install the Heroku CLI](https://coding-boot-camp.github.io/full-stack/heroku/how-to-install-the-heroku-cli) before you proceed.
+1. On the [Heroku website](https://heroku.com/), log into your account. If you don't have a Heroku account, you can sign-up for one [here](https://signup.heroku.com/).
+2. Click on the "New" button in the top right-hand corner and then "Create a New App".
+3. Give your app a unique name and select your local region. Then click on the "Create App" button.
+4. Open the new app's settings tab and click "Reveal Config Vars".
+5. Add "DATABASE_URL" as a Config Var and paste your ElephantSQL URL as discussed in the "Creating a Database" guide above; do not add quotation marks to your URL.
+
+Now that the Heroku app has been created and connected to the ElephantSQL database, you can return to your IDE to run migrations and add a superuser.
+6. Back in your IDE, install dj_database_url and psycopg2 as both are needed to connect to your external database. Type the following command in your terminal.
+```
+pip3 install dj_database_url==0.5.0 psycopg2
+```
+7. You will then need to update your requirments.txt file.
+```
+pip freeze > requirements.txt
+```
+8. In your settings.py file, underneath the import for os,import dj_database_url by typing in the following (ignore "import os" below, it's just for reference):
+```
+import os
+import dj_database_url
+```
+9. Scroll to the "DATABASES" section and update it to the following code, so that the original connection to sqlite3 is commented out and you can connect to your new ElephantSQL database instead. Paste your ElephantSQL database URL in place of 'your-database-url-here' below.
+```
+# DATABASES = {
+ #     'default': {
+ #         'ENGINE': 'django.db.backends.sqlite3',
+ #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+ #     }
+ # }
+     
+ DATABASES = {
+     'default': dj_database_url.parse('your-database-url-here')
+ }
+```
+10. Do not commit the settings.py file with your database string in the code, this is temporary so that we can connect to your new database and make migrations.
+11. Back in the terminal, run the showmigrations command to confirm you are connected to your external database.
+```
+python3 manage.py showmigrations
+```
+12. Migrate your models to your new database.
+```
+python3 manage.py migrate
+```
+13. Create a superuser for your database by typing:
+```
+python3 manage.py createsuperuser
+```
+14. Follow the steps to create a new superuser username and password; the email address is optional and can be left blank.
+Return to the ElephantSQL website for the next few steps.
+15. On your database page, select "Browser" from the left side navigation.
+16. Click on the "Table Queries" button and then select "auth_user (public)".
+17. When you click “Execute”, you should see your new superuser details. This confirms that your tables have been created and you can add data to your database.
+18. Finally, to prevent exposing your database when you push to GitHub, delete your ElephantSQL database URL from settings.py. Instead, you can add an if statement in settings.py to run the ElephantSQL database when running the app on heroku or sqlite if not. Return to the "DATABASE" section of your settings.py file and refactor your code as follows:
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+```
+19. Next you will have to install a package called gunicorn, which will act as your web server. In the terminal, run the following command and then freeze your requirements.txt file to update it.
+```
+pip3 install gunicorn 
+pip3 freeze > requirements.txt
+```
+20. Now you can create a Procfile to tell Heroku to create a web dyno and serve your Django app. In your root directory create a file called 'Procfile' and inside this file insert the following code:
+```
+web: gunicorn your_project_name_.wsgi:application
+```
+21. Return to Heroku and navigate to your app's settings. In the Config Vars, add a new Config Var named "DISABLE_COLLECTSTATIC" and set it's value to "1". This prevents Heroku from collecting static files when you deploy.
+22. Back in your IDE, return to the settings.py file, and find "ALLOWED_HOSTS". Inside the brackets insert your app's URL followed by 'localhost'. As shown below:
+```
+ALLOWED_HOSTS = ['your-project-name.herokuapp.com', 'localhost']
+```
+23. Log into Heroku in the terminal and enter your details.
+```
+heroku login -i
+```
+24. Get your app name from heroku.
+```
+heroku apps
+```
+25. Set your heroku remote.
+```
+heroku git:remote -a <app_name>
+```
+26. Now add, commit and push your changes to GitHub.
+27. Follow this up by pushing to Heroku with the command below.
+```
+git push heroku main
+```
+28. Your app will now be deployed on Heroku but without any static files.
+29. Back in Heroku, you can set your app to be deployed automatically by navigaint to the app "Deploy" menu. Scrolling down to the 'Deployment Method' section and connecting it to github. You will need to search for your repository, once located click 'connect'. Then scroll further down and click 'Enable Automatic Deploys'. Once connected, your code will automatically deploy to Heroku whenever you push to github.
+
+## AWS
+Amazon Web Services are used to store your static and media files.
+1. Go to the AWS website and [create an account](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email).
+2. Once signed up and logged in, locate "My Account" in the navbar and then select "AWS Management Console".
+3. From here, search for 'S3' search bar and select it from the search results.
+4. On the S3 Buckets page, click on the "Create Bucket" button.
+5. Name your new bucket (usually the same as your app name) and select your local region.
+6. Under "Object Ownership" select "ACLs enabled".
+
+
+
+
+
+
 
   1. Make sure that your project is initialized as a Git repository. You can check this by running the following command at the root of your project.
   ```

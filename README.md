@@ -1,14 +1,12 @@
-# GotNoBeans
+![Responsive Mockup](/documentation/readme_images/mockup.webp)
+
+# Got No Beans
 
 GotNoBeans is an online retailer specialising in coffee brewing equipment. Specifically targeted at the home enthusiast. they offer a wide variety of home brewers and accessories. Beyond this, they offer brewing recipes that are specific to their products to empower users to feel confident when purchasing a product they are unfamilar with. In order to promte the business and build a community around it, GotNoBeans host events around the UK during which they showcase and educate around their products.
 
 The GotNoBeans website is a full-stack e-commerce site built using Django, Python, jQuery, CSS, and HTML.
 
 [View the live site here](https://got-no-beans.herokuapp.com/)
-
-&nbsp;
-
-![Responsive Mockup](/documentation/readme_images/mockup.webp)
 
 &nbsp;
 
@@ -26,27 +24,17 @@ The GotNoBeans website is a full-stack e-commerce site built using Django, Pytho
     * [Features to be Implemented in the Future](#features-to-be-implemented-in-future)
 * [Technologies Used](#technologies-used)
     * [Languages](#languages)
-    * [Frameworks](#frameworks)
-    * [Template Engine](#template-engine)
-    * [Database](#database)
-    * [Application Platform](#application-platform)
-    * [Version Control](#version-control)
-    * [Libraries](#libraries)
+    * [Frameworks, Libraries, Programs and Extensions](#frameworks-libraries-programs-and-extensions)
     * [Testing and Validation Tools](#testing-and-validation-tools)
 * [Testing](#testing)
-* [Validation](#validation)
-    * [HTML](#html)
-    * [CSS](#css)
-    * [JavaScript](#javascript)
-    * [Python](#python)
-    * [Colour Contrast](#colour-contrast)
 * [Deployment](#deployment)
     * [Creating a GitHub Repository](#creating-a-github-repository)
     * [Forking the GitHub Repository](#forking-the-github-repository)
     * [Making a Local Clone](#making-a-local-clone)
-    * [Heroku Deployment: Project Setup](#heroku-deployment-project-setup)
-    * [Heroku Deployment: Create a Heroku App](#heroku-deployment-create-a-heroku-app)
-    * [Heroku Deployment: Deploy to Heroku](#heroku-deployment-deploy-to-heroku)
+    * [Django](#django)
+    * [Heroku](#heroku)
+    * [AWS](#aws)
+    * [Stripe](#stripe)
 * [Credits](#credits)
 
 &nbsp;
@@ -185,7 +173,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
 &nbsp;
 
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 # Data Model
 The site is underpinned by a relational database model and the datbabase schema can be seen below. This represents the models, fields, field types and relationships between models. 
@@ -206,7 +194,7 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 &nbsp;
 
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 # Features 
 
@@ -244,155 +232,154 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 * Page Headers
 
-  * Page headers can be found sitewide and assist the user to keep track of which page they are currently on. Page headers are generally uniform across the site, with two main styles, but it differs slightly on the 'Products' page. The products header itself is linked to the products page and shows all products (brewers and accessories), this is particularly helpful on moble devices. Two category badges can be found under the products header which filter products by category.
+    * Page headers can be found sitewide and assist the user to keep track of which page they are currently on. Page headers are generally uniform across the site, with two main styles, but it differs slightly on the 'Products' page. The products header itself is linked to the products page and shows all products (brewers and accessories), this is particularly helpful on moble devices. Two category badges can be found under the products header which filter products by category.
 
-    ![Page Header](/documentation/readme_images/header.png)
+        ![Page Header](/documentation/readme_images/header.png)
 
 * Forms
 
-  * All forms are uniform in appearance with a header above the form fields. Each field is labeled and mandatory fields are marked with an asterisk to assist the user. Date and time pickers are used where required as per best practice. Form validation is present and Bootstrap toasts provide additional feedback to the user. When editing a form with an image field, a minified preview is shown to the user if a image is present.
+    * All forms are uniform in appearance with a header above the form fields. Each field is labeled and mandatory fields are marked with an asterisk to assist the user. Date and time pickers are used where required as per best practice. Form validation is present and Bootstrap toasts provide additional feedback to the user. When editing a form with an image field, a minified preview is shown to the user if a image is present.
 
-    ![Form](/documentation/readme_images/form.png)
+        ![Form](/documentation/readme_images/form.png)
 
 * Delete Item Modal
 
-  * Should the admin attempt to delete a product, recipe or event, a modal will appear to confim that they do indeed want to delete the selected item. This helps to avoid accidental deletion of items as it is a two step process.
+    * Should the admin attempt to delete a product, recipe or event, a modal will appear to confim that they do indeed want to delete the selected item. This helps to avoid accidental deletion of items as it is a two step process.
 
-    ![Delete Item Modal](/documentation/readme_images/modal.png)
+        ![Delete Item Modal](/documentation/readme_images/modal.png)
 
 * All Products and Recipes Pages
 
-  * The products and recipes pages follow the same format displaying images for each item alond with a name, both linked to that item's description page; the products page additionally shows the item price and has a sort selector for sorting the products by name or price. Edit and delete options are also displayed to superusers.
+    * The products and recipes pages follow the same format displaying images for each item alond with a name, both linked to that item's description page; the products page additionally shows the item price and has a sort selector for sorting the products by name or price. Edit and delete options are also displayed to superusers. A back to top button can be found in the bottom right corner of both pages, this is particularly useful to users on a mobile device.
 
-    ![Products](/documentation/readme_images/products.png)
+        ![Products](/documentation/readme_images/products.png)
 
 * Products Details Page
 
-  * The product detail page displays an image of the product which opens in a new tab when clicked. It is accompanied by information on the product such as price and description. There is also a quantity adjuster along with the buttons 'Add to Favourite', "Keep Shopping' and 'Add to Basket'. Edit and delete options are also displayed to superusers.
+    * The product detail page displays an image of the product which opens in a new tab when clicked. It is accompanied by information on the product such as price and description. There is also a quantity adjuster along with the buttons 'Add to Favourite', "Keep Shopping' and 'Add to Basket'. Edit and delete options are also displayed to superusers.
 
-    ![Product Details](/documentation/readme_images/product_details.png)
+        ![Product Details](/documentation/readme_images/product_details.png)
 
 * Recipe Details Page
 
-  * The recipe detail page displays an image associated with the recipe which opens in a new tab when clicked. It is accompanied by information on the recipe such as recommended grind size, water volume and brewing method. There are also suggested products listed, that relate to the recipe, which are linked to their product detail page. Edit and delete options are also displayed to superusers.
+    * The recipe detail page displays an image associated with the recipe which opens in a new tab when clicked. It is accompanied by information on the recipe such as recommended grind size, water volume and brewing method. There are also suggested products listed, that relate to the recipe, which are linked to their product detail page. Edit and delete options are also displayed to superusers.
 
-    ![Recipe Details](/documentation/readme_images/recipe_detail.png)
+        ![Recipe Details](/documentation/readme_images/recipe_detail.png)
 
 * Events Page
 
-  * The events page consiste of an accordion that displays baisc information for each event with further details available when expanded. In the expanded view the user can see full details (descrprtion, date, time, location) for each event along with a list of linked products that will be showcased at each event. Superusers will additionally have access to edit and delete options.
+    * The events page consiste of an accordion that displays baisc information for each event with further details available when expanded. In the expanded view the user can see full details (descrprtion, date, time, location) for each event along with a list of linked products that will be showcased at each event. Superusers will additionally have access to edit and delete options.
 
-    ![Events](/documentation/readme_images/events.png)
+        ![Events](/documentation/readme_images/events.png)
 
 * Profile Page
 
-  * The profile page is only available to registered users and displays the user's order history and default delivery information. Housed within an accordion, the top card contains a list of the user's previous orders while the bottom card contains a form where the user can add or update their default delivery information. Each order within the order card is linked to an order summary page where the user can review full details of each order.
+    * The profile page is only available to registered users and displays the user's order history and default delivery information. Housed within an accordion, the top card contains a list of the user's previous orders while the bottom card contains a form where the user can add or update their default delivery information. Each order within the order card is linked to an order summary page where the user can review full details of each order.
 
-    ![Profile](/documentation/readme_images/profile.png)
+        ![Profile](/documentation/readme_images/profile.png)
 
 * Favourites Page
 
-  * The favourites page allows the user to compile a selection of favoured items that are easily accessible for future refrence. A product name and price is displaed for each item alongside a minified product image. The product name and image both link to the description page for that particular item should the user wish to see further details or purchase the item. A remove button is also displayed beside each item should the user wish to remove that item from their favourites.
+    * The favourites page allows the user to compile a selection of favoured items that are easily accessible for future refrence. A product name and price is displaed for each item alongside a minified product image. The product name and image both link to the description page for that particular item should the user wish to see further details or purchase the item. A remove button is also displayed beside each item should the user wish to remove that item from their favourites.
 
-    ![Favourites](/documentation/readme_images/favourites.png)
+        ![Favourites](/documentation/readme_images/favourites.png)
 
 * Basket
 
-  * The basket page summarises the products added by the user, displaying a product name, sku, unit price, subtotal, delivery cost and grand total. It also contains a quantity selector which can be used to adjust the quantity of each item, it is also possible to remove individual products completely. 'Keep Shopping' and 'Checkout' buttons are at the bottom of the page and these link to the products page and checkout respectively.
+    * The basket page summarises the products added by the user, displaying a product name, sku, unit price, subtotal, delivery cost and grand total. It also contains a quantity selector which can be used to adjust the quantity of each item, it is also possible to remove individual products completely. 'Keep Shopping' and 'Checkout' buttons are at the bottom of the page and these link to the products page and checkout respectively.
 
-    ![Basket](/documentation/readme_images/basket.png)
+        ![Basket](/documentation/readme_images/basket.png)
 
 * Checkout Page
 
-  * The checkout page consits of a form for the user to input their persoal details and delivery information; this is auto-populated if a registered user has saved their default information. Underneath the form is a payment field supplied by Stripe for card details. At the bottom of the page there is an 'Adjust Basket' button, linked to the basket, and a 'Complete Order' button, used to submit the order.
+    * The checkout page consits of a form for the user to input their persoal details and delivery information; this is auto-populated if a registered user has saved their default information. Underneath the form is a payment field supplied by Stripe for card details. At the bottom of the page there is an 'Adjust Basket' button, linked to the basket, and a 'Complete Order' button, used to submit the order.
 
-    ![Checkout](/documentation/readme_images/checkout.png)
+        ![Checkout](/documentation/readme_images/checkout.png)
 
 * Checkout Success Page
 
-  * The checkout success page consists of a complete summary of the order, listing the order number, product name and quantity, delivery, and billing information. It also confirms to the user that an email was sent to the email address provided. A 'Forgot Something?' button is located at the bottom of the page to encourage them to seach for additional proucts and links to the products page.
+    * The checkout success page consists of a complete summary of the order, listing the order number, product name and quantity, delivery, and billing information. It also confirms to the user that an email was sent to the email address provided. A 'Forgot Something?' button is located at the bottom of the page to encourage them to seach for additional proucts and links to the products page.
 
-    ![Checkout Success](/documentation/readme_images/checkout_success.png)
+        ![Checkout Success](/documentation/readme_images/checkout_success.png)
 
 * Footer
 
-  * The footer consists of GotNoBeans copyright text and a mailto link which users can use to contact the site owner. It has an opacity of .5 to add lightness and allow the background image to be seen through it on the homepage.
+    * The footer consists of GotNoBeans copyright text and a mailto link which users can use to contact the site owner. It has an opacity of .5 to add lightness and allow the background image to be seen through it on the homepage.
 
-    ![Footer](/documentation/readme_images/footer.png)
+        ![Footer](/documentation/readme_images/footer.png)
 
 * Toasts
 
-  * Bootstrap toasts are used to provide users with a variety of success, error, and alert messages. The dissapear after a short period and can also be closed by the user.
+    * Bootstrap toasts are used to provide users with a variety of success, error, and alert messages. The dissapear after a short period and can also be closed by the user.
 
-    ![Toasts](/documentation/readme_images/toasts.png)
+        ![Toasts](/documentation/readme_images/toasts.png)
 
+* Admin Features
+
+    * Site admins (superusers) can perform full CRUD functionallity on the site with the ability to create, read, update and delete products, recipes and events.
+    * When an admin logs into the site, they are presented with an extra 'Admin' dropdown in the navbar containing links to add new products, recipes and events to the site.
+    * Additionally, edit and delete options are available to them in the products and product detail pages, the recipes and recipe detail pages and the events page.
+
+* Registered User Features
+
+    * Users who have registered on the site have access to additional features that improve their user experience; including access to order history, a personal favourite products list and the ability to add and update their default personal and delivery information.
+    * When a registered user logs into the site they are offered additional links under the 'Profile' dropdown in the navbar, spcifically linking to their 'Profile' page and 'Favourites' list.
+    * Their profile page shows a list of their previous orders and allows them to maintain their personal and delivery information.
+    * The favourites page lists and items that they have favourited and links back to the product detail page for each individual item should they wish to purchase it at a future date. Products can be added to their favorites list by clicking on the "Add to Favourites' button on the product detail page.
+
+&nbsp;
 
 ## Features to be Implemented in Future
 
-* Example Heading
-  * In the future...
+* Breadcrumbs
+    * The addition of breadcrumbs to the top of each page would be a useful way for users to keep track of where they are on the website.
+
+* Favourite Recipes
+    * In addition to having product favourites, it would be a nice feature to be able to do the same with brewing recipes; especially if the recipe selection expands greatly in the future.
+
+* Categories CRUD
+    * At present, full CRUD functionallity is not require for the store as it specialises in a narrow range of goods. However, to allow for future growth it might be beneficial for admins to be able to create, update and delete product categories.
+
+* Social Media Login
+    * The ability to register and login using social media accounts would be a usful addition and provide a faster sign-up process to users.
 
 &nbsp;
 
-* Example Heading
-  * In the future...
-
-&nbsp;
-
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 # Technologies Used
 
 ## Languages
-  * [HTML](https://en.wikipedia.org/wiki/HTML)
-  * [CSS](https://en.wikipedia.org/wiki/CSS)
-  * [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-  * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+* [HTML](https://en.wikipedia.org/wiki/HTML)
+* [CSS](https://en.wikipedia.org/wiki/CSS)
+* [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
-## Frameworks
-  * [Django](#)
-  * [Bootstrap](#)
+## Frameworks, Libraries, Programs and Extensions
+* [Amazon Web Services: AWS](https://aws.amazon.com/): Used to store static and media files.
+* [Balsamiq](https://balsamiq.com/): Used to create site wireframes.
+* [Bootstrap](https://getbootstrap.com/): Used to enable responsive front-end site development.
+* [Django](https://www.djangoproject.com/): Used to build the project framework.
+* [Font Awesome](https://fontawesome.com/): Used to locate and import icons used throughout the site.
+* [Git](https://en.wikipedia.org/wiki/Git): Used as project development environment and is connected to GitHub.
+* [GitHub](https://en.wikipedia.org/wiki/GitHub): Used to hold project repository which is linked to Heroku.
+* [Google Fonts](https://fonts.google.com/): Used to import the 'Roboto Mono' font used throughout the site.
+* [Heroku](https://en.wikipedia.org/wiki/Heroku): Used to host site and synced with GitHub repository.
+* [jQuery](https://jquery.com/): Used to implement JavaScript code.
+* [Stripe](https://stripe.com/): Used to take and process payments.
 
-## Template Engine
-  * [Jinja](https://en.wikipedia.org/wiki/Jinja_(template_engine))
-
-## Database
-  * [#](#)
-
-## Application Platform
-  * [Heroku](https://en.wikipedia.org/wiki/Heroku)
-
-## Version Control
-  * [Git](https://en.wikipedia.org/wiki/Git)
-  * [GitHub](https://en.wikipedia.org/wiki/GitHub)
-
-## Libraries
-  * [Font Awesome](https://fontawesome.com/)
-    * Font Awesome was used to locate and import icons used throughout the site.
-  * [Google Fonts](https://fonts.google.com/)
-    * Google Fonts was used to import the 'Rubik' font used throughout the site.
 
 ## Testing and Validation Tools
-  * [Chrome DevTools](https://developer.chrome.com/docs/devtools/)
-    * Google Chrome DevTools was used to carry out manual testing on the website and to simulate mobile devices.
-  * [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
-    * The W3C Markup Validation Service was used to check the markup validity of the html code. 
-  * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri)
-    * The W3C CSS Validation Service was used to validate the css code.
-  * [JSHint](https://jshint.com/)
-    * The JSHint static code analysis tool was used to check if the JavaScript source code complies with coding rules.
-  * [CI Python Linter](https://pep8ci.herokuapp.com/)
-    * The Code Institute Python Linter ensures that the code is PEP8 compliant.
-  * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
-    * Lighthouse was used to audit performance, accessibility, best practices and SEO across the website.
-  * [a11y](https://color.a11y.com/)
-    * The a11y Colour Contrast Accessibility Validator was used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
-  * [LambdaTest](https://www.lambdatest.com/)
-    * LambdaTest was used to perform cross browser testing.
+  * [Chrome DevTools](https://developer.chrome.com/docs/devtools/): Used to carry out manual testing on the website and to simulate mobile devices.
+  * [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input): Used to check the markup validity of the html code. 
+  * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri): Used to validate the css code.
+  * [Flake8](https://flake8.pycqa.org/): Used to lint python code for errors, styling issues and complexity.
+  * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/): Used to audit performance, accessibility, best practices and SEO across the website.
+  * [a11y](https://color.a11y.com/): Used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
+  * [LambdaTest](https://www.lambdatest.com/): Used to perform cross browser testing.
 
 &nbsp;
 
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 # Testing 
 
@@ -400,78 +387,11 @@ Testing information can be found in the [testing file][TESTING.md].
 
 &nbsp;
 
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
-# Validation
 
-## HTML
-The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
 
-<details><summary>Home</summary>
-<img src="#">
-</details>
-
-<details><summary>Profile</summary>
-<img src="#">
-</details>
-
-<details><summary>Add Term</summary>
-<img src="#">
-</details>
-
-<details><summary>Edit Term</summary>
-<img src="#">
-</details>
-
-<details><summary>Log In</summary>
-<img src="#">
-</details>
-
-<details><summary>Sign Up</summary>
-<img src="#">
-</details>
-
-&nbsp;
-
-## CSS
-The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
-
-<details><summary>CSS Validation</summary>
-<img src="#">
-</details>
-
-&nbsp;
-
-## JavaScript
-[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The undefined variable shown 'M' relates to Materialize CCS Initialization code.
-
-<details><summary>JavaScript Validation</summary>
-<img src="#">
-</details>
-
-&nbsp;
-
-## Python
-[CI Python Linter](https://pep8ci.herokuapp.com/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with no errors found.
-
-<details><summary>Python Linting</summary>
-<img src="#">
-</details>
-
-&nbsp;
-
-## Colour Contrast
-The colour contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
-
-<details>
-<summary>colour Contrast Validation</summary>
-
-![colour Contrast Validation](#)
-</details>
-
-&nbsp;
-
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 # Deployment
 
@@ -592,7 +512,7 @@ The live link can be found [here](#)
 
 &nbsp;
 
-[Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 # Credits 
 
@@ -620,6 +540,6 @@ The live link can be found [here](#)
 
   &nbsp;
 
-  [Back to top &uarr;](#GotNoBeans)
+[Back to top &uarr;](#got-no-beans)
 
 [TESTING.md]: TESTING.md

@@ -3,18 +3,25 @@
 ## Table of Contents   
 * [Manual Testing](#manual-testing)
 * [Lighthouse](#lighthouse)
+* [Validation](#validation)
+    * [HTML](#html)
+    * [CSS](#css)
+    * [JavaScript](#javascript)
+    * [Python](#python)
+    * [Colour Contrast](#colour-contrast)
 * [Browser Compatibility](#browser-compatibility)
+* [Responsiveness](#responsiveness)
 * [Bugs](#bugs)
 * [Unresolved Bugs](#unresolved-bugs)
 
 ## Manual Testing
 
-### Navbar
+### User Stories
 * Expected
   * The navbar should be...
 
 * Testing
-  * The navbar was tested...
+  * The ..
     <details><summary>Navbar Testing: Unregistered User</summary>
       <img src="#">
     </details>
@@ -24,118 +31,6 @@
 
 * Result
   * The navbar responded...
-
-&nbsp;
-
-### Homepage Carousel
-
-  * Expected
-    * The homepage carousel...
-
-  * Testing
-    * The homepage carousel...
-      <details><summary>Homepage Carousel</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The homepage carousel...
-
-&nbsp;
-
-### Add New Item Form
-
-  * Expected
-    * The form heading should...
-
-  * Testing
-    * The...
-      <details><summary>Add New Item Form Testing</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The form heading...
-
-&nbsp;
-
-### Log In Page
-
-  * Expected
-    * The log in page should consist of...
-
-  * Testing
-    * The log in page was tested for responsiveness...
-      <details><summary>Log In Page Testing</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The log in page consists of...
-
-&nbsp;
-
-### Sign Up Page
-
-  * Expected
-    * The sign up page should consist of...
-
-  * Testing
-    * The log in page was tested for responsiveness...
-      <details><summary>Sign Up Page Testing</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The sign up page consists of...
-
-&nbsp;
-
-### Flash Messages
-
-  * Expected
-    * The flash messages should...
-
-  * Testing
-    * The flash message was tested...
-      <details><summary>Flash Message Testing</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The flash messages...
-
-&nbsp;
-
-### Back to Top Button
-
-  * Expected
-    * The back to top button should...
-
-  * Testing
-    * The back to top button was tested...
-      <details><summary>Back to Top Button Testing</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The back to top button responded...
-
-&nbsp;
-
-### Footer
-
-  * Expected
-    * The footer should be located...
-
-  * Testing
-    * The footer was tested...
-      <details><summary>Footer Testing</summary>
-        <img src="#">
-      </details>
-
-  * Result
-    * The footer is located...
 
 &nbsp;
 
@@ -159,6 +54,77 @@
     * [Lighthouse Report: Add Term](#)
     * [Lighthouse Report: Log In](#)
     * [Lighthouse Report: Sign Up](#)
+
+&nbsp;
+
+[Back to top &uarr;](#testing)
+
+# Validation
+
+## HTML
+The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
+
+<details><summary>Home</summary>
+<img src="#">
+</details>
+
+<details><summary>Profile</summary>
+<img src="#">
+</details>
+
+<details><summary>Add Term</summary>
+<img src="#">
+</details>
+
+<details><summary>Edit Term</summary>
+<img src="#">
+</details>
+
+<details><summary>Log In</summary>
+<img src="#">
+</details>
+
+<details><summary>Sign Up</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## CSS
+The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
+
+<details><summary>CSS Validation</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## JavaScript
+[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The undefined variable shown 'M' relates to Materialize CCS Initialization code.
+
+<details><summary>JavaScript Validation</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## Python
+[CI Python Linter](https://pep8ci.herokuapp.com/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with no errors found.
+
+<details><summary>Python Linting</summary>
+<img src="#">
+</details>
+
+&nbsp;
+
+## Colour Contrast
+The colour contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
+
+<details>
+<summary>colour Contrast Validation</summary>
+
+![colour Contrast Validation](#)
+</details>
 
 &nbsp;
 
@@ -221,6 +187,12 @@
   <details><summary>GotNoBeans on Brave.</summary>
   <img src="#">
   </details>
+
+&nbsp;
+
+[Back to top &uarr;](#testing)
+
+## Responsiveness
 
 &nbsp;
 

@@ -1,30 +1,29 @@
 # GotNoBeans
 
-GotNoBeans is an online retailer specialising in coffee brewing equipment and accessories...
+GotNoBeans is an online retailer specialising in coffee brewing equipment. Specifically targeted at the home enthusiast. they offer a wide variety of home brewers and accessories. Beyond this, they offer brewing recipes that are specific to their products to empower users to feel confident when purchasing a product they are unfamilar with. In order to promte the business and build a community around it, GotNoBeans host events around the UK during which they showcase and educate around their products.
 
-The primary technologies used to form the basis of this website are the coding languages HTML, CSS, JavaScript, Python, Django...
+The GotNoBeans website is a full-stack e-commerce site built using Django, Python, jQuery, CSS, and HTML.
 
-[View the live site here](#)
+[View the live site here](https://got-no-beans.herokuapp.com/)
 
 &nbsp;
 
-![Responsive Mockup](#)
+![Responsive Mockup](/documentation/readme_images/mockup.webp)
 
 &nbsp;
 
 # Table of Contents
-  * [UX and UI](#ux-and-ui)
+* [UX and UI](#ux-and-ui)
     * [Research](#research)
-    * [Owner Goals](#owner-goals)
     * [User Stories](#user-stories)
     * [User Requirements and Expectations](#user-requirements-and-expectations)
     * [Design](#design)
     * [Wireframes](#wireframes)
-  * [Data Model](#data-model)
-  * [Features](#features)
+* [Data Model](#data-model)
+* [Features](#features)
     * [Existing Features](#existing-features)
     * [Features to be Implemented in the Future](#features-to-be-implemented-in-future)
-  * [Technologies Used](#technologies-used)
+* [Technologies Used](#technologies-used)
     * [Languages](#languages)
     * [Frameworks](#frameworks)
     * [Template Engine](#template-engine)
@@ -33,21 +32,21 @@ The primary technologies used to form the basis of this website are the coding l
     * [Version Control](#version-control)
     * [Libraries](#libraries)
     * [Testing and Validation Tools](#testing-and-validation-tools)
-  * [Testing](#testing)
-  * [Validation](#validation)
+* [Testing](#testing)
+* [Validation](#validation)
     * [HTML](#html)
     * [CSS](#css)
     * [JavaScript](#javascript)
     * [Python](#python)
     * [Color Contrast](#color-contrast)
-  * [Deployment](#deployment)
+* [Deployment](#deployment)
     * [Creating a GitHub Repository](#creating-a-github-repository)
     * [Forking the GitHub Repository](#forking-the-github-repository)
     * [Making a Local Clone](#making-a-local-clone)
     * [Heroku Deployment: Project Setup](#heroku-deployment-project-setup)
     * [Heroku Deployment: Create a Heroku App](#heroku-deployment-create-a-heroku-app)
     * [Heroku Deployment: Deploy to Heroku](#heroku-deployment-deploy-to-heroku)
-  * [Credits](#credits)
+* [Credits](#credits)
 
 &nbsp;
 
@@ -64,28 +63,62 @@ Research for the creation of this site was carried out by searching for various 
 
 &nbsp;
 
-## Owner Goals
+## User Stories
 
-  * As the site owner, I want to...
-  * As the site owner, I want to...
-  * As the site owner, I want to...
+**Site Admin**
+| As a...         | I want to be able to...                       | So that I can..                                |
+| --------------- | --------------------------------------------- | ---------------------------------------------- |
+| **Site Owner**  | login and have access to the store backend    | mange product, recipe and event listings.      |
+| **Site Owner**  | restrict backend access to admins/superusers  | keep the site, listings and customers secure.  |
+| **Site Owner**  | mange product listings                        | add, edit and delete products on the site.     |
+| **Site Owner**  | mange recipe listings                         | add, edit and delete recipes on the site.      |
+| **Site Owner**  | mange event listings                          | add, edit and delete events on the site.       |
 
 &nbsp;
 
-## User Stories
+**Viewing & Navigation**
+| As a...         | I want to be able to...             | So that I can..                                  |
+| --------------- | ----------------------------------- | ------------------------------------------------ |
+| **Site User**   | easily see the purpose of the site  | be informed as to whether it meets my needs.     |
+| **Site User**   | browse the full range of products   | view the selection and make a purchase.          |
+| **Site User**   | view individual product details     | identify the price, description, and image.      |
+| **Site User**   | see a running total for my basket   | be informed as to how much I'm spending.         |
+| **Site User**   | browse the full range of recipes    | have knowledge around the use of Site products.  |
+| **Site User**   | view individual recipe details      | see the recipe method and find linked products.  |
+| **Site User**   | browse the full range of events     | attend any local events that interest me.        |
 
-### First Time Visitor
- 
-  * As a first time user, I want to...
-  * As a first time user, I want to...
-  * As a first time user, I want to...
+&nbsp;
 
-### Returning Visitor
+**Sorting & Searching**
+| As a...        | I want to be able to...                          | So that I can..                                          |
+| -------------- | ------------------------------------------------ | -------------------------------------------------------- |
+| **Site User**  | easliy sort the list of products available       | find products by price or name.                          |
+| **Site User**  | easily sort products by category                 | narrow products down to the most relevant for my needs.  |
+| **Site User**  | search products by name or description           | find a specific product.                                 |
+| **Site User**  | view a filtered products list based on my search | easily see if my desired product is available.           |
 
-  * As a registered user, I want to...
-  * As a registered user, I want to...
-  * As a registered user, I want to...
+&nbsp;
 
+**Basket & Checkout**
+| As a...        | I want to be able to...                       | So that I can..                                 |
+| -------------- | --------------------------------------------- | ----------------------------------------------- |
+| **Site User**  | easliy add products to my basket              | compile a selection of products to purchase.    |
+| **Site User**  | view the products in my basket                | see what I have selected and adjust if needed.  |
+| **Site User**  | easily enter my delivery and payment details  | complete a quick and hassel free purchase.      |
+| **Site User**  | view my order confirmation after checkout     | verify that the order details are correct.      |
+| **Site User**  | recieve an order confirmation email           | keep order details for my records.              |
+
+&nbsp;
+
+**Registration & User Accounts**
+| As a...              | I want to be able to...                          | So that I can..                                         |
+| -------------------- | ------------------------------------------------ | ------------------------------------------------------- |
+| **Site User**        | easliy register for a new account                | have a personal profile.                                |
+| **Registered User**  | recieve a verification email during registration | be confident that my registration is successful.        |
+| **Registered User**  | easliy login and out of my accout                | use the site with the advantages of a registered user.  |
+| **Registered User**  | recover my email if I forget it                  | regain access to my account.                            |
+| **Registered User**  | have a personal user profile.                    | view my order history and default delivery details.     |
+| **Registered User**  | keep a list of my favourite products             | easily find and purchase them at a later date.          |
 
 &nbsp;
 

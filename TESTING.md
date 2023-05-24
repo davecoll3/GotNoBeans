@@ -83,7 +83,7 @@
   * Site admins can add, edit and delete events on the site.
 
 * Testing
-    <details><summary>Site Owner Testing: Recipes</summary>
+    <details><summary>Site Owner Testing: Events</summary>
       <img src="documentation/testing_images/add_event.png">
       <img src="documentation/testing_images/edit_event.png">
       <img src="documentation/testing_images/delete_event.png">
@@ -91,6 +91,323 @@
 
 * Result
   * Only admins have access to full CRUD functionality for site events.
+
+&nbsp;
+
+### Viewing & Navigation
+#### ID 6
+* Expected
+  * Site user can easily see the purpose of the site and be informed as to whether it meets their needs.
+
+* Testing
+    <details><summary>Site User Testing: Purpose</summary>
+      <img src="documentation/testing_images/purpose.png">
+    </details>
+
+* Result
+  * The homepage navbar, image, text, and 'Shop Now' button combine to inform the user of the site purpose.
+
+&nbsp;
+
+#### ID 7
+* Expected
+  * Site user can browse the full range of products, view the selection and make a purchase.
+
+* Testing
+    <details><summary>Site User Testing: Product Browsing</summary>
+      <img src="documentation/testing_images/products.png">
+    </details>
+
+* Result
+  * The products page lists a selection of products to all users which can be clicked for further information and to make a purchase.
+
+&nbsp;
+
+#### ID 8
+* Expected
+  * Site user can view individual product details and identify the price, description and image.
+
+* Testing
+    <details><summary>Site User Testing: Product Details</summary>
+      <img src="documentation/testing_images/product_details">
+    </details>
+
+* Result
+  * The product detail page displays such as price, description and an image to the use.
+
+&nbsp;
+
+#### ID 9
+* Expected
+  * Site user can see a running total for their basket and be informed as to how much they're spending.
+
+* Testing
+    <details><summary>Site User Testing: Basket Total</summary>
+      <img src="documentation/testing_images/basket_total.png">
+    </details>
+
+* Result
+  * The basket total, on the navbar, is highlighted in blue when there's something in the basket and auto-updates the price as items are added or removed.
+
+&nbsp;
+
+#### ID 10
+* Expected
+  * Site user can browse the full selection of recipes.
+
+* Testing
+    <details><summary>Site User Testing: Recipe Browsing</summary>
+      <img src="documentation/testing_images/recipes.png">
+    </details>
+
+* Result
+  * The recipes page lists a selection of recipes to all users which can be clicked for further information.
+
+&nbsp;
+
+#### ID 11
+* Expected
+  * Site user can view individual recipe details to see the recipe method and find linked products.
+
+* Testing
+    <details><summary>Site User Testing: Recipe Details</summary>
+      <img src="documentation/testing_images/recipe_details.png">
+    </details>
+
+* Result
+  * The recipe detail page displays the recipe method and links to related products.
+
+&nbsp;
+
+#### ID 12
+* Expected
+  * Site user can browse the full range of events and find any local events that interest them.
+
+* Testing
+    <details><summary>Site User Testing: Events Browsing</summary>
+      <img src="documentation/testing_images/events.png">
+    </details>
+
+* Result
+  * The events page lists a selection of events to all users which expand to expose further information.
+
+&nbsp;
+
+### Sorting & Searching
+#### ID 13
+* Expected
+  * Site user can easliy sort the list of products available and find products by price or name.
+
+* Testing
+    <details><summary>Site User Testing: Sort Products</summary>
+      <img src="documentation/testing_images/sort_products.png">
+    </details>
+
+* Result
+  * The sort dropdown, on the products page, allows users to sort products by price or name.
+
+&nbsp;
+
+#### ID 14
+* Expected
+  * Site user can easily sort products by category and narrow products down to the most relevant.
+
+* Testing
+    <details><summary>Site User Testing: Sort Categories</summary>
+      <img src="documentation/testing_images/sort_cats.png">
+    </details>
+
+* Result
+  * The catagories badges, under the header on the products page, allows users to sort products by category.
+
+&nbsp;
+
+#### ID 15
+* Expected
+  * Site user can search products by name or description and find a specific product.
+
+* Testing
+    <details><summary>Site User Testing: Search Bar</summary>
+      <img src="documentation/testing_images/search_bar.png">
+    </details>
+
+* Result
+  * The search bar allows the user to search all products by name or description.
+
+&nbsp;
+
+#### ID 16
+* Expected
+  * Site user can view a filtered products list based on their search.
+
+* Testing
+    <details><summary>Site User Testing: Search Results</summary>
+      <img src="documentation/testing_images/search.png">
+    </details>
+
+* Result
+  * The search results are shown as a filtered list on the products page.
+
+&nbsp;
+
+### Basket & Checkout
+#### ID 17
+* Expected
+  * Site user can easliy add products to their basket and compile a selection of products to purchase.
+
+* Testing
+    <details><summary>Site User Testing: Add to Basket</summary>
+      <img src="documentation/testing_images/add_basket.png">
+    </details>
+
+* Result
+  * The 'Add to Basket' button, on the products page, allows users to add one or multiple products to their basket.
+
+&nbsp;
+
+#### ID 18
+* Expected
+  * Site user can view the products in their basket to see what they have selected and adjust if needed.
+
+* Testing
+    <details><summary>Site User Testing: Basket</summary>
+      <img src="documentation/testing_images/basket.png">
+    </details>
+
+* Result
+  * Clicking on the basket icon, in the navbar, brings the user to the basket page where they can view and adjust the items in their basket and totals.
+
+&nbsp;
+
+#### ID 19
+* Expected
+  * Site user can easily enter their delivery and payment details allowing for a quick and hassel free purchase.
+
+* Testing
+    <details><summary>Site User Testing: Checkout</summary>
+      <img src="documentation/testing_images/checkot.png">
+    </details>
+
+* Result
+  * The checkout page contains a form in which a guest user can enter their delivery details. Registered users can save their default information to negate the need to enter it each time they make a purchase.
+
+&nbsp;
+
+#### ID 20
+* Expected
+  * Site user can see their order confirmation after checkout and verify that the order details are correct.
+
+* Testing
+    <details><summary>Site User Testing: Order Confirmation</summary>
+      <img src="documentation/testing_images/order_confirmation.png">
+    </details>
+
+* Result
+  * The checkout success page confirms that the order has been placed and provides an order summary. A success toast message is also displayed to the user.
+
+&nbsp;
+
+#### ID 21
+* Expected
+  * Site user will recieve an order confirmation email to keep order details for their records.
+
+* Testing
+    <details><summary>Site User Testing: Order Confirmation Email</summary>
+      <img src="documentation/testing_images/order_email.png">
+    </details>
+
+* Result
+  * Upon completion of the purchase, and email is sent to the user to confirm that it has been successfully placed and provides a summary.
+
+&nbsp;
+
+### Registration & User Accounts
+#### ID 22
+* Expected
+  * Site user can easliy register for a new account and	have a personal profile.
+
+* Testing
+    <details><summary>Site User Testing: Register</summary>
+      <img src="documentation/testing_images/register.png">
+    </details>
+
+* Result
+  * By selecting the 'Profile' dropdown, in the navbar, users will have the option of registering which will bring them to a sign-up page.
+
+&nbsp;
+
+#### ID 23
+* Expected
+  * Registered users recieve a verification email during registration so that they can be confident that their registration was successful.
+
+* Testing
+    <details><summary>Site User Testing: Email Verification</summary>
+      <img src="documentation/testing_images/verification.png">
+    </details>
+
+* Result
+  * When a valid sign-up form has been submitted, an email verification email is sent to the user allowing them to complete their registration.
+
+&nbsp;
+
+#### ID 24
+* Expected
+  * Registered users can easliy sign in and out of their accout.
+
+* Testing
+    <details><summary>Site User Testing: Sign in & Out</summary>
+      <img src="documentation/testing_images/sign_in.png">
+    </details>
+
+* Result
+  * Sign in and out buttons are easily available at all times form the 'Account' dropdown in the navbar.
+
+&nbsp;
+
+#### ID 25
+* Expected
+  * Registered users can recover their email if they forget it.
+
+* Testing
+    <details><summary>Site User Testing: Password Recovery</summary>
+      <img src="documentation/testing_images/password.png">
+    </details>
+
+* Result
+  * Under the 'Sign In' button on the sign in page, there is a link to a password recovery page which sends a recovery email to the user's email address.
+
+&nbsp;
+
+#### ID 26
+* Expected
+  * Registered users have a personal user profile which shows their order history and default delivery details.
+
+* Testing
+    <details><summary>Site User Testing: Profile</summary>
+      <img src="documentation/testing_images/profile.png">
+    </details>
+
+* Result
+  * The user's profile is easily accessible at all times form the 'Account' dropdown in the navbar. This contains their order history and default delivery information, which they can update.
+
+&nbsp;
+
+#### ID 27
+* Expected
+  * Registered users can keep a list of their favourite products.
+
+* Testing
+    <details><summary>Site User Testing: Favourites</summary>
+      <img src="documentation/testing_images/favourites.png">
+    </details>
+
+* Result
+  * The user's favourites list is easily accessible at all times form the 'Account' dropdown in the navbar. This contains basic information on each product and links to it. They can also remove products from thir favourites here.
+
+&nbsp;
+
+
+
 
 &nbsp;
 

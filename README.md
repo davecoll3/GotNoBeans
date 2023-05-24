@@ -81,7 +81,7 @@ The store owner has several goals for this site, which are outlined below:
 | 7  | **Site User**   | browse the full range of products   | view the selection and make a purchase.          |
 | 8  | **Site User**   | view individual product details     | identify the price, description, and image.      |
 | 9  | **Site User**   | see a running total for my basket   | be informed as to how much I'm spending.         |
-| 10 | **Site User**   | browse the full range of recipes    | have knowledge around the use of Site products.  |
+| 10 | **Site User**   | browse the full range of recipes    | have knowledge around the use of site products.  |
 | 11 | **Site User**   | view individual recipe details      | see the recipe method and find linked products.  |
 | 12 | **Site User**   | browse the full range of events     | attend any local events that interest me.        |
 

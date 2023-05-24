@@ -29,7 +29,7 @@ def add_event(request):
         form = EventForm(request.POST)
         # Add event if valid
         if form.is_valid():
-            event = form.save()
+            form.save()
             messages.success(request, 'New event added!')
             return redirect(reverse('events'))
         # Display error message for invalid form

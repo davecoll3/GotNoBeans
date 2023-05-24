@@ -414,23 +414,11 @@
 [Back to top &uarr;](#testing)
 
 ## Lighthouse
-[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit performance, accessibility, best practices and SEO across the website.
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit performance, accessibility, best practices and SEO.
 
   * Desktop
-    * [Lighthouse Report: Home](#)
-    * [Lighthouse Report: Profile](#)
-    * [Lighthouse Report: Add Term](#)
-    * [Lighthouse Report: Log In](#)
-    * [Lighthouse Report: Sign Up](#)
-
-    &nbsp;
-
-  * Mobile
-    * [Lighthouse Report: Home](#)
-    * [Lighthouse Report: Profile](#)
-    * [Lighthouse Report: Add Term](#)
-    * [Lighthouse Report: Log In](#)
-    * [Lighthouse Report: Sign Up](#)
+    * [Lighthouse Report: Desktop](/documentation/testing_docs/lighthouse_desktop.pdf)
+    * [Lighthouse Report: Mobile](/documentation/testing_docs/lighthouse_mobile.pdf)
 
 &nbsp;
 

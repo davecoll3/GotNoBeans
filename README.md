@@ -501,7 +501,6 @@ The database used while developing your project within the IED is only available
 &nbsp;
 
 ## Heroku Deployment
-
 1. On the [Heroku website](https://heroku.com/), log into your account. If you don't have a Heroku account, you can sign-up for one [here](https://signup.heroku.com/).
 2. Click on the "New" button in the top right-hand corner and then "Create a New App".
 3. Give your app a unique name and select your local region. Then click on the "Create App" button.
@@ -601,86 +600,85 @@ git push heroku main
 28. Your app will now be deployed on Heroku but without any static files.
 29. Back in Heroku, you can set your app to be deployed automatically by navigaint to the app "Deploy" menu. Scrolling down to the 'Deployment Method' section and connecting it to github. You will need to search for your repository, once located click 'connect'. Then scroll further down and click 'Enable Automatic Deploys'. Once connected, your code will automatically deploy to Heroku whenever you push to github.
 
+The live Heroku app link can be found [here](https://got-no-beans.herokuapp.com/)
+
 ## AWS
+
+### S3 Bucket
 Amazon Web Services are used to store your static and media files.
 1. Go to the AWS website and [create an account](https://portal.aws.amazon.com/billing/signup?nc2=h_ct&src=header_signup&redirect_url=https%3A%2F%2Faws.amazon.com%2Fregistration-confirmation#/start/email).
 2. Once signed up and logged in, locate "My Account" in the navbar and then select "AWS Management Console".
 3. From here, search for 'S3' search bar and select it from the search results.
 4. On the S3 Buckets page, click on the "Create Bucket" button.
 5. Name your new bucket (usually the same as your app name) and select your local region.
-6. Under "Object Ownership" select "ACLs enabled".
+6. Under "Object Ownership" select "ACLs enabled" and then "Bucket owner perferred.
+7. Uncheck "Block all public access" and acknowledge the change when prompted.
+8. Scroll to the bottom and click on the "Create Bucket" button.
+9. Navigate to your new bucket and, within the "Properties" tab, locate "static website hosting" by scrolling down to the bottom of the page. Click "Enable" and specify the index and error document names (index.html and error.html are fine for this). Click save.
+10. Now navigate to the permissions tab, scroll down to the "Cross-origin resource sharing (CORS)" section. Click edit and paste in the following code:
+```
+[
+    {
+        "AllowedHeaders": [
+            "Authorization"
+        ],
+        "AllowedMethods": [
+            "GET"
+        ],
+        "AllowedOrigins": [
+            "*"
+        ],
+        "ExposeHeaders": []
+    }
+]
+```
+11. Scroll back up to the 'Bucket Policy' section. Click 'Edit' and then 'Policy generator'. This will open the AWS policy generator page.
+12. Under the 'Select Type of Policy' dropdown, select 'S3 Bucket Policy'. Then inside 'Principle' allow all principals by typing '*' and from the 'Actions' dropdown, select 'Get object'.
+13. Back in the previous tab, locate the Bucket ARN number. Copy this number and return to the policy generator, pasting it in the field labelled 'Amazon Resource Name (ARN)'. Then click 'Add Statement'.
+14. From here click 'Generate Policy'. Copy the generated policy and paste it into the bucket policy editor.
+15. Add a '/*' at the end of your resource key; this allows access to all resources in this bucket. Click 'Save'.
+16. Now scroll down to the 'Access control list (ACL)' section and click 'Edit' and and enable list for 'Everyone (public access)';
+accepting the warning box. Then click 'Save'.
 
+### IAM (Identity and Access Management)
+1. With you bucket ready you will need to create a user to access it. In the search bar at the top of the window, search for IAM and select it from the search results.
+2. On the IAM page, click 'User Groups' from the side bar, then click 'Create group'.
+3. Name your group 'manage-your-project-name' and click 'Create Group' at the bottom of the page.
+4. From the sidebar click 'Policies' and then 'Create policy'.
+5. On the JSON tab, click 'Import Managed Policy'. Then search for 'S3' and select 'AmazonS3FullAccess'. Click import.
+6. Once imported you will need to edit the policy slightly. Go back to your S3 bucket and copy your ARN number. Coming back to the policy, update the 'Resource' key to include your ARN and add a second line with your ARN followed by '/*'. See below for reference.
+```
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "s3:*",
+                "s3-object-lambda:*"
+            ],
+            "Resource": [
+                "your-arn-number",
+                "your-arn-number/*"
+            ]
+        }
+    ]
+}
+```
+7. Now click 'Next: Tags' and then click 'Next: Review'. On the 'Review Policy' page give the policy a name and a short description. Click 'Create Policy'.
+8. This will take you back to the policy page where you should see your new policy.
+9. From the sidebar click 'User Groups' and select your group. Go to the permissions tab,
+open the 'Add permissions' dropdown and click 'Attach policies'. Select the policy and click 'Add
+permissions' at the bottom.
+10. Finally you will create a user to put in the group. Select 'Users' from the sidebar and click 'Add user'.
+11. Provide a username, check 'Programmatic Access' and then click the 'Next: Permissions' button.
+12. Select your group, that has the policy attached, and click 'Next: Tags', 'Next: Review' and then 'Create user'.
+13. On the next page you will need to download the CSV file. This contains the user's access key and secret access key which you will need.
 
+### Connecting AWS to Django
 
+## Stripe
 
-
-
-
-  1. Make sure that your project is initialized as a Git repository. You can check this by running the following command at the root of your project.
-  ```
-  git status
-  ```
-
-  2. If you encounter an error, that means that your project isn't yet a Git repository. You can initialize the repository by running the following command.
-  ```
-  git init
-  ```
-
-  3. Applications that feature an Express.js back end can use Heroku's PORT environment variable. To set this up, create a port variable with a value of process.env.PORT. You can also add a default value for local instances of your server by using the || syntax.
-  ```
-  const port = process.env.PORT || 3001
-  ```
-
-## Heroku Deployment: Create a Heroku App
-
-Now that you have created the repository and configured the server, you can create an app on Heroku. Using the steps below, this can be done without opening the browser.
-  1. Create a new Heroku app by running the following command in the root of your project:
-  ```
-  heroku create
-  ```
-
-  2. The Heroku CLI will randomly generate an app name, but you can specify a name using the following syntax.
-  ```
-  heroku create <app name>
-  ```
-
-  3. Once you have created the app, you can run 'git remote -v' to verify that the Heroku remote URL was added by the Heroku CLI
-  ```
-  git remote -v
-  heroku  https://git.heroku.com/<heroku-app-name>.git (fetch)
-  heroku  https://git.heroku.com/<heroku-app-name>.git (push)
-  ```
-
-  4. The remote URL gets added automatically to your Git repository without requiring any extra commands. You can now prepare for deployment.
-
-## Heroku Deployment: Deploy to Heroku
-
-  1. Add and commit all your project files, then push to Heroku.
-  ```
-  git add -A
-  git commit -m "Pushing to Heroku"
-  git push heroku main
-  ```
-
-  2. Confirm that the application was deployed successfully by visiting the application URL provided in the terminal. Sometimes the output will say that the build was successful, but you should still open your application in the browser to verify.
-  ```
-  remote: -----> Build succeeded!
-  remote: -----> Discovering process types
-  remote:        Procfile declares types     -> (none)
-  remote:        Default types for buildpack -> web
-  remote:
-  remote: -----> Compressing...
-  remote:        Done: 33.8M
-  remote: -----> Launching...
-  remote:        Released v9
-  remote:        https://lit-retreat-65972.herokuapp.com/ deployed to Heroku
-  ```
-
-  3. Your app should now be deployed with a server to Heroku. The link will be accessible as long as your app exists on Heroku.
-
-If you encounter any issues, further details on Heroku deployment and troubleshooting can be found [here](https://coding-boot-camp.github.io/full-stack/heroku/heroku-deployment-guide).
-
-The live link can be found [here](#)
 
 &nbsp;
 
@@ -691,18 +689,12 @@ The live link can be found [here](#)
 ## Content 
 
   * The Code Institute's readme-template provided the basic structure for the readme.md file.
-  * The Code Institute's Non-Relational Database Management Systems Mini Project was used to provide basic structure and authentication.
-  * The [Bootstrap](#) front-end framework was used to supply components such as navbar, sidenav, collapsible, and search panel.
+  * The Code Institute's Boutique Ado walkthrough project was used to provide the core structure and functionality.
 
 ## Media
 
   * The favicon image was sourced from [Icons8](https://icons8.com) and was freely used under the [Icons8 licence](https://icons8.com/license).
-  * The hero-image was sourced from [Unsplash](https://unsplash.com) and was freely used under the [Unsplash licence](https://unsplash.com/license).
-
-## Code
-
-  * The CSS code for...
-  * The JavaScript code for...
+  * All site images were sourced from [Pexels](https://www.pexels.com/) and was freely used under the [Pexels licence](https://www.pexels.com/license/).
 
 ## Acknowledgements
 

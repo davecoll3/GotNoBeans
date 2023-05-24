@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from django.contrib import messages
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import login_required
 
 from .models import Event
 from .forms import EventForm
@@ -18,8 +18,12 @@ def all_events(request):
     return render(request, 'events/events.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def add_event(request):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Add an event
     if request.method == 'POST':
         form = EventForm(request.POST)
@@ -42,8 +46,12 @@ def add_event(request):
     return render(request, 'events/add_event.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def edit_event(request, event_id):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Edit an existing event
     event = get_object_or_404(Event, pk=event_id)
     if request.method == 'POST':
@@ -69,8 +77,12 @@ def edit_event(request, event_id):
     return render(request, 'events/edit_event.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def delete_event(request, event_id):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Delete an event
     event = get_object_or_404(Event, pk=event_id)
     event.delete()

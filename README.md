@@ -145,6 +145,8 @@ The store owner has several goals for this site, which are outlined below:
     * Footer: rgba(26,13,0,.5)
     * Buttons and Links: #000, #adb5bd, #0d6efd, #dc3545 (Bootstrap theme colours)
 
+![Colour Pallet](/documentation/readme_images/colours.png)
+
 ### Fonts
 * The Google font of Roboto Mono was chosen for this site. A monospaced member of the Roboto family type, this font is optimised for readability on screens across a wide variety of devices and reading environments. It works very well with the site theme and helps to provide a clean asthetic.
 
@@ -340,6 +342,9 @@ The site is underpinned by a relational database model and the datbabase schema 
 * Categories CRUD
     * At present, full CRUD functionallity is not require for the store as it specialises in a narrow range of goods. However, to allow for future growth it might be beneficial for admins to be able to create, update and delete product categories.
 
+* Stock levels built in
+    * It would be very useful for admins to include stock levels for each product and have these auto update when items are purchased through the store.
+
 * Social Media Login
     * The ability to register and login using social media accounts would be a usful addition and provide a faster sign-up process to users.
 
@@ -386,10 +391,6 @@ The site is underpinned by a relational database model and the datbabase schema 
 Testing information can be found in the [testing file][TESTING.md].
 
 &nbsp;
-
-[Back to top &uarr;](#got-no-beans)
-
-
 
 [Back to top &uarr;](#got-no-beans)
 

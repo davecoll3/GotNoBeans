@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from django.contrib import messages
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
@@ -69,8 +69,12 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def add_product(request):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Add a product to the store
     if request.method == 'POST':
         form = ProductForm(request.POST, request.FILES)
@@ -94,8 +98,12 @@ def add_product(request):
     return render(request, template, context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def edit_product(request, product_id):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Edit an existing product
     product = get_object_or_404(Product, pk=product_id)
     if request.method == 'POST':
@@ -121,8 +129,12 @@ def edit_product(request, product_id):
     return render(request, template, context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def delete_product(request, product_id):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Delete a product from the store
     product = get_object_or_404(Product, pk=product_id)
     product.delete()

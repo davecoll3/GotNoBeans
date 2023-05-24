@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from django.contrib import messages
-from django.contrib.auth.decorators import user_passes_test
+from django.contrib.auth.decorators import login_required
 
 from .models import Recipe
 from .forms import RecipeForm
@@ -29,8 +29,12 @@ def recipe_detail(request, recipe_id):
     return render(request, 'recipes/recipe_detail.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def add_recipe(request):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Add a recipe
     if request.method == 'POST':
         # Add new recipe if form is valid
@@ -52,8 +56,12 @@ def add_recipe(request):
     return render(request, 'recipes/add_recipe.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def edit_recipe(request, recipe_id):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Edit an existing recipe
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     if request.method == 'POST':
@@ -78,8 +86,12 @@ def edit_recipe(request, recipe_id):
     return render(request, 'recipes/edit_recipe.html', context)
 
 
-@user_passes_test(lambda u: u.is_superuser)
+@login_required
 def delete_recipe(request, recipe_id):
+    # Check if superuser
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, you do not have access.')
+        return redirect(reverse('home'))
     # Delete a recipe
     recipe = get_object_or_404(Recipe, pk=recipe_id)
     recipe.delete()

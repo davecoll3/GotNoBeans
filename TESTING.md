@@ -1,7 +1,7 @@
 # Testing 
 
 ## Table of Contents   
-* [Manual Testing](#manual-testing)
+* [User Stories](#user-stories)
 * [Lighthouse](#lighthouse)
 * [Validation](#validation)
     * [HTML](#html)
@@ -14,23 +14,34 @@
 * [Bugs](#bugs)
 * [Unresolved Bugs](#unresolved-bugs)
 
-## Manual Testing
+## User Stories
 
-### User Stories
+### Site Admin
 * Expected
-  * The navbar should be...
+  * Site owner has access to store backend so that they can manage products, recipes and events.
 
 * Testing
-  * The ..
-    <details><summary>Navbar Testing: Unregistered User</summary>
-      <img src="#">
-    </details>
-    <details><summary>Navbar Testing: Registered User</summary>
-      <img src="#">
+    <details><summary>Site Owner Testing: Backend Access</summary>
+      <img src="documentation/testing_images/backend.png">
+      <img src="documentation/testing_images/edit_delete.png">
     </details>
 
 * Result
-  * The navbar responded...
+  * The site owner or admin has access to an additional 'Admin' menu in the navbar when they login. This is in addition to edit and delete options connected to individual products, recipes and events.
+
+&nbsp;
+
+* Expected
+  * Site owner privliges are restriced to admins/superusers only.
+
+* Testing
+    <details><summary>Site Owner Testing: Restricted Access</summary>
+      <img src="documentation/testing_images/backend.png">
+      <img src="documentation/testing_images/edit_delete.png">
+    </details>
+
+* Result
+  * Only admins/superusers have access to full CRUD functionality for site products, recipes and events.
 
 &nbsp;
 

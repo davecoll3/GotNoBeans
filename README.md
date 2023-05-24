@@ -64,59 +64,59 @@ The store owner has several goals for this site, which are outlined below:
 ## User Stories
 
 **Site Admin**
-| As a...         | I want to be able to...                       | So that I can..                                |
-| --------------- | --------------------------------------------- | ---------------------------------------------- |
-| **Site Owner**  | login and have access to the store backend    | mange product, recipe and event listings.      |
-| **Site Owner**  | restrict backend access to admins/superusers  | keep the site, listings and customers secure.  |
-| **Site Owner**  | mange product listings                        | add, edit and delete products on the site.     |
-| **Site Owner**  | mange recipe listings                         | add, edit and delete recipes on the site.      |
-| **Site Owner**  | mange event listings                          | add, edit and delete events on the site.       |
+| ID | As a...         | I want to be able to...                       | So that I can..                                |
+| -- | --------------- | --------------------------------------------- | ---------------------------------------------- |
+| 1  | **Site Owner**  | login and have access to the store backend    | mange product, recipe and event listings.      |
+| 2  | **Site Owner**  | restrict backend access to admins/superusers  | keep the site, listings and customers secure.  |
+| 3  | **Site Owner**  | mange product listings                        | add, edit and delete products on the site.     |
+| 4  | **Site Owner**  | mange recipe listings                         | add, edit and delete recipes on the site.      |
+| 5  | **Site Owner**  | mange event listings                          | add, edit and delete events on the site.       |
 
 &nbsp;
 
 **Viewing & Navigation**
-| As a...         | I want to be able to...             | So that I can..                                  |
-| --------------- | ----------------------------------- | ------------------------------------------------ |
-| **Site User**   | easily see the purpose of the site  | be informed as to whether it meets my needs.     |
-| **Site User**   | browse the full range of products   | view the selection and make a purchase.          |
-| **Site User**   | view individual product details     | identify the price, description, and image.      |
-| **Site User**   | see a running total for my basket   | be informed as to how much I'm spending.         |
-| **Site User**   | browse the full range of recipes    | have knowledge around the use of Site products.  |
-| **Site User**   | view individual recipe details      | see the recipe method and find linked products.  |
-| **Site User**   | browse the full range of events     | attend any local events that interest me.        |
+| ID | As a...         | I want to be able to...             | So that I can..                                  |
+| -- | --------------- | ----------------------------------- | ------------------------------------------------ |
+| 6  | **Site User**   | easily see the purpose of the site  | be informed as to whether it meets my needs.     |
+| 7  | **Site User**   | browse the full range of products   | view the selection and make a purchase.          |
+| 8  | **Site User**   | view individual product details     | identify the price, description, and image.      |
+| 9  | **Site User**   | see a running total for my basket   | be informed as to how much I'm spending.         |
+| 10 | **Site User**   | browse the full range of recipes    | have knowledge around the use of Site products.  |
+| 11 | **Site User**   | view individual recipe details      | see the recipe method and find linked products.  |
+| 12 | **Site User**   | browse the full range of events     | attend any local events that interest me.        |
 
 &nbsp;
 
 **Sorting & Searching**
-| As a...        | I want to be able to...                          | So that I can..                                          |
-| -------------- | ------------------------------------------------ | -------------------------------------------------------- |
-| **Site User**  | easliy sort the list of products available       | find products by price or name.                          |
-| **Site User**  | easily sort products by category                 | narrow products down to the most relevant for my needs.  |
-| **Site User**  | search products by name or description           | find a specific product.                                 |
-| **Site User**  | view a filtered products list based on my search | easily see if my desired product is available.           |
+| ID | As a...        | I want to be able to...                          | So that I can..                                          |
+| -- | -------------- | ------------------------------------------------ | -------------------------------------------------------- |
+| 13 | **Site User**  | easliy sort the list of products available       | find products by price or name.                          |
+| 14 | **Site User**  | easily sort products by category                 | narrow products down to the most relevant for my needs.  |
+| 15 | **Site User**  | search products by name or description           | find a specific product.                                 |
+| 16 | **Site User**  | view a filtered products list based on my search | easily see if my desired product is available.           |
 
 &nbsp;
 
 **Basket & Checkout**
-| As a...        | I want to be able to...                       | So that I can..                                 |
-| -------------- | --------------------------------------------- | ----------------------------------------------- |
-| **Site User**  | easliy add products to my basket              | compile a selection of products to purchase.    |
-| **Site User**  | view the products in my basket                | see what I have selected and adjust if needed.  |
-| **Site User**  | easily enter my delivery and payment details  | complete a quick and hassel free purchase.      |
-| **Site User**  | view my order confirmation after checkout     | verify that the order details are correct.      |
-| **Site User**  | recieve an order confirmation email           | keep order details for my records.              |
+| ID | As a...        | I want to be able to...                       | So that I can..                                 |
+| -- | -------------- | --------------------------------------------- | ----------------------------------------------- |
+| 17 | **Site User**  | easliy add products to my basket              | compile a selection of products to purchase.    |
+| 18 | **Site User**  | view the products in my basket                | see what I have selected and adjust if needed.  |
+| 19 | **Site User**  | easily enter my delivery and payment details  | complete a quick and hassel free purchase.      |
+| 20 | **Site User**  | view my order confirmation after checkout     | verify that the order details are correct.      |
+| 21 | **Site User**  | recieve an order confirmation email           | keep order details for my records.              |
 
 &nbsp;
 
 **Registration & User Accounts**
-| As a...              | I want to be able to...                          | So that I can..                                         |
-| -------------------- | ------------------------------------------------ | ------------------------------------------------------- |
-| **Site User**        | easliy register for a new account                | have a personal profile.                                |
-| **Registered User**  | recieve a verification email during registration | be confident that my registration is successful.        |
-| **Registered User**  | easliy login and out of my accout                | use the site with the advantages of a registered user.  |
-| **Registered User**  | recover my email if I forget it                  | regain access to my account.                            |
-| **Registered User**  | have a personal user profile.                    | view my order history and default delivery details.     |
-| **Registered User**  | keep a list of my favourite products             | easily find and purchase them at a later date.          |
+| ID | As a...              | I want to be able to...                          | So that I can..                                         |
+| -- | -------------------- | ------------------------------------------------ | ------------------------------------------------------- |
+| 22 | **Site User**        | easliy register for a new account                | have a personal profile.                                |
+| 23 | **Registered User**  | recieve a verification email during registration | be confident that my registration is successful.        |
+| 24 | **Registered User**  | easliy login and out of my accout                | use the site with the advantages of a registered user.  |
+| 25 | **Registered User**  | recover my email if I forget it                  | regain access to my account.                            |
+| 26 | **Registered User**  | have a personal user profile.                    | view my order history and default delivery details.     |
+| 27 | **Registered User**  | keep a list of my favourite products             | easily find and purchase them at a later date.          |
 
 &nbsp;
 

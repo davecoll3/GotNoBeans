@@ -17,6 +17,7 @@
 ## User Stories
 
 ### Site Admin
+#### ID 1
 * Expected
   * Site owner has access to store backend so that they can manage products, recipes and events.
 
@@ -27,21 +28,69 @@
     </details>
 
 * Result
-  * The site owner or admin has access to an additional 'Admin' menu in the navbar when they login. This is in addition to edit and delete options connected to individual products, recipes and events.
+  * The site owner or admins(superusers) have access to an additional 'Admin' menu in the navbar when they login. This is in addition to edit and delete options connected to individual products, recipes and events.
 
 &nbsp;
 
+#### ID 2
 * Expected
-  * Site owner privliges are restriced to admins/superusers only.
+  * Site owner privliges are restriced to admins only.
 
 * Testing
     <details><summary>Site Owner Testing: Restricted Access</summary>
-      <img src="documentation/testing_images/backend.png">
-      <img src="documentation/testing_images/edit_delete.png">
+      <img src="documentation/testing_images/access.png">
     </details>
 
 * Result
-  * Only admins/superusers have access to full CRUD functionality for site products, recipes and events.
+  * Only admins have access to full CRUD functionality for site products, recipes and events.
+
+&nbsp;
+
+#### ID 3
+* Expected
+  * Site admins can add, edit and delete products on the site.
+
+* Testing
+    <details><summary>Site Owner Testing: Products</summary>
+      <img src="documentation/testing_images/add_product.png">
+      <img src="documentation/testing_images/edit_product.png">
+      <img src="documentation/testing_images/delete_product.png">
+    </details>
+
+* Result
+  * Only admins have access to full CRUD functionality for site products.
+
+&nbsp;
+
+#### ID 4
+* Expected
+  * Site admins can add, edit and delete recipes on the site.
+
+* Testing
+    <details><summary>Site Owner Testing: Recipes</summary>
+      <img src="documentation/testing_images/add_recipe.png">
+      <img src="documentation/testing_images/edit_recipe.png">
+      <img src="documentation/testing_images/delete_recipe.png">
+    </details>
+
+* Result
+  * Only admins have access to full CRUD functionality for site recipes.
+
+&nbsp;
+
+#### ID 5
+* Expected
+  * Site admins can add, edit and delete events on the site.
+
+* Testing
+    <details><summary>Site Owner Testing: Recipes</summary>
+      <img src="documentation/testing_images/add_event.png">
+      <img src="documentation/testing_images/edit_event.png">
+      <img src="documentation/testing_images/delete_event.png">
+    </details>
+
+* Result
+  * Only admins have access to full CRUD functionality for site events.
 
 &nbsp;
 

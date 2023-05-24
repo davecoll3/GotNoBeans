@@ -52,6 +52,9 @@
                     <!-- Adjust Basket Item Qty Input -->
                     <div class="col-12 col-6-sm">
                         {% include "basket/includes/quantity_form.html" %}
+                        <!-- Update & Remove Item Tags -->
+                        <a class="update-link text-primary float-left"><small>Update</small></a>
+                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                     </div>
                 </div>
                 <div class="row">

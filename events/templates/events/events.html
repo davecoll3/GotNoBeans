@@ -23,11 +23,11 @@
     <div class="accordion" id="accordion{{ event.id }}">
         <div class="card">
             <!-- Event Header -->
-            <div class="card-header" id="headingOne">
+            <div class="card-header" id="headingOne{{ event.id }}">
                 <h2 class="mb-0">
                     <button class="btn btn-block text-dark text-left" type="button" 
-                            data-toggle="collapse" data-target="#collapse{{ event.id }}" 
-                            aria-expanded="true" aria-controls="collapseOne">
+                            data-toggle="collapse" data-target="#collapseOne{{ event.id }}" 
+                            aria-expanded="true" aria-controls="collapseOne{{ event.id }}">
                         <strong>{{ event.name }} in {{ event.town_or_city }}</strong>
                         <br> 
                         {{ event.date }}
@@ -35,7 +35,7 @@
                 </h2>
             </div>
             <!-- Event Details -->
-            <div id="collapse{{ event.id }}" class="collapse" aria-labelledby="headingOne" data-parent="#accordion{{ event.id }}">
+            <div id="collapseOne{{ event.id }}" class="collapse" aria-labelledby="headingOne{{ event.id }}" data-parent="#accordion{{ event.id }}">
                 <div class="col-12 col-md-10 card-body">
                     {{ event.description }}
                     <br>

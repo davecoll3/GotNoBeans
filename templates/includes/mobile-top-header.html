@@ -2,13 +2,13 @@
     {% if request.user.is_superuser %}
     <li class="list-inline-item dropdown d-lg-none">
         <!-- Admin Only Nav Dropdown -->
-        <a class="text-white nav-link" href="#" id="admin-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="text-white nav-link" href="#" id="admin-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <div class="text-center">
                 <div><i class="fa-solid fa-cog fa-lg"></i></div>
                 <p class="my-0">Admin</p>
             </div>
         </a>
-        <div class="dropdown-menu border-0" aria-labelledby="admin-options">
+        <div class="dropdown-menu border-0" aria-labelledby="admin-menu">
             <!-- Add New Product/Recipe/Event Links -->
             <a href="{% url 'add_product' %}" class="dropdown-item">Add New Product</a>
             <a href="{% url 'add_recipe' %}" class="dropdown-item">Add New Recipe</a>

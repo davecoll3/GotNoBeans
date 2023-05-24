@@ -7,7 +7,7 @@
     * [HTML](#html)
     * [CSS](#css)
     * [JavaScript](#javascript)
-    * [Python](#python)
+    * [Flake8](#flake8)
     * [Colour Contrast](#colour-contrast)
 * [Browser Compatibility](#browser-compatibility)
 * [Responsiveness](#responsiveness)
@@ -430,39 +430,71 @@
 The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
 
 <details><summary>Homepage</summary>
-<img src="#">
+<img src="documentation/testing_images/homepage_html.png">
 </details>
 
 <details><summary>Products</summary>
-<img src="#">
+<img src="documentation/testing_images/products_html.png">
+</details>
+
+<details><summary>Product Detail</summary>
+<img src="documentation/testing_images/product_detail_html.png">
+</details>
+
+<details><summary>Add Product</summary>
+<img src="documentation/testing_images/add_product_html.png">
+</details>
+
+<details><summary>Edit Product</summary>
+<img src="documentation/testing_images/edit_product_html.png">
 </details>
 
 <details><summary>Recipes</summary>
-<img src="#">
+<img src="documentation/testing_images/recipes_html.png">
+</details>
+
+<details><summary>Recipe Detail</summary>
+<img src="documentation/testing_images/recipe_detail_html.png">
+</details>
+
+<details><summary>Add Recipe</summary>
+<img src="documentation/testing_images/add_recipe_html.png">
+</details>
+
+<details><summary>Edit Recipe</summary>
+<img src="documentation/testing_images/edit_recipe_html.png">
 </details>
 
 <details><summary>Events</summary>
-<img src="#">
+<img src="documentation/testing_images/events_html.png">
+</details>
+
+<details><summary>Add Event</summary>
+<img src="documentation/testing_images/edit_event_html.png">
+</details>
+
+<details><summary>Edit Event</summary>
+<img src="documentation/testing_images/edit_event_html.png">
 </details>
 
 <details><summary>Profile</summary>
-<img src="#">
+<img src="documentation/testing_images/profile_html.png">
 </details>
 
 <details><summary>Favourites</summary>
-<img src="#">
+<img src="documentation/testing_images/favourites_html.png">
 </details>
 
 <details><summary>Basket</summary>
-<img src="#">
+<img src="documentation/testing_images/basket_html.png">
 </details>
 
 <details><summary>Checkout</summary>
-<img src="#">
+<img src="documentation/testing_images/checkout_html.png">
 </details>
 
 <details><summary>Checkout Success</summary>
-<img src="#">
+<img src="documentation/testing_images/success_html.png">
 </details>
 
 &nbsp;
@@ -471,15 +503,15 @@ The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
 
 <details><summary>Base</summary>
-<img src="#">
+<img src="documentation/testing_images/base_css.png">
 </details>
 
 <details><summary>Checkout</summary>
-<img src="#">
+<img src="documentation/testing_images/checkout_css.png">
 </details>
 
 <details><summary>Profiles</summary>
-<img src="#">
+<img src="documentation/testing_images/profile_css.png">
 </details>
 
 &nbsp;
@@ -493,8 +525,8 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 
 &nbsp;
 
-## Python
-[CI Python Linter](https://pep8ci.herokuapp.com/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with no errors found.
+## Flake8
+[Flake8](https://flake8.pycqa.org/en/latest/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with only errors found.
 
 <details><summary>Python Linting</summary>
 <img src="#">

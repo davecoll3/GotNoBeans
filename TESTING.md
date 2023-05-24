@@ -429,7 +429,19 @@
 ## HTML
 The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input) was used to validate the code. The code was successfully validated with no errors or warnings.
 
-<details><summary>Home</summary>
+<details><summary>Homepage</summary>
+<img src="#">
+</details>
+
+<details><summary>Products</summary>
+<img src="#">
+</details>
+
+<details><summary>Recipes</summary>
+<img src="#">
+</details>
+
+<details><summary>Events</summary>
 <img src="#">
 </details>
 
@@ -437,19 +449,19 @@ The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 <img src="#">
 </details>
 
-<details><summary>Add Term</summary>
+<details><summary>Favourites</summary>
 <img src="#">
 </details>
 
-<details><summary>Edit Term</summary>
+<details><summary>Basket</summary>
 <img src="#">
 </details>
 
-<details><summary>Log In</summary>
+<details><summary>Checkout</summary>
 <img src="#">
 </details>
 
-<details><summary>Sign Up</summary>
+<details><summary>Checkout Success</summary>
 <img src="#">
 </details>
 
@@ -458,7 +470,15 @@ The [W3C Markup Validation Service](https://validator.w3.org/#validate_by_input)
 ## CSS
 The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri) was used to validate the code. The code was successfully validated with no errors or warnings.
 
-<details><summary>CSS Validation</summary>
+<details><summary>Base</summary>
+<img src="#">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="#">
+</details>
+
+<details><summary>Profiles</summary>
 <img src="#">
 </details>
 

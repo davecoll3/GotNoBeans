@@ -1,10 +1,12 @@
 <!-- Keep Shopping & Checkout Buttons -->
-<a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-secondary">
-    <span class="mt-2">Keep Shopping</span>
-</a>
-<a href="{% url 'checkout' %}" class="btn btn-dark">
-    <span>Checkout</span>
-    <span class="icon">
-        <i class="fa-solid fa-lock"></i>
-    </span>
-</a>
+<div class="text-right">
+    <a href="{% url 'products' %}?category=brewers,accessories" class="btn btn-secondary">
+        <span class="mt-2">Keep Shopping</span>
+    </a>
+    <a href="{% url 'checkout' %}" class="btn btn-dark">
+        <span>Checkout</span>
+        <span class="icon">
+            <i class="fa-solid fa-lock"></i>
+        </span>
+    </a>
+</div>

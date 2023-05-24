@@ -96,19 +96,15 @@
                         </td>
                     </tr>
                     {% endfor %}
-                    <!-- Basket Price Totals -->
-                    <tr>
-                        <td colspan="5" class="pt-5 text-right">
-                            {% include "basket/includes/basket_total.html" %}
-                        </td>
-                    </tr>
-                    <!-- Keep Shopping & Checkout Buttons -->
-                    <tr>
-                        <td colspan="5" class="text-right">
-                            {% include "basket/includes/checkout_buttons.html" %}
-                        </td>
-                    </tr>
                 </table>
+                <div>
+                    <!-- Basket Price Totals -->
+                    {% include "basket/includes/basket_total.html" %}
+                </div>
+                <div>
+                    <!-- Keep Shopping & Checkout Buttons -->
+                    {% include "basket/includes/checkout_buttons.html" %}
+                </div>
             </div>
             {% else %}
             <!-- Empty Basket Notice -->

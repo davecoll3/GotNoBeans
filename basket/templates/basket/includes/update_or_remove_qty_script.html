@@ -18,4 +18,17 @@
              location.reload();
          });
     });
+
+    // Remove item and reload on click for mobile
+    $('.delete-item').click(function(e) {
+        const csrfToken = "{{ csrf_token }}";
+        const itemId = $(this).attr('id').split('delete_')[1];
+        const url = `/basket/remove/${itemId}/`;
+        const data = {'csrfmiddlewaretoken': csrfToken,};
+
+        $.post(url, data)
+         .done(function() {
+             location.reload();
+         });
+    });
 </script>

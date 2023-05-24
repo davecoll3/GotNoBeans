@@ -190,7 +190,8 @@ button[disabled]{
 
 .to-top-link,
 .update-link,
-.remove-item {
+.remove-item,
+.delete-item {
     cursor: pointer;
 }
 

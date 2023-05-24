@@ -51,7 +51,7 @@ def edit_event(request, event_id):
         # Update event if valid
         if form.is_valid():
             form.save()
-            messages.success(request, 'Event Updated!')
+            messages.success(request, 'Successfully updated event!')
             return redirect(reverse('events'))
         # Display error message for invalid form
         else:

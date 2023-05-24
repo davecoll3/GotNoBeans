@@ -676,8 +676,124 @@ permissions' at the bottom.
 13. On the next page you will need to download the CSV file. This contains the user's access key and secret access key which you will need.
 
 ### Connecting AWS to Django
+Now that you have an S3 bucket, you will need to connect it to Django.
+1. Start by installing Boto3 and Django-storages in your IDE. Run the following commands sequentially in your terminal:
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+2. Add 'storages' to your installed apps section inside your settings.py file.
+3. Scroll down your setting.py file and add the settings below to let Django know which bucket it is communicating with. Somewhere near the bottom of the file you can write an if statement to check if there is an environment variable called USE_AWS. 
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = 'insert-your-bucket-name-here'
+    AWS_S3_REGION_NAME = 'insert-your-region-here'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+```
+4. Go back to Heroku, in the settings tab, you will have additional Config Vars from the CSV file that you downloaded earlier. First, add 'AWS_ACCESS_KEY_ID' with the value in the CSV. Then add 'AWS_SECRET_ACCESS_KEY' with the value from the CSV file. Once they have both been added, add 'USE_AWS' and set it to True.
+5. You can now remove the 'DISABLE_COLLECTSTAIC' variable, as django should now collect static files automatically and upload them to S3.
+6. Return to your settings.py file, in your django project, and go back to the if statement you wrote earlier. In order to tell django where our static files will be coming from in production, inside the if statement add:
+```
+WS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+```
+7. Now we need to create a file to tell django that we want to use S3 to store our static files, whenever someone runs collectstatic, and  that we want any uploaded images to go there too.
+8. In the root directory of your project create a file called 'custom_storages.py'. Inside this file you will import your settings as well as the s3boto3 storage class. At the top of the file insert:
+```
+from django.conf import settings
+from storages.backends.s3boto3 import S3Boto3Storage
+```
+9. Underneath these imports insert two classes.
+```
+class StaticStorage(S3Boto3Storage):
+    location = settings.STATICFILES_LOCATION
+
+
+class MediaStorage(S3Boto3Storage):
+    location = settings.MEDIAFILES_LOCATION
+```
+10. Back in the settings.py file, you will now define 'STATICFILES_LOCATION' and 'MEDIAFILES_LOCATION'. Underneath the bucket config settings, inside the if statement, add the following:
+```
+STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+STATICFILES_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+MEDIAFILES_LOCATION = 'media'
+```
+11. You will now need to override and explicitly set the URLs for static and media files using your custom domain and new locations. You can do this by adding these two lines inside the if statement.
+```
+STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+12. Save, add, commit and push your changes to GitHub which will, in turn, trigger an automatic deployment to Heroku. You should now see that your S3 bucket has a static folder with all your static files inside. 
+13. Add the following code to help speed things up by letting the browser know that its ok to cache static files for a long time.
+```
+AWS_S3_OBJECT_PARAMETERS = {
+    'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+    'CacheControl': 'max-age=94608000',
+}
+```
+14. You complete if statement should now look something like this:
+```
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
+
+    # Bucket Config
+    AWS_STORAGE_BUCKET_NAME = 'your-app-name'
+    AWS_S3_REGION_NAME = 'eu-west-2'
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+
+    # Static and media files
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+15. Back on AWS and in S3, go to your bucket. Click 'Create folder' and name it 'media'. Click 'Save'.
+16. Inside this new media folder, click 'Upload' then 'Add files'. Select all the images that you are using on your site.
+17. Under 'Permissions' select the option 'Grant public-read access' and click upload. You may also need to check an acknowledgment warning checkbox.
+18. Once that is done, your static and media files should be automatically linked from django to your S3 bucket.
+
+
 
 ## Stripe
+Stripe is used to handle all payments in the checkout process. If you don't already have one, you will need to sign-up for an account which you can do on their [website](https://dashboard.stripe.com/register).
+
+### Payments
+You can set up Stripe payments by following their [step-by-step guide](https://stripe.com/docs/payments/accept-a-payment#web-collect-card-details).
+
+### Webhooks
+1. To set up a new webhook, log into your Stripe account and click 'Developers' on the navbar; top right-hand corner.
+2. Click on the 'Webhooks' tab, just under the Developers heading, then 'Add endpoint'.
+3. You will then need to input the URL for your Heroku app followed by '/checkout/wh/'. It should look something like this:
+```
+https://your-app-name.herokuapp.com/checkout/wh/
+```
+4. Then click '+ Select events' button and check the 'Select all events' checkbox before clicking 'Add events' at the bottom. Once this is done finish the setup by clicking 'Add endpoint'.
+5. Your webhook has now been created and it will have generated a secret key. You will need this to add to your Config Vars in Heroku.
+6. Now go to your app in Heroku and under settings click 'Reveal Config Vars'. You will need the secret key your newly generated webhook along with your Stripe 'Publishable Key' and 'Secret Key' which you can find in the API keys section of stripe.
+```
+STRIPE_PUBLIC_KEY = your_stripe_publishable_key
+STRIPE_SECRET_KEY = your_secret_key
+STRIPE_WH_SECRET = your_webhook_secret_key
+```
+7. To finish, go back to your setting.py file in your IDE and insert the following near the bottom of the file.
+```
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+```
+8. You can now checkout using a test credit card number (such as 4242 4242 4242 4242) and check that they're coming through to your webhook on stripe.
 
 
 &nbsp;

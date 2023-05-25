@@ -134,5 +134,5 @@ form.addEventListener('submit', function(ev) {
         error displayed in django messages
         */
         location.reload();
-    })
+    });
 });

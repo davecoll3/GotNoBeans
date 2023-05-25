@@ -517,19 +517,35 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 &nbsp;
 
 ## JavaScript
-[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The undefined variable shown 'M' relates to Materialize CCS Initialization code.
+[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The 'Stripe Elements' code comes from [Stripe](https://stripe.com/docs/payments/accept-a-payment) and was flagged for having one undefinded variable 'Stripe' on line 10.
 
-<details><summary>JavaScript Validation</summary>
-<img src="#">
+<details><summary>Add or Edit</summary>
+<img src="documentation/testing_images/add_or_edit_script.png">
+</details>
+
+<details><summary>Quantity Input</summary>
+<img src="documentation/testing_images/qty_input_script.png">
+</details>
+
+<details><summary>Scroll to Top</summary>
+<img src="documentation/testing_images/scroll_to_top_script.png">
+</details>
+
+<details><summary>Stripe Elements</summary>
+<img src="documentation/testing_images/stripe_script.png">
+</details>
+
+<details><summary>Update or Remove Qty Script</summary>
+<img src="documentation/testing_images/update_remove_qty_script.png">
 </details>
 
 &nbsp;
 
 ## Flake8
-[Flake8](https://flake8.pycqa.org/en/latest/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with only errors found.
+[Flake8](https://flake8.pycqa.org/en/latest/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with the only errors found relating to django files and migrations.
 
-<details><summary>Python Linting</summary>
-<img src="#">
+<details><summary>Flake8 Results</summary>
+<img src="documentation/testing_images/flake8.png">
 </details>
 
 &nbsp;

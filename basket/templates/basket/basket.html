@@ -53,8 +53,8 @@
                     <div class="col-12 col-6-sm">
                         {% include "basket/includes/quantity_form.html" %}
                         <!-- Update & Remove Item Tags -->
-                        <a class="update-link text-primary float-left"><small>Update</small></a>
-                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                        <button type="button" class="update-link text-primary btn bg-transparent float-left"><small>Update</small></button>
+                        <button type="button" class="remove-item text-danger btn bg-transparent float-right" id="remove_{{ item.item_id }}"><small>Remove</small></button>
                     </div>
                 </div>
                 <div class="row">
@@ -88,8 +88,8 @@
                         <!-- Adjust Basket Item Qty Input -->
                         <td class="py-3 text-right">
                             {% include "basket/includes/quantity_form.html" %}
-                            <a class="update-link text-primary float-left"><small>Update</small></a>
-                            <a class="delete-item text-danger float-right" id="delete_{{ item.item_id }}"><small>Remove</small></a>
+                            <button type="button" class="update-link text-primary btn bg-transparent float-left"><small>Update</small></button>
+                            <button type="button" class="delete-item text-danger btn bg-transparent float-right" id="delete_{{ item.item_id }}"><small>Remove</small></button>
                         </td>
                         <td class="py-3 text-right">
                             <p class="my-0">£{{ item.product.price | calc_subtotal:item.quantity }}</p>

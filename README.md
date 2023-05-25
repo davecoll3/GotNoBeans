@@ -168,11 +168,9 @@ The store owner has several goals for this site, which are outlined below:
 ## Wireframes
 
 * Balsamiq Wireframes was used to create the wireframes for this site. 
-Wireframes for mobile, tablet, and desktop can be found below:
+Wireframes for desktop and mobile devices can be found below:
 
-  ### [Phone Wireframe](#)
-
-  ### [Tablet Wireframe](#)
+  ### [Mobile Wireframe](documentation/readme_docs/mobile_wireframes.pdf)
 
   ### [Desktop Wireframe](documentation/readme_docs/desktop_wireframes.pdf)
 

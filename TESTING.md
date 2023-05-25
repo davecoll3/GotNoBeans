@@ -17,7 +17,7 @@
 ### Site Admin
 #### ID 1
 * Expected
-  * Site owner has access to store backend so that they can manage products, recipes and events.
+  * Site owner has access to the store backend so that they can manage products, recipes and events.
 
 * Testing
     <details><summary>Site Owner Testing: Backend Access</summary>
@@ -30,7 +30,7 @@
 
 #### ID 2
 * Expected
-  * Site owner privliges are restriced to admins only.
+  * Site owner privileges are restricted to admins only.
 
 * Testing
     <details><summary>Site Owner Testing: Restricted Access</summary>
@@ -87,7 +87,7 @@
 ### Viewing & Navigation
 #### ID 6
 * Expected
-  * Site user can easily see the purpose of the site and be informed as to whether it meets their needs.
+  * Site users can easily see the purpose of the site and be informed as to whether it meets their needs.
 
 * Testing
     <details><summary>Site User Testing: Purpose</summary>
@@ -95,11 +95,11 @@
     </details>
 
 * Result
-  * The homepage navbar, image, text, and 'Shop Now' button combine to inform the user of the site purpose.
+  * The homepage navbar, image, text, and 'Shop Now' button combine to inform the user of the site's purpose.
 
 #### ID 7
 * Expected
-  * Site user can browse the full range of products, view the selection and make a purchase.
+  * Site users can browse the full range of products, view the selection and make a purchase.
 
 * Testing
     <details><summary>Site User Testing: Product Browsing</summary>
@@ -111,7 +111,7 @@
 
 #### ID 8
 * Expected
-  * Site user can view individual product details and identify the price, description and image.
+  * Site users can view individual product details and identify the price, description and image.
 
 * Testing
     <details><summary>Site User Testing: Product Details</summary>
@@ -119,11 +119,11 @@
     </details>
 
 * Result
-  * The product detail page displays such as price, description and an image to the use.
+  * The product detail page displays such as price, description and an image to the user.
 
 #### ID 9
 * Expected
-  * Site user can see a running total for their basket and be informed as to how much they're spending.
+  * Site users can see a running total for their basket and be informed as to how much they're spending.
 
 * Testing
     <details><summary>Site User Testing: Basket Total</summary>
@@ -135,7 +135,7 @@
 
 #### ID 10
 * Expected
-  * Site user can browse the full selection of recipes.
+  * Site users can browse the full selection of recipes.
 
 * Testing
     <details><summary>Site User Testing: Recipe Browsing</summary>
@@ -147,7 +147,7 @@
 
 #### ID 11
 * Expected
-  * Site user can view individual recipe details to see the recipe method and find linked products.
+  * Site users can view individual recipe details to see the recipe method and find linked products.
 
 * Testing
     <details><summary>Site User Testing: Recipe Details</summary>
@@ -159,7 +159,7 @@
 
 #### ID 12
 * Expected
-  * Site user can browse the full range of events and find any local events that interest them.
+  * Site users can browse the full range of events and find any local events that interest them.
 
 * Testing
     <details><summary>Site User Testing: Events Browsing</summary>
@@ -174,7 +174,7 @@
 ### Sorting & Searching
 #### ID 13
 * Expected
-  * Site user can easliy sort the list of products available and find products by price or name.
+  * Site users can easily sort the list of products available and find products by price or name.
 
 * Testing
     <details><summary>Site User Testing: Sort Products</summary>
@@ -186,7 +186,7 @@
 
 #### ID 14
 * Expected
-  * Site user can easily sort products by category and narrow products down to the most relevant.
+  * Site users can easily sort products by category and narrow products down to the most relevant.
 
 * Testing
     <details><summary>Site User Testing: Sort Categories</summary>
@@ -194,11 +194,11 @@
     </details>
 
 * Result
-  * The catagories badges, under the header on the products page, allows users to sort products by category.
+  * The categories badges, under the header on the products page, allows users to sort products by category.
 
 #### ID 15
 * Expected
-  * Site user can search products by name or description and find a specific product.
+  * Site users can search products by name or description and find a specific product.
 
 * Testing
     <details><summary>Site User Testing: Search Bar</summary>
@@ -210,7 +210,7 @@
 
 #### ID 16
 * Expected
-  * Site user can view a filtered products list based on their search.
+  * Site users can view a filtered products list based on their search.
 
 * Testing
     <details><summary>Site User Testing: Search Results</summary>
@@ -225,7 +225,7 @@
 ### Basket & Checkout
 #### ID 17
 * Expected
-  * Site user can easliy add products to their basket and compile a selection of products to purchase.
+  * Site users can easily add products to their basket and compile a selection of products to purchase.
 
 * Testing
     <details><summary>Site User Testing: Add to Basket</summary>
@@ -237,7 +237,7 @@
 
 #### ID 18
 * Expected
-  * Site user can view the products in their basket to see what they have selected and adjust if needed.
+  * Site users can view the products in their basket to see what they have selected and adjust if needed.
 
 * Testing
     <details><summary>Site User Testing: Basket</summary>
@@ -249,7 +249,7 @@
 
 #### ID 19
 * Expected
-  * Site user can easily enter their delivery and payment details allowing for a quick and hassel free purchase.
+  * Site users can easily enter their delivery and payment details allowing for a quick and hassle free purchase.
 
 * Testing
     <details><summary>Site User Testing: Checkout</summary>
@@ -261,7 +261,7 @@
 
 #### ID 20
 * Expected
-  * Site user can see their order confirmation after checkout and verify that the order details are correct.
+  * Site users can see their order confirmation after checkout and verify that the order details are correct.
 
 * Testing
     <details><summary>Site User Testing: Order Confirmation</summary>
@@ -273,7 +273,7 @@
 
 #### ID 21
 * Expected
-  * Site user will recieve an order confirmation email to keep order details for their records.
+  * Site users will receive an order confirmation email to keep order details for their records.
 
 * Testing
     <details><summary>Site User Testing: Order Confirmation Email</summary>
@@ -281,14 +281,14 @@
     </details>
 
 * Result
-  * Upon completion of the purchase, and email is sent to the user to confirm that it has been successfully placed and provides a summary.
+  * Upon completion of the purchase, an email is sent to the user to confirm that it has been successfully placed and provides a summary.
 
 &nbsp;
 
 ### Registration & User Accounts
 #### ID 22
 * Expected
-  * Site user can easliy register for a new account and	have a personal profile.
+  * Site users can easily register for a new account and have a personal profile.
 
 * Testing
     <details><summary>Site User Testing: Register</summary>
@@ -300,7 +300,7 @@
 
 #### ID 23
 * Expected
-  * Registered users recieve a verification email during registration so that they can be confident that their registration was successful.
+  * Registered users receive a verification email during registration so that they can be confident that their registration was successful.
 
 * Testing
     <details><summary>Site User Testing: Email Verification</summary>
@@ -312,7 +312,7 @@
 
 #### ID 24
 * Expected
-  * Registered users can easliy sign in and out of their accout.
+  * Registered users can easily sign in and out of their account.
 
 * Testing
     <details><summary>Site User Testing: Sign in & Out</summary>
@@ -320,7 +320,7 @@
     </details>
 
 * Result
-  * Sign in and out buttons are easily available at all times form the 'Account' dropdown in the navbar.
+  * Sign in and out buttons are easily available at all times from the 'Account' dropdown in the navbar.
 
 #### ID 25
 * Expected
@@ -344,7 +344,7 @@
     </details>
 
 * Result
-  * The user's profile is easily accessible at all times form the 'Account' dropdown in the navbar. This contains their order history and default delivery information, which they can update.
+  * The user's profile is easily accessible at all times from the 'Account' dropdown in the navbar. This contains their order history and default delivery information, which they can update.
 
 #### ID 27
 * Expected
@@ -356,7 +356,7 @@
     </details>
 
 * Result
-  * The user's favourites list is easily accessible at all times form the 'Account' dropdown in the navbar. This contains basic information on each product and links to it. They can also remove products from thir favourites here.
+  * The user's favourites list is easily accessible at all times from the 'Account' dropdown in the navbar. This contains basic information on each product and links to it. They can also remove products from their favourites here.
 
 &nbsp;
 
@@ -455,7 +455,7 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 &nbsp;
 
 ## JavaScript
-[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The 'Stripe Elements' code comes from [Stripe](https://stripe.com/docs/payments/accept-a-payment) and was flagged for having one undefinded variable 'Stripe' on line 10.
+[JSHint](https://jshint.com/) was used to check if the JavaScript code complies with coding rules. The code was successfully validated with no errors or warnings. The 'Stripe Elements' code comes from [Stripe](https://stripe.com/docs/payments/accept-a-payment) and was flagged for having one undefined variable 'Stripe' on line 10.
 
 <details><summary>Add or Edit</summary>
 <img src="documentation/testing_images/add_or_edit_script.png">
@@ -707,7 +707,7 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 ## Notable Bugs
 
 ### Checkout App: Order model
-During the development of the project I was recieving the TypeError message shown below.
+During the development of the project I was receiving the TypeError message shown below.
 
 ![TypeError](/documentation/testing_images/decimal_bug.png)
 
@@ -728,11 +728,11 @@ The simplest solution I found ws to rewrite any reference to delivery_cost decla
 &nbsp;
 
 ### Events App: EventForm
-During the development of the project, the EditForm class, refrenced in the edit_event view, was not pulling through the event date and time data from the Event model.
+During the development of the project, the EditForm class, referenced in the edit_event view, was not pulling through the event date and time data from the Event model.
 
 ![EventForm Bug](/documentation/testing_images/date_time_bug.png)
 
-All other information was being pulled through apart from the event date and time. There were no issues found in the add_event view and I confirmed in the admin that a value for both date and time existed. After testing and researching the issue, it was discovered that the issue was being casued by the date and time format that was being used in the form. The bug stemmed from the code below, from the EventForm:
+All other information was being pulled through apart from the event date and time. There were no issues found in the add_event view and I confirmed in the admin that a value for both date and time existed. After testing and researching the issue, it was discovered that the issue was being caused by the date and time format that was being used in the form. The bug stemmed from the code below, from the EventForm:
 ```
 class Meta:
         model = Event
@@ -757,7 +757,7 @@ class Meta:
 &nbsp;
 
 ### HTML Validation: Base Templates
-During HTML code validation, I was recieving an error, coming from the base templates, stating that the site had duplicate IDs for 'user-options'. 
+During HTML code validation, I was receiving an error, coming from the base templates, stating that the site had duplicate IDs for 'user-options'. 
 
 ![Home HTML Validation Error](/documentation/testing_images/html_validation_error.png)
 
@@ -798,7 +798,7 @@ This issue was resolved by changing the ID in the mobile top header template to 
 &nbsp;
 
 ### Events App: Toast Messages
-During the testing of the project, it was noticed that toast messages weren't appearing when adding, editing or deleting events from the site. This was unusual as toasts were appearing for almost everything else and were coming from the base template. I used print statemenets to check the code in the events views, all of which seemed okay. Using Google DevTools it was discovered that while the toasts were being rendered in the html, they were not being given the requsite 'show' class.
+During the testing of the project, it was noticed that toast messages weren't appearing when adding, editing or deleting events from the site. This was unusual as toasts were appearing for almost everything else and were coming from the base template. I used print statements to check the code in the events views, all of which seemed okay. Using Google DevTools it was discovered that while the toasts were being rendered in the html, they were not being given the requisite 'show' class.
 
 ![Event Toasts Bug](/documentation/testing_images/toasts_bug.png)
 

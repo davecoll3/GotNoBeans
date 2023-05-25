@@ -2,9 +2,9 @@
 
 # Got No Beans
 
-GotNoBeans is an online retailer specialising in coffee brewing equipment. Specifically targeted at the home enthusiast. they offer a wide variety of home brewers and accessories. Beyond this, they offer brewing recipes that are specific to their products to empower users to feel confident when purchasing a product they are unfamilar with. In order to promte the business and build a community around it, GotNoBeans host events around the UK during which they showcase and educate around their products.
+GotNoBeans is an online retailer specialising in coffee brewing equipment. Specifically targeted at the home enthusiast. They offer a wide variety of home brewers and accessories. Beyond this, they offer brewing recipes that are specific to their products to empower users to feel confident when purchasing a product they are unfamiliar with. In order to promote the business and build a community around it, GotNoBeans host events around the UK during which they showcase and educate around their products.
 
-The GotNoBeans website is a full-stack e-commerce site built using Django, Python, jQuery, CSS, and HTML.
+The GotNoBeans website is a full-stack e-commerce site built using Django, Python, JavaScript, CSS, and HTML.
 
 [View the live site here](https://got-no-beans.herokuapp.com/)
 
@@ -56,7 +56,7 @@ Research for the creation of this site was carried out by searching for various 
 ## Owner Goals
 The store owner has several goals for this site, which are outlined below:
 * Provide an e-commerce site that will appeal to the home brew coffee enthusiast.
-* Showcase a product line that consisting of a range of coffee brewers and accessories.
+* Showcase a product line that consists of a range of coffee brewers and accessories.
 * List store organised events that help generate interest and a community around the business.
 * Educate the user in brewing methods by listing product specific recipes.
 
@@ -69,7 +69,7 @@ The store owner has several goals for this site, which are outlined below:
 **Site Admin**
 | ID | As a...         | I want to be able to...                       | So that I can..                                |
 | -- | --------------- | --------------------------------------------- | ---------------------------------------------- |
-| 1  | **Site Owner**  | login and have access to the store backend    | mange product, recipe and event listings.      |
+| 1  | **Site Owner**  | login and have access to the store backend    | manage product, recipe and event listings.      |
 | 2  | **Site Owner**  | restrict backend access to admins/superusers  | keep the site, listings and customers secure.  |
 | 3  | **Site Owner**  | mange product listings                        | add, edit and delete products on the site.     |
 | 4  | **Site Owner**  | mange recipe listings                         | add, edit and delete recipes on the site.      |
@@ -93,7 +93,7 @@ The store owner has several goals for this site, which are outlined below:
 **Sorting & Searching**
 | ID | As a...        | I want to be able to...                          | So that I can..                                          |
 | -- | -------------- | ------------------------------------------------ | -------------------------------------------------------- |
-| 13 | **Site User**  | easliy sort the list of products available       | find products by price or name.                          |
+| 13 | **Site User**  | easily sort the list of products available       | find products by price or name.                          |
 | 14 | **Site User**  | easily sort products by category                 | narrow products down to the most relevant for my needs.  |
 | 15 | **Site User**  | search products by name or description           | find a specific product.                                 |
 | 16 | **Site User**  | view a filtered products list based on my search | easily see if my desired product is available.           |
@@ -103,20 +103,20 @@ The store owner has several goals for this site, which are outlined below:
 **Basket & Checkout**
 | ID | As a...        | I want to be able to...                       | So that I can..                                 |
 | -- | -------------- | --------------------------------------------- | ----------------------------------------------- |
-| 17 | **Site User**  | easliy add products to my basket              | compile a selection of products to purchase.    |
+| 17 | **Site User**  | easily add products to my basket              | compile a selection of products to purchase.    |
 | 18 | **Site User**  | view the products in my basket                | see what I have selected and adjust if needed.  |
-| 19 | **Site User**  | easily enter my delivery and payment details  | complete a quick and hassel free purchase.      |
+| 19 | **Site User**  | easily enter my delivery and payment details  | complete a quick and hassle free purchase.      |
 | 20 | **Site User**  | view my order confirmation after checkout     | verify that the order details are correct.      |
-| 21 | **Site User**  | recieve an order confirmation email           | keep order details for my records.              |
+| 21 | **Site User**  | receive an order confirmation email           | keep order details for my records.              |
 
 &nbsp;
 
 **Registration & User Accounts**
 | ID | As a...              | I want to be able to...                          | So that I can..                                         |
 | -- | -------------------- | ------------------------------------------------ | ------------------------------------------------------- |
-| 22 | **Site User**        | easliy register for a new account                | have a personal profile.                                |
-| 23 | **Registered User**  | recieve a verification email during registration | be confident that my registration is successful.        |
-| 24 | **Registered User**  | easliy login and out of my accout                | use the site with the advantages of a registered user.  |
+| 22 | **Site User**        | easily register for a new account                | have a personal profile.                                |
+| 23 | **Registered User**  | receive a verification email during registration | be confident that my registration is successful.        |
+| 24 | **Registered User**  | easily login and out of my account                | use the site with the advantages of a registered user.  |
 | 25 | **Registered User**  | recover my email if I forget it                  | regain access to my account.                            |
 | 26 | **Registered User**  | have a personal user profile.                    | view my order history and default delivery details.     |
 | 27 | **Registered User**  | keep a list of my favourite products             | easily find and purchase them at a later date.          |
@@ -129,7 +129,7 @@ The store owner has several goals for this site, which are outlined below:
 * Appealing visual presentation that enhances the user experience.
 * Familiar and intuitive design that negates any learning curve.
 * Feedback when interacting with the site that is also instructive.
-* Colour choices for links and buttons should be familar and logical.
+* Colour choices for links and buttons should be familiar and logical.
 * A reactive site that is user friendly and well presented on all types of device and screen sizes.
 * Adequate levels of colour contrast across the site that presents content in an accessible and easy to read manner.
 
@@ -141,7 +141,7 @@ The store owner has several goals for this site, which are outlined below:
 * A large colourful image showing a selection of coffee brewers is used as a background for the site homepage. The image itself is visually appealing while also making a direct link to the products sold on the site. 
 
 ### Colour Scheme
-* Black text on a white background forms the main basis of the site. This clean and classic pairing offers maximium contrast to the user while also being visually appealing and working well with other colours. The navbar is an extremelt dark shade of brown (#1a0d00) which is used to provide a suttle link to that of coffee beans. Brown is also used on the footer with an opacity of .5 to add lightness and allow the background image to be seen through it on the homepage.
+* Black text on a white background forms the main basis of the site. This clean and classic pairing offers maximum contrast to the user while also being visually appealing and working well with other colours. The navbar is an extremely dark shade of brown (#1a0d00) which is used to provide a subtle link to that of coffee beans. Brown is also used on the footer with an opacity of .5 to add lightness and allow the background image to be seen through it on the homepage.
 
 * Main Colour Pallet:
     * Background: #fff
@@ -153,7 +153,7 @@ The store owner has several goals for this site, which are outlined below:
 ![Colour Pallet](/documentation/readme_images/colours.png)
 
 ### Fonts
-* The Google font of Roboto Mono was chosen for this site. A monospaced member of the Roboto family type, this font is optimised for readability on screens across a wide variety of devices and reading environments. It works very well with the site theme and helps to provide a clean asthetic.
+* The Google font of Roboto Mono was chosen for this site. A monospaced member of the Roboto family type, this font is optimised for readability on screens across a wide variety of devices and reading environments. It works very well with the site theme and helps to provide a clean aesthetic.
 
 ### Structure
 * The information architecture type used for this site is the hierarchical tree structure. This common structure allows for simple navigation throughout the site and allows for easy expansion of the site in the future. The use of the burger navigation icon, along with a floating return to top button, help to overcome the common issues with this structure on mobile devices.
@@ -179,7 +179,7 @@ Wireframes for desktop and mobile devices can be found below:
 [Back to top &uarr;](#got-no-beans)
 
 # Data Model
-The site is underpinned by a relational database model and the datbabase schema can be seen below. This represents the models, fields, field types and relationships between models. 
+The site is underpinned by a relational database model and the database schema can be seen below. This represents the models, fields, field types and relationships between models. 
 
 * The database currently consists of eight models, these include:
     * Category
@@ -229,31 +229,31 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 * Homepage
 
-    * A large colourful image showing a selection of coffee brewers is used as a background for the site homepage. The image itself is visually appealing while also making a direct link to the products sold on the site. This immediately demonstrates to the user the purpose of the site and is ovelayed with a 'Shop Now' which encourages them to view the products on offer. The tagline of "You do the brew, we'll do the beans" is used to convey that the site specailses in brewing equipment rather than coffee itself. 
+    * A large colourful image showing a selection of coffee brewers is used as a background for the site homepage. The image itself is visually appealing while also making a direct link to the products sold on the site. This immediately demonstrates to the user the purpose of the site and is overlaid with a 'Shop Now' which encourages them to view the products on offer. The tagline of "You do the brew, we'll do the beans" is used to convey that the site specialises in brewing equipment rather than coffee itself. 
 
         ![Homepage](/documentation/readme_images/homepage.png)
 
 * Page Headers
 
-    * Page headers can be found sitewide and assist the user to keep track of which page they are currently on. Page headers are generally uniform across the site, with two main styles, but it differs slightly on the 'Products' page. The products header itself is linked to the products page and shows all products (brewers and accessories), this is particularly helpful on moble devices. Two category badges can be found under the products header which filter products by category.
+    * Page headers can be found sitewide and assist the user to keep track of which page they are currently on. Page headers are generally uniform across the site, with two main styles, but it differs slightly on the 'Products' page. The products header itself is linked to the products page and shows all products (brewers and accessories), this is particularly helpful on mobile devices. Two category badges can be found under the products header which filter products by category.
 
         ![Page Header](/documentation/readme_images/header.png)
 
 * Forms
 
-    * All forms are uniform in appearance with a header above the form fields. Each field is labeled and mandatory fields are marked with an asterisk to assist the user. Date and time pickers are used where required as per best practice. Form validation is present and Bootstrap toasts provide additional feedback to the user. When editing a form with an image field, a minified preview is shown to the user if a image is present.
+    * All forms are uniform in appearance with a header above the form fields. Each field is labelled and mandatory fields are marked with an asterisk to assist the user. Date and time pickers are used where required as per best practice. Form validation is present and Bootstrap toasts provide additional feedback to the user. When editing a form with an image field, a minified preview is shown to the user if an image is present.
 
         ![Form](/documentation/readme_images/form.png)
 
 * Delete Item Modal
 
-    * Should the admin attempt to delete a product, recipe or event, a modal will appear to confim that they do indeed want to delete the selected item. This helps to avoid accidental deletion of items as it is a two step process.
+    * Should the admin attempt to delete a product, recipe or event, a modal will appear to confirm that they do indeed want to delete the selected item. This helps to avoid accidental deletion of items as it is a two step process.
 
         ![Delete Item Modal](/documentation/readme_images/modal.png)
 
 * All Products and Recipes Pages
 
-    * The products and recipes pages follow the same format displaying images for each item alond with a name, both linked to that item's description page; the products page additionally shows the item price and has a sort selector for sorting the products by name or price. Edit and delete options are also displayed to superusers. A back to top button can be found in the bottom right corner of both pages, this is particularly useful to users on a mobile device.
+    * The products and recipes pages follow the same format displaying images for each item along with a name, both linked to that item's description page; the products page additionally shows the item price and has a sort selector for sorting the products by name or price. Edit and delete options are also displayed to superusers. A back to top button can be found in the bottom right corner of both pages, this is particularly useful to users on a mobile device.
 
         ![Products](/documentation/readme_images/products.png)
 
@@ -271,7 +271,7 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 * Events Page
 
-    * The events page consiste of an accordion that displays baisc information for each event with further details available when expanded. In the expanded view the user can see full details (descrprtion, date, time, location) for each event along with a list of linked products that will be showcased at each event. Superusers will additionally have access to edit and delete options.
+    * The events page consists of an accordion that displays basic information for each event with further details available when expanded. In the expanded view the user can see full details (description, date, time, location) for each event along with a list of linked products that will be showcased at each event. Superusers will additionally have access to edit and delete options.
 
         ![Events](/documentation/readme_images/events.png)
 
@@ -283,7 +283,7 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 * Favourites Page
 
-    * The favourites page allows the user to compile a selection of favoured items that are easily accessible for future refrence. A product name and price is displaed for each item alongside a minified product image. The product name and image both link to the description page for that particular item should the user wish to see further details or purchase the item. A remove button is also displayed beside each item should the user wish to remove that item from their favourites.
+    * The favourites page allows the user to compile a selection of favoured items that are easily accessible for future reference. A product name and price is displayed for each item alongside a minified product image. The product name and image both link to the description page for that particular item should the user wish to see further details or purchase the item. A remove button is also displayed beside each item should the user wish to remove that item from their favourites.
 
         ![Favourites](/documentation/readme_images/favourites.png)
 
@@ -295,13 +295,13 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 * Checkout Page
 
-    * The checkout page consits of a form for the user to input their persoal details and delivery information; this is auto-populated if a registered user has saved their default information. Underneath the form is a payment field supplied by Stripe for card details. At the bottom of the page there is an 'Adjust Basket' button, linked to the basket, and a 'Complete Order' button, used to submit the order.
+    * The checkout page consists of a form for the user to input their personal details and delivery information; this is auto-populated if a registered user has saved their default information. Underneath the form is a payment field supplied by Stripe for card details. At the bottom of the page there is an 'Adjust Basket' button, linked to the basket, and a 'Complete Order' button, used to submit the order.
 
         ![Checkout](/documentation/readme_images/checkout.png)
 
 * Checkout Success Page
 
-    * The checkout success page consists of a complete summary of the order, listing the order number, product name and quantity, delivery, and billing information. It also confirms to the user that an email was sent to the email address provided. A 'Forgot Something?' button is located at the bottom of the page to encourage them to seach for additional proucts and links to the products page.
+    * The checkout success page consists of a complete summary of the order, listing the order number, product name and quantity, delivery, and billing information. It also confirms to the user that an email was sent to the email address provided. A 'Forgot Something?' button is located at the bottom of the page to encourage them to search for additional products and links to the products page.
 
         ![Checkout Success](/documentation/readme_images/checkout_success.png)
 
@@ -313,22 +313,22 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 * Toasts
 
-    * Bootstrap toasts are used to provide users with a variety of success, error, and alert messages. The dissapear after a short period and can also be closed by the user.
+    * Bootstrap toasts are used to provide users with a variety of success, error, and alert messages. They disappear after a short period and can also be closed by the user.
 
         ![Toasts](/documentation/readme_images/toasts.png)
 
 * Admin Features
 
-    * Site admins (superusers) can perform full CRUD functionallity on the site with the ability to create, read, update and delete products, recipes and events.
+    * Site admins (superusers) can perform full CRUD functionality on the site with the ability to create, read, update and delete products, recipes and events.
     * When an admin logs into the site, they are presented with an extra 'Admin' dropdown in the navbar containing links to add new products, recipes and events to the site.
     * Additionally, edit and delete options are available to them in the products and product detail pages, the recipes and recipe detail pages and the events page.
 
 * Registered User Features
 
     * Users who have registered on the site have access to additional features that improve their user experience; including access to order history, a personal favourite products list and the ability to add and update their default personal and delivery information.
-    * When a registered user logs into the site they are offered additional links under the 'Profile' dropdown in the navbar, spcifically linking to their 'Profile' page and 'Favourites' list.
+    * When a registered user logs into the site they are offered additional links under the 'Profile' dropdown in the navbar, specifically linking to their 'Profile' page and 'Favourites' list.
     * Their profile page shows a list of their previous orders and allows them to maintain their personal and delivery information.
-    * The favourites page lists and items that they have favourited and links back to the product detail page for each individual item should they wish to purchase it at a future date. Products can be added to their favorites list by clicking on the "Add to Favourites' button on the product detail page.
+    * The favourites page lists and items that they have favourited and links back to the product detail page for each individual item should they wish to purchase it at a future date. Products can be added to their favourites list by clicking on the "Add to Favourites' button on the product detail page.
 
 &nbsp;
 
@@ -343,13 +343,13 @@ The site is underpinned by a relational database model and the datbabase schema 
     * In addition to having product favourites, it would be a nice feature to be able to do the same with brewing recipes; especially if the recipe selection expands greatly in the future.
 
 * Categories CRUD
-    * At present, full CRUD functionallity is not require for the store as it specialises in a narrow range of goods. However, to allow for future growth it might be beneficial for admins to be able to create, update and delete product categories.
+    * At present, full CRUD functionality is not required for the store as it specialises in a narrow range of goods. However, to allow for future growth it might be beneficial for admins to be able to create, update and delete product categories.
 
 * Stock levels built in
     * It would be very useful for admins to include stock levels for each product and have these auto update when items are purchased through the store.
 
 * Social Media Login
-    * The ability to register and login using social media accounts would be a usful addition and provide a faster sign-up process to users.
+    * The ability to register and login using social media accounts would be a useful addition and provide a faster sign-up process to users.
 
 &nbsp;
 
@@ -360,6 +360,7 @@ The site is underpinned by a relational database model and the datbabase schema 
 ## Languages
 * [HTML](https://en.wikipedia.org/wiki/HTML)
 * [CSS](https://en.wikipedia.org/wiki/CSS)
+* [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
 * [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
 
 ## Frameworks, Libraries, Programs and Extensions
@@ -368,8 +369,8 @@ The site is underpinned by a relational database model and the datbabase schema 
 * [Bootstrap](https://getbootstrap.com/): Used to enable responsive front-end site development.
 * [Django](https://www.djangoproject.com/): Used to build the project framework.
 * [Font Awesome](https://fontawesome.com/): Used to locate and import icons used throughout the site.
-* [Git](https://en.wikipedia.org/wiki/Git): Used as project development environment and is connected to GitHub.
-* [GitHub](https://en.wikipedia.org/wiki/GitHub): Used to hold project repository which is linked to Heroku.
+* [Git](https://en.wikipedia.org/wiki/Git): Used as a project development environment and is connected to GitHub.
+* [GitHub](https://en.wikipedia.org/wiki/GitHub): Used to hold the project repository which is linked to Heroku.
 * [Google Fonts](https://fonts.google.com/): Used to import the 'Roboto Mono' font used throughout the site.
 * [Heroku](https://en.wikipedia.org/wiki/Heroku): Used to host site and synced with GitHub repository.
 * [jQuery](https://jquery.com/): Used to implement JavaScript code.
@@ -382,7 +383,6 @@ The site is underpinned by a relational database model and the datbabase schema 
   * [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_by_uri): Used to validate the css code.
   * [Flake8](https://flake8.pycqa.org/): Used to lint python code for errors, styling issues and complexity.
   * [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/): Used to audit performance, accessibility, best practices and SEO across the website.
-  * [a11y](https://color.a11y.com/): Used to verify that the colour contrast across the site adhered to the WCAG 2.1 Guidelines.
   * [LambdaTest](https://www.lambdatest.com/): Used to perform cross browser testing.
 
 &nbsp;
@@ -415,7 +415,7 @@ A GitHub repository is used to store your project, with Git and GitHub used for 
 
 Forking the GitHub Repository makes a copy of the original repository on your GitHub account; allowing you to view and/or make changes without affecting the original repository and can be done by using the following steps.
 1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
-2. Once in the repository, navigate to the "Fork" button at the top righthand corner of the page.
+2. Once in the repository, navigate to the "Fork" button at the top right hand corner of the page.
 3. Click on the fork dropdown arrow and then select "Create a new fork".
 4. You should now have a copy of the original repository in your GitHub account.
 
@@ -423,7 +423,7 @@ Forking the GitHub Repository makes a copy of the original repository on your Gi
 
 ## Making a Local Clone
 1. Log in to GitHub and locate the repository: [GotNoBeans](https://github.com/davecoll3/GotNoBeans).
-2. Click on the geen "Code" button at the top of the page.
+2. Click on the green "Code" button at the top of the page.
 3. From here you can select HTTPS, SSH or Github CLI; click on the clipboard icon to copy the URL.
 4. Open Git Bash
 5. Change the current working directory to the location where you want the cloned directory to be made.
@@ -585,7 +585,7 @@ pip3 freeze > requirements.txt
 ```
 web: gunicorn your_project_name_.wsgi:application
 ```
-21. Return to Heroku and navigate to your app's settings. In the Config Vars, add a new Config Var named "DISABLE_COLLECTSTATIC" and set it's value to "1". This prevents Heroku from collecting static files when you deploy.
+21. Return to Heroku and navigate to your app's settings. In the Config Vars, add a new Config Var named "DISABLE_COLLECTSTATIC" and set its value to "1". This prevents Heroku from collecting static files when you deploy.
 22. Back in your IDE, return to the settings.py file, and find "ALLOWED_HOSTS". Inside the brackets insert your app's URL followed by 'localhost'. As shown below:
 ```
 ALLOWED_HOSTS = ['your-project-name.herokuapp.com', 'localhost']
@@ -608,7 +608,7 @@ heroku git:remote -a <app_name>
 git push heroku main
 ```
 28. Your app will now be deployed on Heroku but without any static files.
-29. Back in Heroku, you can set your app to be deployed automatically by navigaint to the app "Deploy" menu. Scrolling down to the 'Deployment Method' section and connecting it to github. You will need to search for your repository, once located click 'connect'. Then scroll further down and click 'Enable Automatic Deploys'. Once connected, your code will automatically deploy to Heroku whenever you push to github.
+29. Back in Heroku, you can set your app to be deployed automatically by navigating to the app "Deploy" menu. Scrolling down to the 'Deployment Method' section and connecting it to github. You will need to search for your repository, once located click 'connect'. Then scroll further down and click 'Enable Automatic Deploys'. Once connected, your code will automatically deploy to Heroku whenever you push to github.
 
 The live Heroku app link can be found [here](https://got-no-beans.herokuapp.com/)
 
@@ -625,7 +625,7 @@ Amazon Web Services are used to store your static and media files.
 3. From here, search for 'S3' search bar and select it from the search results.
 4. On the S3 Buckets page, click on the "Create Bucket" button.
 5. Name your new bucket (usually the same as your app name) and select your local region.
-6. Under "Object Ownership" select "ACLs enabled" and then "Bucket owner perferred.
+6. Under "Object Ownership" select "ACLs enabled" and then "Bucket owner preferred.
 7. Uncheck "Block all public access" and acknowledge the change when prompted.
 8. Scroll to the bottom and click on the "Create Bucket" button.
 9. Navigate to your new bucket and, within the "Properties" tab, locate "static website hosting" by scrolling down to the bottom of the page. Click "Enable" and specify the index and error document names (index.html and error.html are fine for this). Click save.
@@ -659,7 +659,7 @@ accepting the warning box. Then click 'Save'.
 [Back to top &uarr;](#got-no-beans)
 
 ### IAM (Identity and Access Management)
-1. With you bucket ready you will need to create a user to access it. In the search bar at the top of the window, search for IAM and select it from the search results.
+1. Now that your bucket is ready, you will need to create a user to access it. In the search bar at the top of the window, search for IAM and select it from the search results.
 2. On the IAM page, click 'User Groups' from the side bar, then click 'Create group'.
 3. Name your group 'manage-your-project-name' and click 'Create Group' at the bottom of the page.
 4. From the sidebar click 'Policies' and then 'Create policy'.
@@ -744,7 +744,7 @@ STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 ```
 12. Save, add, commit and push your changes to GitHub which will, in turn, trigger an automatic deployment to Heroku. You should now see that your S3 bucket has a static folder with all your static files inside. 
-13. Add the following code to help speed things up by letting the browser know that its ok to cache static files for a long time.
+13. Add the following code to help speed things up by letting the browser know that it's ok to cache static files for a long time.
 ```
 AWS_S3_OBJECT_PARAMETERS = {
     'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -799,9 +799,9 @@ You can set up Stripe payments by following their [step-by-step guide](https://s
 ```
 https://your-app-name.herokuapp.com/checkout/wh/
 ```
-4. Then click '+ Select events' button and check the 'Select all events' checkbox before clicking 'Add events' at the bottom. Once this is done finish the setup by clicking 'Add endpoint'.
+4. Then click the '+ Select events' button and check the 'Select all events' checkbox before clicking 'Add events' at the bottom. Once this is done finish the setup by clicking 'Add endpoint'.
 5. Your webhook has now been created and it will have generated a secret key. You will need this to add to your Config Vars in Heroku.
-6. Now go to your app in Heroku and under settings click 'Reveal Config Vars'. You will need the secret key your newly generated webhook along with your Stripe 'Publishable Key' and 'Secret Key' which you can find in the API keys section of stripe.
+6. Now go to your app in Heroku and under settings click 'Reveal Config Vars'. You will need the secret key from your newly generated webhook along with your Stripe 'Publishable Key' and 'Secret Key' which you can find in the API keys section of stripe.
 ```
 STRIPE_PUBLIC_KEY = your_stripe_publishable_key
 STRIPE_SECRET_KEY = your_secret_key

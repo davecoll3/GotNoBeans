@@ -28,8 +28,6 @@
 * Result
   * The site owner or admins(superusers) have access to an additional 'Admin' menu in the navbar when they login. This is in addition to edit and delete options connected to individual products, recipes and events.
 
-&nbsp;
-
 #### ID 2
 * Expected
   * Site owner privliges are restriced to admins only.
@@ -41,8 +39,6 @@
 
 * Result
   * Only admins have access to full CRUD functionality for site products, recipes and events.
-
-&nbsp;
 
 #### ID 3
 * Expected
@@ -58,8 +54,6 @@
 * Result
   * Only admins have access to full CRUD functionality for site products.
 
-&nbsp;
-
 #### ID 4
 * Expected
   * Site admins can add, edit and delete recipes on the site.
@@ -73,8 +67,6 @@
 
 * Result
   * Only admins have access to full CRUD functionality for site recipes.
-
-&nbsp;
 
 #### ID 5
 * Expected
@@ -105,8 +97,6 @@
 * Result
   * The homepage navbar, image, text, and 'Shop Now' button combine to inform the user of the site purpose.
 
-&nbsp;
-
 #### ID 7
 * Expected
   * Site user can browse the full range of products, view the selection and make a purchase.
@@ -118,8 +108,6 @@
 
 * Result
   * The products page lists a selection of products to all users which can be clicked for further information and to make a purchase.
-
-&nbsp;
 
 #### ID 8
 * Expected
@@ -133,8 +121,6 @@
 * Result
   * The product detail page displays such as price, description and an image to the use.
 
-&nbsp;
-
 #### ID 9
 * Expected
   * Site user can see a running total for their basket and be informed as to how much they're spending.
@@ -146,8 +132,6 @@
 
 * Result
   * The basket total, on the navbar, is highlighted in blue when there's something in the basket and auto-updates the price as items are added or removed.
-
-&nbsp;
 
 #### ID 10
 * Expected
@@ -161,8 +145,6 @@
 * Result
   * The recipes page lists a selection of recipes to all users which can be clicked for further information.
 
-&nbsp;
-
 #### ID 11
 * Expected
   * Site user can view individual recipe details to see the recipe method and find linked products.
@@ -174,8 +156,6 @@
 
 * Result
   * The recipe detail page displays the recipe method and links to related products.
-
-&nbsp;
 
 #### ID 12
 * Expected
@@ -204,8 +184,6 @@
 * Result
   * The sort dropdown, on the products page, allows users to sort products by price or name.
 
-&nbsp;
-
 #### ID 14
 * Expected
   * Site user can easily sort products by category and narrow products down to the most relevant.
@@ -218,8 +196,6 @@
 * Result
   * The catagories badges, under the header on the products page, allows users to sort products by category.
 
-&nbsp;
-
 #### ID 15
 * Expected
   * Site user can search products by name or description and find a specific product.
@@ -231,8 +207,6 @@
 
 * Result
   * The search bar allows the user to search all products by name or description.
-
-&nbsp;
 
 #### ID 16
 * Expected
@@ -261,8 +235,6 @@
 * Result
   * The 'Add to Basket' button, on the products page, allows users to add one or multiple products to their basket.
 
-&nbsp;
-
 #### ID 18
 * Expected
   * Site user can view the products in their basket to see what they have selected and adjust if needed.
@@ -274,8 +246,6 @@
 
 * Result
   * Clicking on the basket icon, in the navbar, brings the user to the basket page where they can view and adjust the items in their basket and totals.
-
-&nbsp;
 
 #### ID 19
 * Expected
@@ -289,8 +259,6 @@
 * Result
   * The checkout page contains a form in which a guest user can enter their delivery details. Registered users can save their default information to negate the need to enter it each time they make a purchase.
 
-&nbsp;
-
 #### ID 20
 * Expected
   * Site user can see their order confirmation after checkout and verify that the order details are correct.
@@ -302,8 +270,6 @@
 
 * Result
   * The checkout success page confirms that the order has been placed and provides an order summary. A success toast message is also displayed to the user.
-
-&nbsp;
 
 #### ID 21
 * Expected
@@ -332,8 +298,6 @@
 * Result
   * By selecting the 'Profile' dropdown, in the navbar, users will have the option of registering which will bring them to a sign-up page.
 
-&nbsp;
-
 #### ID 23
 * Expected
   * Registered users recieve a verification email during registration so that they can be confident that their registration was successful.
@@ -345,8 +309,6 @@
 
 * Result
   * When a valid sign-up form has been submitted, an email verification email is sent to the user allowing them to complete their registration.
-
-&nbsp;
 
 #### ID 24
 * Expected
@@ -360,8 +322,6 @@
 * Result
   * Sign in and out buttons are easily available at all times form the 'Account' dropdown in the navbar.
 
-&nbsp;
-
 #### ID 25
 * Expected
   * Registered users can recover their email if they forget it.
@@ -374,8 +334,6 @@
 * Result
   * Under the 'Sign In' button on the sign in page, there is a link to a password recovery page which sends a recovery email to the user's email address.
 
-&nbsp;
-
 #### ID 26
 * Expected
   * Registered users have a personal user profile which shows their order history and default delivery details.
@@ -387,8 +345,6 @@
 
 * Result
   * The user's profile is easily accessible at all times form the 'Account' dropdown in the navbar. This contains their order history and default delivery information, which they can update.
-
-&nbsp;
 
 #### ID 27
 * Expected
@@ -541,13 +497,124 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 ## Lighthouse
 [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit performance, accessibility, best practices and SEO.
 
-### Desktop
-![Desktop](/documentation/testing_images/home_desktop_lighthouse.png)
+### Homepage
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/home_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/home_mobile_lighthouse.png">
+</details>
 
 &nbsp;
 
-### Mobile
-![Mobile](/documentation/testing_images/home_mobile_lighthouse.png)
+### Products
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/products_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/products_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Product Detail
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/product_detail_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/product_detail_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Recipes
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/recipes_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/recipes_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Recipe Detail
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/recipe_detail_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/recipe_detail_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Events
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/events_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/events_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Profile
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/profile_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/profile_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Favourites
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/favourites_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/favourites_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Basket
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/basket_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/basket_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Checkout
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/checkout_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/checkout_mobile_lighthouse.png">
+</details>
+
+&nbsp;
+
+### Checkout Success
+<details><summary>Desktop</summary>
+<img src="documentation/testing_images/checkout_success_desktop_lighthouse.png">
+</details>
+
+<details><summary>Mobile</summary>
+<img src="documentation/testing_images/checkout_success_mobile_lighthouse.png">
+</details>
 
 &nbsp;
 

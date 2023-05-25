@@ -6,7 +6,7 @@
             <!-- Decrement Qty Button -->
             <div class="input-group-prepend">
                 <button class="decrement-qty btn-sm btn-dark decrement-qty_{{ item.item_id }}" 
-                    data-item_id="{{ item.item_id }}">
+                    data-item_id="{{ item.item_id }}" aria-label="decrement quantity">
                     <span>
                         <i class="fa-solid fa-minus fa-sm"></i>
                     </span>
@@ -14,11 +14,11 @@
             </div>
             <input class="form-control form-control-sm text-center qty_input id_qty_{{ item.item_id }}" type="number"
                 name="quantity" value="{{ item.quantity }}" min="1" max="20"
-                data-item_id="{{ item.item_id }}">
+                data-item_id="{{ item.item_id }}" aria-label="item quantity">
             <!-- Increment Qty Button -->
             <div class="input-group-append">
                 <button class="increment-qty btn-sm btn-dark increment-qty_{{ item.item_id }}"
-                    data-item_id="{{ item.item_id }}">
+                    data-item_id="{{ item.item_id }}" aria-label="increment quantity">
                     <span>
                         <i class="fa-solid fa-plus fa-sm"></i>
                     </span>

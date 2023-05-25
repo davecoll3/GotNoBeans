@@ -10,7 +10,7 @@
 * [Lighthouse](#lighthouse)
 * [Browser Compatibility](#browser-compatibility)
 * [Responsiveness](#responsiveness)
-* [Bugs](#bugs)
+* [Notable Bugs](#notablebugs)
 * [Unresolved Bugs](#unresolved-bugs)
 
 ## User Stories
@@ -638,37 +638,96 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 
 [Back to top &uarr;](#testing)
 
-## Bugs
+## Notable Bugs
 
-### Function: get_terms
-  During the development of the project the get_terms function was causing a type error
+### Checkout App: Order model
+During the development of the project I was recieving the TypeError message shown below.
 
-  <details><summary>Type Error Screenshot</summary>
-  <img src="#">
-  </details>
+![TypeError](/documentation/testing_images/decimal_bug.png)
 
-  After researching TypeError: object of type 'Cursor' has no len(), it was discovered that the use of terms = mongo.db.terms.find() was causing the bug; as shown below.
-  ```
-    @app.route("/get_terms")
-    def get_terms():
-        terms = mongo.db.terms.find()
-        return render_template("terms.html", terms=terms)
+After researching TypeError: "unsupported operand type(s) for +: 'decimal.Decimal' and 'float'" I managed to track the issue down to the deliver_cost value, set to 3.99, in the Order model and how that was being used to calculate the grand total. It was being caused as I was trying to add a Decimal and a float.
+```
+def update_total(self):
+    # Update grand total each time a line item is added
+    self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
+    self.grand_total = self.order_total + self.delivery_cost
+    self.save()
+```
 
+The simplest solution I found ws to rewrite any reference to delivery_cost declaring it as a Decimal object:
+```
+    self.grand_total = self.order_total + Decimal(self.delivery_cost)
+```
 
-    @app.route("/search", methods=["GET", "POST"])
-    def search():
-        query = request.form.get("query")
-        terms = list(mongo.db.terms.find({"$text": {"$search": query}}))
-        return render_template("terms.html", terms=terms)
-  ```
+&nbsp;
 
-  This was resolved by changing terms to equal list(mongo.db.terms.find()); as below.
-  ```
-    @app.route("/get_terms")
-    def get_terms():
-        terms = list(mongo.db.terms.find())
-        return render_template("terms.html", terms=terms)
-  ```
+### Events App: EventForm
+During the development of the project, the EditForm class, refrenced in the edit_event view, was not pulling through the event date and time data from the Event model.
+
+![EventForm Bug](/documentation/testing_images/date_time_bug.png)
+
+All other information was being pulled through apart from the event date and time. There were no issues found in the add_event view and I confirmed in the admin that a value for both date and time existed. After testing and researching the issue, it was discovered that the issue was being casued by the date and time format that was being used in the form. The bug stemmed from the code below, from the EventForm:
+```
+class Meta:
+        model = Event
+        fields = '__all__'
+        widgets = {
+            'date': DateInput(),
+            'time': TimeInput(),
+        }
+```
+
+This issue was resolved by supplying both DateInput and TimeInput with the required format, as below.
+```
+class Meta:
+        model = Event
+        fields = '__all__'
+        widgets = {
+            'date': DateInput(format=('%Y-%m-%d')),
+            'time': TimeInput(format=('%H:%M:%S')),
+        }
+```
+
+&nbsp;
+
+### HTML Validation: Base Templates
+During HTML code validation, I was recieving an error, coming from the base templates, stating that the site had duplicate IDs for 'user-options'. 
+
+![Home HTML Validation Error](/documentation/testing_images/html_validation_error.png)
+
+This ID was coming from the 'Account' dropdown in the navbar, this was the only instance of 'user-options' used as an ID in the base.html file. However, it was also used in the mobile-top-header template which was being imported into the base template.
+```
+base.html
+
+<a class="text-white nav-link" href="#" 
+    id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="text-center">
+        <div><i class="fa-solid fa-user fa-lg"></i></div>
+        <p class="my-0">Account</p>
+    </div>
+</a>
+
+mobile-top-header.html
+
+<a class="nav-link text-white d-block d-lg-none" href="#" 
+    id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="text-center">
+        <div><i class="fa-solid fa-user fa-lg"></i></div>
+        <p class="my-0">Account</p>
+    </div>
+</a>
+```
+
+This issue was resolved by changing the ID in the mobile top header template to 'user-menu'.
+```
+<a class="nav-link text-white d-block d-lg-none" href="#" 
+    id="user-menu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <div class="text-center">
+        <div><i class="fa-solid fa-user fa-lg"></i></div>
+        <p class="my-0">Account</p>
+    </div>
+</a> 
+```
 
 &nbsp;
 
@@ -676,8 +735,8 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 
 ## Unresolved Bugs
  
- ### Navbar Menu Items Not Active
-   Materialize allows for an active class to be added to the menu < li > elements to highlight, on the navbar, which page the user is currently on. However, due to the navbar code only appearing on the base.html file, it is not as simple to implement as is shown in the Materialize documentation and requires further jinja or JavaScript code to achieve this. In order to mitigate the effects of this, page headers are used to help signpost the current page to users.
+### Toasts: Events
+The toast messages for events...
 
 &nbsp;
 

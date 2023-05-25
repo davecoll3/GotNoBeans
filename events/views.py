@@ -26,7 +26,7 @@ def add_event(request):
         return redirect(reverse('home'))
     # Add an event
     if request.method == 'POST':
-        form = EventForm(request.POST)
+        form = EventForm(request.POST, request.FILES)
         # Add event if valid
         if form.is_valid():
             form.save()

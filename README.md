@@ -17,6 +17,7 @@ The GotNoBeans website is a full-stack e-commerce site built using Django, Pytho
     * [User Stories](#user-stories)
     * [User Requirements](#user-requirements)
     * [Design](#design)
+    * [Sitemap](#sitemap)
     * [Wireframes](#wireframes)
 * [Data Model](#data-model)
 * [Features](#features)
@@ -60,6 +61,8 @@ The store owner has several goals for this site, which are outlined below:
 * Educate the user in brewing methods by listing product specific recipes.
 
 &nbsp;
+
+[Back to top &uarr;](#got-no-beans)
 
 ## User Stories
 
@@ -120,6 +123,8 @@ The store owner has several goals for this site, which are outlined below:
 
 &nbsp;
 
+[Back to top &uarr;](#got-no-beans)
+
 ## User Requirements
 * Appealing visual presentation that enhances the user experience.
 * Familiar and intuitive design that negates any learning curve.
@@ -153,14 +158,12 @@ The store owner has several goals for this site, which are outlined below:
 ### Structure
 * The information architecture type used for this site is the hierarchical tree structure. This common structure allows for simple navigation throughout the site and allows for easy expansion of the site in the future. The use of the burger navigation icon, along with a floating return to top button, help to overcome the common issues with this structure on mobile devices.
 
-<details>
-<summary>Site Map</summary>
-
-![Site Map](/readme-files/images/sitemap.webp)
-
-</details>
+### Sitemap
+![Site Map](/documentation/readme_images/sitemap.png)
 
 &nbsp;
+
+[Back to top &uarr;](#got-no-beans)
 
 ## Wireframes
 
@@ -171,7 +174,7 @@ Wireframes for mobile, tablet, and desktop can be found below:
 
   ### [Tablet Wireframe](#)
 
-  ### [Desktop Wireframe](#)
+  ### [Desktop Wireframe](documentation/readme_docs/desktop_wireframes.pdf)
 
 &nbsp;
 
@@ -331,6 +334,8 @@ The site is underpinned by a relational database model and the datbabase schema 
 
 &nbsp;
 
+[Back to top &uarr;](#got-no-beans)
+
 ## Features to be Implemented in Future
 
 * Breadcrumbs
@@ -442,6 +447,10 @@ $ git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
 
 Click [Here](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository) to retrieve pictures for some of the buttons and more detailed explanations of the above process.
 
+&nbsp;
+
+[Back to top &uarr;](#got-no-beans)
+
 ## Django
 This project is built around the Dango framework which can be installed as follows:
 1. Type the following command into your IDE:
@@ -500,6 +509,8 @@ The database used while developing your project within the IED is only available
 8. This URL will be used in your Heroku Config Vars to connect it to your database.
 
 &nbsp;
+
+[Back to top &uarr;](#got-no-beans)
 
 ## Heroku Deployment
 1. On the [Heroku website](https://heroku.com/), log into your account. If you don't have a Heroku account, you can sign-up for one [here](https://signup.heroku.com/).
@@ -603,6 +614,10 @@ git push heroku main
 
 The live Heroku app link can be found [here](https://got-no-beans.herokuapp.com/)
 
+&nbsp;
+
+[Back to top &uarr;](#got-no-beans)
+
 ## AWS
 
 ### S3 Bucket
@@ -640,6 +655,10 @@ Amazon Web Services are used to store your static and media files.
 15. Add a '/*' at the end of your resource key; this allows access to all resources in this bucket. Click 'Save'.
 16. Now scroll down to the 'Access control list (ACL)' section and click 'Edit' and and enable list for 'Everyone (public access)';
 accepting the warning box. Then click 'Save'.
+
+&nbsp;
+
+[Back to top &uarr;](#got-no-beans)
 
 ### IAM (Identity and Access Management)
 1. With you bucket ready you will need to create a user to access it. In the search bar at the top of the window, search for IAM and select it from the search results.
@@ -765,7 +784,9 @@ if 'USE_AWS' in os.environ:
 17. Under 'Permissions' select the option 'Grant public-read access' and click upload. You may also need to check an acknowledgment warning checkbox.
 18. Once that is done, your static and media files should be automatically linked from django to your S3 bucket.
 
+&nbsp;
 
+[Back to top &uarr;](#got-no-beans)
 
 ## Stripe
 Stripe is used to handle all payments in the checkout process. If you don't already have one, you will need to sign-up for an account which you can do on their [website](https://dashboard.stripe.com/register).
@@ -796,7 +817,6 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 ```
 8. You can now checkout using a test credit card number (such as 4242 4242 4242 4242) and check that they're coming through to your webhook on stripe.
 
-
 &nbsp;
 
 [Back to top &uarr;](#got-no-beans)
@@ -805,21 +825,21 @@ STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 
 ## Content 
 
-  * The Code Institute's readme-template provided the basic structure for the readme.md file.
-  * The Code Institute's Boutique Ado walkthrough project was used to provide the core structure and functionality.
+* The Code Institute's readme-template provided the basic structure for the readme.md file.
+* The Code Institute's Boutique Ado walkthrough project was used to provide the core structure and functionality.
 
 ## Media
 
-  * The favicon image was sourced from [Icons8](https://icons8.com) and was freely used under the [Icons8 licence](https://icons8.com/license).
-  * All site images were sourced from [Pexels](https://www.pexels.com/) and was freely used under the [Pexels licence](https://www.pexels.com/license/).
+* The favicon image was sourced from [Icons8](https://icons8.com) and was freely used under the [Icons8 licence](https://icons8.com/license).
+* All site images were sourced from [Pexels](https://www.pexels.com/) and was freely used under the [Pexels licence](https://www.pexels.com/license/).
 
 ## Acknowledgements
 
-  * I would like to thank my mentor, Oluwaseun Owonikoko, who assisted me on this project.
-  * I would like to thank Iris Smok, the Code Institute's cohort facilitator for Coleg y Cymoedd, for her advice and encouragement.
-  * I would also like to acknowledge the support and advice obtained from the Code Institute's Tutor Support and Slack community. 
+* I would like to thank my mentor, Oluwaseun Owonikoko, who assisted me on this project.
+* I would like to thank Iris Smok, the Code Institute's cohort facilitator for Coleg y Cymoedd, for her advice and encouragement.
+* I would also like to acknowledge the support and advice obtained from the Code Institute's Tutor Support and Slack community. 
 
-  &nbsp;
+&nbsp;
 
 [Back to top &uarr;](#got-no-beans)
 

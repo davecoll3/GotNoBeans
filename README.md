@@ -43,12 +43,12 @@ The GotNoBeans website is a full-stack e-commerce site built using Django, Pytho
 
 ## Research
 
-Research for the creation of this site was carried out by searching for various forms of...
+Research for the creation of this site was carried out by searching for various forms of online home coffee equipment retailers. A selection of sites found are shown below. 
 
 * [Clumsy Goat Coffee](https://clumsygoat.co.uk/pages/home-coffee-equipment)
-* [#](#)
-* [#](#)
-* [#](#)
+* [Coffee Island](https://www.coffeeisland.co.uk/catalog/homeBarista/46)
+* [Odd Kin Coffee](https://www.oddkincoffee.com/collections/coffee-brewing-equipment)
+* [Roast Works](https://www.roastworks.co.uk/collections/gear)
 
 &nbsp;
 

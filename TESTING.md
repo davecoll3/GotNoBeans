@@ -2,13 +2,12 @@
 
 ## Table of Contents   
 * [User Stories](#user-stories)
-* [Lighthouse](#lighthouse)
 * [Validation](#validation)
     * [HTML](#html)
     * [CSS](#css)
     * [JavaScript](#javascript)
     * [Flake8](#flake8)
-    * [Colour Contrast](#colour-contrast)
+* [Lighthouse](#lighthouse)
 * [Browser Compatibility](#browser-compatibility)
 * [Responsiveness](#responsiveness)
 * [Bugs](#bugs)
@@ -406,22 +405,6 @@
 
 &nbsp;
 
-
-
-
-&nbsp;
-
-[Back to top &uarr;](#testing)
-
-## Lighthouse
-[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit performance, accessibility, best practices and SEO.
-
-  * Desktop
-    * [Lighthouse Report: Desktop](/documentation/testing_docs/lighthouse_desktop.pdf)
-    * [Lighthouse Report: Mobile](/documentation/testing_docs/lighthouse_mobile.pdf)
-
-&nbsp;
-
 [Back to top &uarr;](#testing)
 
 # Validation
@@ -531,6 +514,10 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 <img src="documentation/testing_images/scroll_to_top_script.png">
 </details>
 
+<details><summary>Sort Selector</summary>
+<img src="documentation/testing_images/sort_selector_script.png">
+</details>
+
 <details><summary>Stripe Elements</summary>
 <img src="documentation/testing_images/stripe_script.png">
 </details>
@@ -541,91 +528,111 @@ The [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/#validate_b
 
 &nbsp;
 
+[Back to top &uarr;](#testing)
+
 ## Flake8
 [Flake8](https://flake8.pycqa.org/en/latest/) was used to check if the Python code is PEP 8 compliant. The code was successfully processed by the linter with the only errors found relating to django files and migrations.
 
-<details><summary>Flake8 Results</summary>
-<img src="documentation/testing_images/flake8.png">
-</details>
+![Flake8](/documentation/testing_images/flake8.png)
 
 &nbsp;
 
-## Colour Contrast
-The colour contrast accessibility validator [a11y](https://color.a11y.com/) was used to verify that the colour contrast across the site adhered to the [WCAG 2.1 Guidelines](https://www.w3.org/TR/WCAG21/).
+[Back to top &uarr;](#testing)
 
-<details>
-<summary>colour Contrast Validation</summary>
+## Lighthouse
+[Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) was used to audit performance, accessibility, best practices and SEO.
 
-![colour Contrast Validation](#)
-</details>
+### Desktop
+![Desktop](/documentation/testing_images/home_desktop_lighthouse.png)
+
+&nbsp;
+
+### Mobile
+![Mobile](/documentation/testing_images/home_mobile_lighthouse.png)
 
 &nbsp;
 
 [Back to top &uarr;](#testing)
 
 ## Browser Compatibility
-
 [LambdaTest](https://www.lambdatest.com/) was used to test the site across a number of browsers, including:
 
-### Chrome: Windows
-  <details><summary>GotNoBeans on Chrome.</summary>
-  <img src="#">
-  </details>
-  
-  &nbsp;
+### Chrome
+<details><summary>Windows OS</summary>
+<img src="documentation/testing_images/chrome_windows.png">
+</details>
 
-  ### Chrome: Android
-  <details><summary>GotNoBeans on Chrome (Android).</summary>
-  <img src="#">
-  </details>
+<details><summary>Android OS</summary>
+<img src="documentation/testing_images/chrome_android.png">
+</details>
 
-  &nbsp;
+&nbsp;
 
-  ### Safari: MacOS
-  <details><summary>GotNoBeans on Safari.</summary>
-  <img src="#">
-  </details>
+### Safari
+<details><summary>macOS</summary>
+<img src="documentation/testing_images/safari_mac.png">
+</details>
 
-  &nbsp;
+<details><summary>iOS</summary>
+<img src="documentation/testing_images/safari_mobile.png">
+</details>
 
-  ### Safari: iOS
-  <details><summary>GotNoBeans on Safari (iOS).</summary>
-  <img src="#">
-  </details>
+&nbsp;
 
-  &nbsp;
+### Firefox: Windows
+<details><summary>Windows OS</summary>
+<img src="documentation/testing_images/firefox_windows.png">
+</details>
 
-  ### MS Edge: Windows
-  <details><summary>GotNoBeans on MS Edge.</summary>
-  <img src="#">
-  </details>
+<details><summary>Android OS</summary>
+<img src="documentation/testing_images/firefox_mobile.png">
+</details>
 
-  &nbsp;
+&nbsp;
 
-  ### Firefox: Windows
-  <details><summary>GotNoBeans on Firefox.</summary>
-  <img src="#">
-  </details>
-
-  &nbsp;
-
-  ### Opera: Windows
-  <details><summary>GotNoBeans on Opera.</summary>
-  <img src="#">
-  </details>
-
-  &nbsp;
-
-  ### Brave: Windows
-  <details><summary>GotNoBeans on Brave.</summary>
-  <img src="#">
-  </details>
+### MS Edge:
+<details><summary>Windows OS</summary>
+<img src="documentation/testing_images/edge_windows.png">
+</details>
 
 &nbsp;
 
 [Back to top &uarr;](#testing)
 
 ## Responsiveness
+[Chrome DevTools](https://developer.chrome.com/docs/devtools/) was used to test the responsiveness of the site.
+
+<details><summary>Homepage</summary>
+<img src="documentation/testing_gifs/home_responsive.gif">
+</details>
+
+<details><summary>Products</summary>
+<img src="documentation/testing_gifs/products_responsive.gif">
+</details>
+
+<details><summary>Recipes</summary>
+<img src="documentation/testing_gifs/recipes_responsive.gif">
+</details>
+
+<details><summary>Events</summary>
+<img src="documentation/testing_gifs/events_responsive.gif">
+</details>
+
+<details><summary>Favourites</summary>
+<img src="documentation/testing_gifs/favourites_responsive.gif">
+</details>
+
+<details><summary>Profile</summary>
+<img src="documentation/testing_gifs/profile_responsive.gif">
+</details>
+
+<details><summary>Basket</summary>
+<img src="documentation/testing_gifs/basket_responsive.gif">
+</details>
+
+<details><summary>Checkout</summary>
+<img src="documentation/testing_gifs/checkout_responsive.gif">
+</details>
 
 &nbsp;
 

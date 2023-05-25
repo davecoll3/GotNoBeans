@@ -46,5 +46,6 @@
 
 <!-- Post Load JavaScript -->
 {% block postloadjs %}
+{{ block.super }}
 {% include 'recipes/includes/add_or_edit_recipe_script.html' %}
 {% endblock %}

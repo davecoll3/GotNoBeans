@@ -26,8 +26,8 @@ def add_event(request):
         return redirect(reverse('home'))
     # Add an event
     if request.method == 'POST':
+        # Add event if form is valid
         form = EventForm(request.POST, request.FILES)
-        # Add event if valid
         if form.is_valid():
             form.save()
             messages.success(request, 'New event added!')
@@ -56,7 +56,7 @@ def edit_event(request, event_id):
     event = get_object_or_404(Event, pk=event_id)
     if request.method == 'POST':
         form = EventForm(request.POST, request.FILES, instance=event)
-        # Update event if valid
+        # Update event if form is valid
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated event!')

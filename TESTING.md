@@ -11,7 +11,6 @@
 * [Browser Compatibility](#browser-compatibility)
 * [Responsiveness](#responsiveness)
 * [Notable Bugs](#notablebugs)
-* [Unresolved Bugs](#unresolved-bugs)
 
 ## User Stories
 
@@ -731,12 +730,25 @@ This issue was resolved by changing the ID in the mobile top header template to 
 
 &nbsp;
 
-[Back to top &uarr;](#testing)
+### Events App: Toast Messages
+During the testing of the project, it was noticed that toast messages weren't appearing when adding, editing or deleting events from the site. This was unusual as toasts were appearing for almost everything else and were coming from the base template. I used print statemenets to check the code in the events views, all of which seemed okay. Using Google DevTools it was discovered that while the toasts were being rendered in the html, they were not being given the requsite 'show' class.
 
-## Unresolved Bugs
- 
-### Toasts: Events
-The toast messages for events...
+![Event Toasts Bug](/documentation/testing_images/toasts_bug.png)
+
+The 'show' class was being added by jQuery in the base template but it was discovered that the {% block postloadjs %} in the events template was replacing it.
+```
+{% block postloadjs %}
+{% include 'recipes/includes/add_or_edit_recipe_script.html' %}
+{% endblock %}
+```
+
+This issue was resolved by including {{ block.super }} in the postloast JS in the events template.
+```
+{% block postloadjs %}
+{{ block.super }}
+{% include 'recipes/includes/add_or_edit_recipe_script.html' %}
+{% endblock %}
+```
 
 &nbsp;
 

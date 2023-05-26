@@ -11,6 +11,7 @@
 * [Browser Compatibility](#browser-compatibility)
 * [Responsiveness](#responsiveness)
 * [Notable Bugs](#notablebugs)
+* [Unresolved Bugs](#notablebugs)
 
 ## User Stories
 
@@ -816,6 +817,15 @@ This issue was resolved by including {{ block.super }} in the postloast JS in th
 {% include 'recipes/includes/add_or_edit_recipe_script.html' %}
 {% endblock %}
 ```
+
+&nbsp;
+
+[Back to top &uarr;](#testing)
+
+## Unresolved Bugs
+
+### Products: Recipe and Events
+One small bug that would have been nice to resolve, if I had the time, would be to have the linked product listings (in the recipe and events forms) appear in alphabetical order. It would look tidier and make it easier to find products to link, especially as the site grows.
 
 &nbsp;
 

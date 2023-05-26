@@ -43,8 +43,8 @@
                 <!-- Admin Edit/Delete Options -->
                 {% if request.user.is_superuser %}
                 <small>
-                    <a class="text-primary" href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
-                    <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{recipe.id}}">Delete</a>
+                    <a class="text-primary btn bg-transparent" href="{% url 'edit_recipe' recipe.id %}">Edit</a> | 
+                    <button class="text-danger btn bg-transparent" data-toggle="modal" data-target="#delete-modal-{{recipe.id}}">Delete</button>
                 </small>
                 <!-- Delete Recipe Modal -->
                 {% include 'recipes/includes/delete_recipe_modal.html' %}

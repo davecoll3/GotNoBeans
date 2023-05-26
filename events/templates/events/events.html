@@ -52,8 +52,8 @@
                     <br>
                     {% if request.user.is_superuser %}
                     <small>
-                        <a class="text-primary" href="{% url 'edit_event' event.id %}">Edit</a> | 
-                        <a class="text-danger" href="#" data-toggle="modal" data-target="#delete-modal-{{event.id}}">Delete</a>
+                        <a class="text-primary btn bg-transparent" href="{% url 'edit_event' event.id %}">Edit</a> | 
+                        <button class="text-danger btn bg-transparent" href="#" data-toggle="modal" data-target="#delete-modal-{{event.id}}">Delete</button>
                     </small>
                     {% include 'events/includes/delete_event_modal.html' %}
                     {% endif %}

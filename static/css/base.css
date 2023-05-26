@@ -177,6 +177,11 @@ button[disabled]{
   background-color: #666;
 }
 
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none;
+ }
+
 .to-top-button {
     height: 42px;
     width: 42px;

@@ -1,4 +1,7 @@
 # Pin setuptools first to avoid build errors
+pip>=24.0
+setuptools>=65.0.0,<68.0.0
+wheel>=0.41.0
 setuptools>=65.0.0,<68.0.0
 
 # Upgrade pip in case of old environment

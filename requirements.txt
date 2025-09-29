@@ -22,6 +22,7 @@ defusedxml==0.7.1
 dj-database-url==3.0.1
 Django==5.2.6
 django-allauth==65.11.2
+django-crispy-forms==2.4
 executing==2.2.0
 fastjsonschema==2.21.1
 filelock==3.13.1

@@ -14,7 +14,7 @@ sqlparse==0.4.4
 dj-database-url==0.5.0
 
 # Authentication
-django-allauth==0.41.0
+django-allauth==0.64.1
 python3-openid==3.2.0
 
 # Forms, utilities, and localization

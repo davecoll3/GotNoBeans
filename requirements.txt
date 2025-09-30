@@ -24,6 +24,7 @@ defusedxml==0.7.1
 dj-database-url==3.0.1
 Django==5.2.6
 django-allauth==65.11.2
+django-countries==7.2.1
 django-crispy-forms==2.4
 django-storages==1.14.6
 executing==2.2.0
